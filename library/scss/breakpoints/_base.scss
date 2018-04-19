@@ -70,9 +70,117 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
+/*.wrap {
 	width: 96%;
 	margin: 0 auto;
+}*/
+
+.wrap{
+  display:block;
+  min-width:20em; // 320px
+  width:20em;
+  margin:0 auto;
+  clear:both;
+  padding:0 0.625rem;
+  &:after{
+	clear: both;
+	content: " "; 
+	display: block;
+	font-size: 0;
+	height: 0;
+	visibility: hidden;
+  }
+  @include breakpoint(lgMobile) {
+	width: 30em; // (480px)
+  }
+  @include breakpoint(tablet) {
+	width: 48em; // (768px)
+  }
+  @include breakpoint(tabletUp) {
+	width:100%;
+	max-width: 75em;
+  }
+  @include breakpoint(desktop) {
+	max-width: 75em; // (1200px)
+	width:100%;
+	padding:0;
+  }
+  @include breakpoint(smDesktop) {
+	padding:0 0.625rem;
+  }
+}
+
+.wrap-desktop{
+  @include breakpoint(desktop) {
+	position:relative;
+	display:block;
+	max-width:75em; // (1200px)
+	width:100%;
+	margin:0 auto;
+	clear:both;
+	&:after{
+	  clear: both;
+	  content: " ";
+	  display: block;
+	  font-size: 0;
+	  height: 0;
+	  visibility: hidden;
+	}
+  }
+  @include breakpoint(smDesktop) {
+	padding:0 0.625rem;
+  }
+}
+
+.wrap-mobile{
+  @include breakpoint(smMobile) {
+	width:20em; // (320px)
+	min-width:20em;
+	padding:0 0.625rem;
+	margin:0 auto;
+	clear:both;
+  }
+  @include breakpoint(lgMobile) {
+	width:30em; // (480px)
+  }
+  @include breakpoint(tablet) {
+	width:48em; // (768px)
+  }
+}
+
+.mobile-only{
+  display:block;
+  @include breakpoint(tabletUp) {
+	display:none !important;
+  }
+}
+
+.mobile-tablet-only{
+  display:block;
+  @include breakpoint(desktop) {
+	display:none !important;
+  }
+}
+
+.lgtabletup-only{
+  display:none !important;
+  @include breakpoint(lgTabletUp) {
+	display:block !important;
+  }
+}
+
+.tabletup-only{
+  display:none !important;
+  @include breakpoint(tabletUp) {
+	display:block !important;
+  }
+}
+
+.desktop-only{
+  display:none !important;
+  @include breakpoint(desktop) {
+	display:block !important;
+  }
 }
 
 /*********************

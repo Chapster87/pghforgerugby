@@ -18,8 +18,8 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 ******************************************************************/
 /******************************************************************
-Site Name:
-Author:
+Site Name: Pittsburgh Forge Rugby Club
+Author: Andrew Chapman
 
 Stylesheet: Variables
 
@@ -29,6 +29,9 @@ contains variables that way our files don't get all messy.
 No one likes a mess.
 
 ******************************************************************/
+/*********************
+Breakpoint Mixins
+*********************/
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:

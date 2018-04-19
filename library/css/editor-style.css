@@ -189,8 +189,8 @@ body#tinymce.wp-editor {
   http://simplebits.com/notebook/2008/08/14/ampersands-2/
   */
   /******************************************************************
-  Site Name:
-  Author:
+  Site Name: Pittsburgh Forge Rugby Club
+  Author: Andrew Chapman
   
   Stylesheet: Variables
   
@@ -200,6 +200,9 @@ body#tinymce.wp-editor {
   No one likes a mess.
   
   ******************************************************************/
+  /*********************
+  Breakpoint Mixins
+  *********************/
   /*********************
   COLORS
   Need help w/ choosing your colors? Try this site out:
