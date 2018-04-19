@@ -1618,6 +1618,7 @@ HEADER STYLES
 /* line 159, ../scss/breakpoints/_base.scss */
 #logo {
   margin: 0.75em 0;
+  background-color: black;
 }
 /* line 162, ../scss/breakpoints/_base.scss */
 #logo a {
