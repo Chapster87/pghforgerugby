@@ -287,23 +287,33 @@ and more scalable.
 .nav {
 	border-bottom: 0;
 	margin: 0;
+	@include breakpoint(tabletUp) {
+		border:0;
+		ul {
+			background:$black;
+			margin-top:0;
+		}
+	}
 
 	li {
-
+		@include breakpoint(tabletUp) {
+			float: left;
+			position: relative;
+		}
 		a {
 			display: block;
 			color: $white;
 			text-decoration: none;
 			padding: 0.75em;
+			@include breakpoint(tabletUp) {
+				border-bottom:0;
+			}
 
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
+			@include breakpoint(tabletUp) {
+				&:hover, &:focus {
+					color: $white;
+					text-decoration: underline;
+				}
 			}
 		}
 
@@ -320,11 +330,26 @@ and more scalable.
 		*/
 		ul.sub-menu,
 		ul.children {
+			@include breakpoint(tabletUp) {
+				margin-top: 0;
+				border: 1px solid #ccc;
+				border-top: 0;
+				position: absolute;
+				visibility: hidden;
+				z-index: 8999;
+			}
 
 			li {
 
 				a {
 					padding-left: 30px;
+					@include breakpoint(tabletUp) {
+						padding-left: 10px;
+						border-right: 0;
+						display: block;
+						width: 180px;
+						border-bottom: 1px solid #ccc;
+					}
 
 					&:hover,
 					&:focus {}
@@ -335,10 +360,29 @@ and more scalable.
 
 				&:first-child {}
 
-				&:last-child {}
+				@include breakpoint(tabletUp) {
+					&:last-child {
+						a{
+							border-bottom:0;
+						}
+					}
+
+					ul{
+						top:0;
+						left:100%;
+					}
+				}
 
 			}
 
+		}
+
+		@include breakpoint(tabletUp) {
+			/* showing sub-menus */
+			&:hover > ul {
+				top: auto;
+				visibility:visible;
+			}
 		}
 
 	} /* end .menu li */
@@ -522,9 +566,28 @@ POSTS & CONTENT STYLES
 			and floating images at the next breakpoint,
 			but it's up to you. Feel free to change it up.
 			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
+			.alignleft, img.alignleft {
+				@include breakpoint(lgMobileUp) {
+					margin-right: 1.5em;
+					display: inline;
+					float: left;
+				}
+			}
+			.alignright, img.alignright {
+				@include breakpoint(lgMobileUp) {
+					margin-left: 1.5em;
+					display: inline;
+					float: right;
+				}
+			}
+			.aligncenter, img.aligncenter {
+				@include breakpoint(lgMobileUp) {
+					margin-right: auto;
+					margin-left: auto;
+					display: block;
+					clear: both;
+				}
+			}
 
 			.size-auto,
 			.size-full,
@@ -930,15 +993,37 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+	.sidebar {
 
-	.widgettitle {}
+		@include breakpoint(tabletUp) {
+			margin-top: 2.2em;
+		}
+
+	}
+
+	.widgettitle {
+
+		@include breakpoint(tabletUp) {
+			border-bottom: 2px solid #444;
+			margin-bottom: 0.75em;
+		}
+
+	}
 
 	.widget {
+
+		@include breakpoint(tabletUp) {
+			padding: 0 10px;
+			margin: 2.2em 0;
+		}
 
 		ul {
 
 			li {
+
+				@include breakpoint(tabletUp) {
+					margin-bottom: 0.75em;
+				}
 
 				&:first-child {}
 
@@ -947,7 +1032,14 @@ SIDEBARS & ASIDES
 				a {}
 
 				/* deep nesting */
-				ul {}
+				ul {
+
+					@include breakpoint(tabletUp) {
+						margin-top: 0.75em;
+						padding-left: 1em;
+					}
+
+				}
 
 			}
 
