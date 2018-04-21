@@ -16,36 +16,36 @@ Breakpoint Mixins
 *********************/
 
 @mixin breakpoint($point) {
-  @if $point == desktop {
-    @media screen and (min-width:64.0625em) { @content ; } // (1025px and up)
-  }
-  @else if $point == lgTabletUp {
-    @media screen and ( min-width:60em) { @content ; } // (960px and up)
-  }
-  @else if $point == tabletUp {
-    @media screen and (min-width:48em) { @content ; } // (768px and up)
-  }
-  @else if $point == tablet {
-    @media screen and ( min-width:48em) and (max-width:64em) { @content ; } // (768px - 1024px)
-  }
-  @else if $point == lgTablet {
-    @media screen and ( min-width:60em) and (max-width:64em) { @content ; } // (960px - 1024px)
-  }
-  @else if $point == smDesktop {
-    @media screen and ( min-width:60em) and (max-width:75em) { @content ; } // (960px - 1200px)
-  }
-  @else if $point == smTablet {
-    @media screen and ( min-width:48em) and (max-width:59.9375em) { @content ; } // (768px - 959px)
-  }
-  @else if $point == lgMobileUp {
-    @media screen and ( min-width:30.063em){ @content ; } // (481px and up)
-  }
-  @else if $point == lgMobile {
-    @media screen and ( min-width:30em) and (max-width:47.9375em) { @content ; } // (480px - 767px)
-  }
-  @else if $point == smMobile {
-    @media screen and (max-width:20em) { @content ; } // (up to 320px)
-  }
+	@if $point == desktop {
+		@media screen and (min-width:64.0625em) { @content ; } // (1025px and up)
+	}
+	@else if $point == lgTabletUp {
+		@media screen and ( min-width:60em) { @content ; } // (960px and up)
+	}
+	@else if $point == tabletUp {
+		@media screen and (min-width:48em) { @content ; } // (768px and up)
+	}
+	@else if $point == tablet {
+		@media screen and ( min-width:48em) and (max-width:64em) { @content ; } // (768px - 1024px)
+	}
+	@else if $point == lgTablet {
+		@media screen and ( min-width:60em) and (max-width:64em) { @content ; } // (960px - 1024px)
+	}
+	@else if $point == smDesktop {
+		@media screen and ( min-width:60em) and (max-width:75em) { @content ; } // (960px - 1200px)
+	}
+	@else if $point == smTablet {
+		@media screen and ( min-width:48em) and (max-width:59.9375em) { @content ; } // (768px - 959px)
+	}
+	@else if $point == lgMobileUp {
+		@media screen and ( min-width:30.063em){ @content ; } // (481px and up)
+	}
+	@else if $point == lgMobile {
+		@media screen and ( min-width:30em) and (max-width:47.9375em) { @content ; } // (480px - 767px)
+	}
+	@else if $point == smMobile {
+		@media screen and (max-width:20em) { @content ; } // (up to 320px)
+	}
 }
 
 /*********************

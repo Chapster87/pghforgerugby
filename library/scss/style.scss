@@ -1,8 +1,8 @@
 /*! Made with Bones: http://themble.com/bones :) */
 
 /******************************************************************
-Site Name:
-Author:
+Site Name: Pittsburgh Forge Rugby Club
+Author: Andrew Chapman
 
 Stylesheet: Main Stylesheet
 
@@ -65,6 +65,13 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 // forms (inputs & labels)
 @import "modules/forms";
+
+/*********************
+PAGE SECTIONS
+*********************/
+
+// header
+@import "modules/header";
 
 /*********************
 RETINA (2x RESOLUTION DEVICES)
