@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: Pittsburgh Forge Rugby Club
+Author: Andrew Chapman
 
 Stylesheet: Header Styles
 
@@ -17,14 +17,28 @@ HEADER STYLES
 
 #inner-header{
 	position:relative;
+	height:4.25rem;
 }
 
-.logo {
-	position: absolute;
-	max-width: 12.188rem;
-	top: 0.5rem;
-	left: 0.5rem;
+.logo-block{
+	.page-home & {
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		display:flex;
+		align-items:center;
+		.logo {
+			max-width: 12.188rem;
+		}
+		.header-title{
+			font-family:$lemonmilk-regular;
+			font-size:1.938rem;
+			margin:-1rem 0 0 0.875rem;
+		}
+	}
 }
+
+
 
 /*********************
 NAVIGATION STYLES
@@ -151,3 +165,21 @@ and more scalable.
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+// Styles Specifically for the Main Site Nav
+
+.main-nav{
+	height:100%;
+	ul{
+		display:flex;
+		justify-content: flex-end;
+		align-items:center;
+		height:100%;
+		li{
+			a{
+				color:$black;
+				font-weight:700;
+			}
+		}
+	}
+}

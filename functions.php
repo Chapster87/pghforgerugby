@@ -230,6 +230,17 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+  global $post;
+  if ( isset( $post ) ) {
+    $classes[] = $post->post_type . '-' . $post->post_name;
+  }
+  
+  return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
 
 /*
 This is a modification of a function found in the
@@ -239,7 +250,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"');
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
