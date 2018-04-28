@@ -189,6 +189,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
+	font-family: $oswald;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -227,6 +228,19 @@ h5, .h5 {
 	letter-spacing: 2px;
 }
 
+p{
+	font-family: $roboto;
+}
+
+hr{
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #999;
+    margin: 1em 0;
+    padding: 0; 
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -243,21 +257,31 @@ POSTS & CONTENT STYLES
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 }
 
+.primary{
+	float:left;
+	width:100%;
+	@include breakpoint(tabletUp) {
+		width:75%;
+	}
+}
+.secondary{
+	float:right;
+	width:100%;
+	@include breakpoint(tabletUp) {
+		width:23%;
+	}
+}
+
 .hentry {
 	background-color: $white;
 	border-radius: 3px;
 	margin-bottom: 1.5em;
 	border: 1px solid $border-color;
+	padding: 1.5em;
 
-	header {
-		border-bottom: 1px solid $light-gray;
-		padding: 1.5em;
-	}
+	header {}
 
 	footer {
-		padding: 1.5em;
-		border-top: 1px solid $light-gray;
-
 		p {
 			margin: 0;
 		}
@@ -300,7 +324,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-	padding: 1.5em 1.5em 0;
+	padding: 1.5em 0 0;
 
 	p {
 		margin: 0 0 1.5em;
@@ -830,6 +854,7 @@ SIDEBARS & ASIDES
 *********************/
 
 	.sidebar {
+		color:#fff;
 
 		@include breakpoint(tabletUp) {
 			margin-top: 2.2em;

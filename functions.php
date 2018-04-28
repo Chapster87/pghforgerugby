@@ -250,7 +250,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"');
+  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Oswald:400,500,600,700|Roboto:400,400i,500,500i,700,700i,900,900i"');
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');

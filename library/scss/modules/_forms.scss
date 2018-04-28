@@ -125,4 +125,10 @@ select {
   background-position: 97.5% center;
 }
 
+input[type="search"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 

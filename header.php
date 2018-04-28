@@ -46,13 +46,13 @@
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div id="inner-header" class="wrap cf">
+				<div id="inner-header" class="wrap">
 
 					<div class="logo-block">
 						<h1>
-							<a href="<?php echo home_url(); ?>" rel="nofollow">
+							<a href="<?php echo home_url(); ?>" rel="nofollow" class="logo-link">
 								<img src="<?php echo get_template_directory_uri(); ?>/library/images/pghforgerugby.png" class="logo" alt="<?php bloginfo('name'); ?>"/>
-								<span class="header-title" itemscope itemtype="http://schema.org/Organization"><?php bloginfo('name'); ?></span>
+								<span class="header-title" itemscope itemtype="http://schema.org/Organization">Pittsburgh Forge <span class="title-rugbyclub">Rugby Club</span></span>
 							</a>
 						</h1>
 

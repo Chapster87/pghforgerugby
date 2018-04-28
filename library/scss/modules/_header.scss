@@ -20,35 +20,64 @@ HEADER STYLES
 	height:4.5rem;
 }
 
-.logo-block{
-	position: absolute;
-	top: 0.5rem;
-	left: 0.5rem;
-	display:flex;
-	align-items:center;
-	h1{
-		font-size:inherit;
-		line-height:1;
-		margin:0;
-	}
-	.logo {
-		max-width: 12.188rem;
-	}
-	.header-title{
-		font-family:$lemonmilk-regular;
-		font-size:1.938rem;
-		margin:-1rem 0 0 0.875rem;
-		letter-spacing:0.063rem;
-	}
-}
-
 .page-home{
 	.header{
 		background:none transparent;
 	}
 	.logo-block{
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		display:flex;
+		align-items:center;
+		h1{
+			font-size:inherit;
+			line-height:1;
+			margin:0;
+		}
+		.logo {
+			max-width: 12.188rem;
+		}
 		.header-title{
 			@include visuallyHidden;
+		}
+	}
+}
+
+body:not(.page-home), .scrolled{
+	#inner-header{
+		display:flex;
+		justify-content:space-between;
+	}
+	.logo-block{
+		display: block;
+		height: 100%;
+		h1{
+			display:block;
+			height:100%;
+			font-size:inherit;
+			line-height:1;
+			margin:0;
+		}
+		.logo-link{
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding: 0rem;
+			float: left;
+		}
+		.logo {
+			max-height:87%;
+		}
+		.header-title{
+			font-family:$lemonmilk-regular;
+			font-size:1.938rem;
+			margin: 0 0 0 0.875rem;
+			letter-spacing:0.063rem;
+			color:$black;
+			.title-rugbyclub{
+				@include visuallyHidden;
+			}
 		}
 	}
 }
@@ -192,6 +221,10 @@ and more scalable.
 					color:inherit;
 					border-bottom:0.25rem solid $black;
 				}
+			}
+			&.current_page_item a{
+				color:inherit;
+				border-bottom:0.25rem solid $black;
 			}
 		}
 	}
