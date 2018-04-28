@@ -11,7 +11,28 @@ HOMEPAGE STYLES
 *********************/
 
 .page-home{
+	.header{
+		background:none transparent;
+	}
+	.logo-block{
+		.header-title{
+			@include visuallyHidden;
+		}
+	}
 	#content{
-		margin-top:3.625rem;
+		margin-top:0;
+	}
+	.hero{
+		min-height:30.375rem;
+		display:flex;
+		align-items:center;
+		justify-content: center;
+		color:white;
+		h1{
+			color:$forge-gold;
+			font-family:$lemonmilk-regular;
+			font-size:3rem;
+			letter-spacing:0.063rem;
+		}
 	}
 }

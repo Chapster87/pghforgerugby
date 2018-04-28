@@ -49,10 +49,12 @@
 				<div id="inner-header" class="wrap cf">
 
 					<div class="logo-block">
-						<img src="<?php echo get_template_directory_uri(); ?>/library/images/pghforgerugby.png" class="logo" alt="<?php bloginfo('name'); ?>"/>
-
-						<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-						<h1 class="header-title" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+						<h1>
+							<a href="<?php echo home_url(); ?>" rel="nofollow">
+								<img src="<?php echo get_template_directory_uri(); ?>/library/images/pghforgerugby.png" class="logo" alt="<?php bloginfo('name'); ?>"/>
+								<span class="header-title" itemscope itemtype="http://schema.org/Organization"><?php bloginfo('name'); ?></span>
+							</a>
+						</h1>
 
 						<?php // if you'd like to use the site description you can un-comment it below ?>
 						<?php // bloginfo('description'); ?>

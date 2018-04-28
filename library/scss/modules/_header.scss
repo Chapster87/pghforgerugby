@@ -17,28 +17,41 @@ HEADER STYLES
 
 #inner-header{
 	position:relative;
-	height:4.25rem;
+	height:4.5rem;
 }
 
 .logo-block{
-	.page-home & {
-		position: absolute;
-		top: 0.5rem;
-		left: 0.5rem;
-		display:flex;
-		align-items:center;
-		.logo {
-			max-width: 12.188rem;
-		}
-		.header-title{
-			font-family:$lemonmilk-regular;
-			font-size:1.938rem;
-			margin:-1rem 0 0 0.875rem;
-		}
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	display:flex;
+	align-items:center;
+	h1{
+		font-size:inherit;
+		line-height:1;
+		margin:0;
+	}
+	.logo {
+		max-width: 12.188rem;
+	}
+	.header-title{
+		font-family:$lemonmilk-regular;
+		font-size:1.938rem;
+		margin:-1rem 0 0 0.875rem;
+		letter-spacing:0.063rem;
 	}
 }
 
-
+.page-home{
+	.header{
+		background:none transparent;
+	}
+	.logo-block{
+		.header-title{
+			@include visuallyHidden;
+		}
+	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -72,16 +85,10 @@ and more scalable.
 			display: block;
 			color: $white;
 			text-decoration: none;
-			padding: 0.75em;
+			padding: 0.75em 0;
+			margin:0 1rem;
 			@include breakpoint(tabletUp) {
 				border-bottom:0;
-			}
-
-			@include breakpoint(tabletUp) {
-				&:hover, &:focus {
-					color: $white;
-					text-decoration: underline;
-				}
 			}
 		}
 
@@ -179,6 +186,20 @@ and more scalable.
 			a{
 				color:$black;
 				font-weight:700;
+				border-bottom:0.25rem solid transparent;
+				transition:border ease 0.5s;
+				&:hover{
+					color:inherit;
+					border-bottom:0.25rem solid $black;
+				}
+			}
+		}
+	}
+	.page-home & {
+		ul li a{
+			color:$white;
+			&:hover{
+				border-bottom:0.25rem solid $forge-gold;
 			}
 		}
 	}

@@ -1,19 +1,28 @@
 <?php
 /*
- Template Name: Custom Page Example
- *
- * This is your custom page template. You can create as many of these as you need.
- * Simply name is "page-whatever.php" and in add the "Template Name" title at the
- * top, the same way it is here.
- *
- * When you create your page, you can just select the template and viola, you have
- * a custom page template to call your very own. Your mother would be so proud.
- *
- * For more info: http://codex.wordpress.org/Page_Templates
+ Template Name: Homepage
 */
 ?>
 
-<<?php get_header(); ?>
+<?php get_header(); ?>
+
+	<div class="hero">
+		<div class="wrap cf">
+			<?php
+				$the_slug = 'homepage-hero';
+				$args = array(
+				  'name'        => $the_slug,
+				  'post_type'   => 'post',
+				  'post_status' => 'publish',
+				  'numberposts' => 1
+				);
+				$my_posts = get_posts($args);
+				if( $my_posts ) :
+				  echo $my_posts[0]->post_content;
+				endif;
+			?>
+		</div>
+	</div>
 
 	<div id="content">
 
