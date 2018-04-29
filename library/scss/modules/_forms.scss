@@ -154,10 +154,12 @@ button, .button{
 /*********************
 NINJA FORMS RESETS
 *********************/
+.nf-form-cont{
+	margin-top:1rem;
+}
 .nf-before-form-content{
 	margin-bottom:1rem;
 }
-
 .nf-form-fields-required{
 	font-style:italic;
 }

@@ -241,6 +241,26 @@ function add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'add_slug_body_class' );
 
+// Custom Shortcodes
+//this callback function performs many actions depending on which shortcode ($tag) calls it
+function custom_shortcodes($atts, $content, $tag){
+
+  //if called from the 'my_primary_shortcode' shortcode
+  if($tag == 'social_links'){
+    $output = '<ul class="shortcode__social-links"><li><a href="https://www.facebook.com/pittsburghrugby" target="_blank" ><span class="visually-hidden">Facebook</span><i class="fab fa-facebook"></i></a></li><li><a href="https://www.instagram.com/pittsburghrugby/" target="_blank" ><span class="visually-hidden">Instagram</span><i class="fab fa-instagram"></i></a></li><li><a href="https://twitter.com/pittsburghrugby" target="_blank" ><span class="visually-hidden">Twitter</span><i class="fab fa-twitter"></i></a></li></ul>';
+    return $output;
+  }
+  /*if called from the 'my_secondary_shortcode' shortcode
+  else if($tag == 'my_secondary_shortcode'){
+    return 'This is the secondary shortcode';
+  }
+  //default
+  else{
+    return 'This is something else';
+  } */
+}
+add_shortcode('social_links','custom_shortcodes');
+//add_shortcode('my_secondary_shortcode','custom_shortcodes');
 
 /*
 This is a modification of a function found in the

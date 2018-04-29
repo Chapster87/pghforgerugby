@@ -1332,15 +1332,16 @@ LINK STYLES
 /* line 161, ../scss/modules/_base.scss */
 a, a:visited {
   color: #FFB81C;
+  transition: color ease 0.5rem;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
-/* line 165, ../scss/modules/_base.scss */
+/* line 166, ../scss/modules/_base.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
   color: #eda300;
 }
-/* line 175, ../scss/modules/_base.scss */
+/* line 176, ../scss/modules/_base.scss */
 a:link, a:visited:link {
   /*
   this highlights links on iPhones/iPads.
@@ -1353,7 +1354,7 @@ a:link, a:visited:link {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 189, ../scss/modules/_base.scss */
+/* line 190, ../scss/modules/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
@@ -1364,33 +1365,32 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   */
   /* removing text decoration from all headline links */
 }
-/* line 199, ../scss/modules/_base.scss */
+/* line 200, ../scss/modules/_base.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
 
-/* line 204, ../scss/modules/_base.scss */
+/* line 205, ../scss/modules/_base.scss */
 h1, .h1 {
   font-size: 2.5em;
   line-height: 1.333em;
 }
 
-/* line 209, ../scss/modules/_base.scss */
+/* line 210, ../scss/modules/_base.scss */
 h2, .h2 {
   font-size: 1.75em;
   line-height: 1.4em;
   margin-bottom: 0.375em;
 }
 
-/* line 215, ../scss/modules/_base.scss */
+/* line 216, ../scss/modules/_base.scss */
 h3, .h3 {
   font-size: 1.125em;
 }
 
-/* line 219, ../scss/modules/_base.scss */
+/* line 220, ../scss/modules/_base.scss */
 h4, .h4 {
   font-size: 1.1em;
-  font-weight: 700;
 }
 
 /* line 224, ../scss/modules/_base.scss */
@@ -2438,11 +2438,16 @@ button:hover, .button:hover {
 NINJA FORMS RESETS
 *********************/
 /* line 157, ../scss/modules/_forms.scss */
+.nf-form-cont {
+  margin-top: 1rem;
+}
+
+/* line 160, ../scss/modules/_forms.scss */
 .nf-before-form-content {
   margin-bottom: 1rem;
 }
 
-/* line 161, ../scss/modules/_forms.scss */
+/* line 163, ../scss/modules/_forms.scss */
 .nf-form-fields-required {
   font-style: italic;
 }
@@ -2750,6 +2755,23 @@ HOMEPAGE STYLES
   font-family: lemonmilk-regular, "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3rem;
   letter-spacing: 0.063rem;
+}
+
+/* line 2, ../scss/modules/_shortcodes.scss */
+.shortcode__social-links {
+  display: flex;
+}
+/* line 4, ../scss/modules/_shortcodes.scss */
+.shortcode__social-links li {
+  margin: 0 0.625rem;
+}
+/* line 7, ../scss/modules/_shortcodes.scss */
+.shortcode__social-links li a:hover {
+  color: #000;
+}
+/* line 12, ../scss/modules/_shortcodes.scss */
+.shortcode__social-links .fab {
+  font-size: 3rem;
 }
 
 /*********************
