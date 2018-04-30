@@ -62,6 +62,7 @@
 
 
 					<nav class="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<span class="mm-btn mobile-tablet-only"><i class="fas fa-bars"></i></span>
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)

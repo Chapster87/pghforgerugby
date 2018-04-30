@@ -110,11 +110,15 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
+  $(".main-nav .mm-btn").on('click', function(event) {
+    event.preventDefault();
+    $(this).siblings('#menu-main').toggleClass('active');
+  });
+
   /*
    * Let's fire off the gravatar function
    * You can remove this if you don't need it
   */
   loadGravatars();
-
 
 }); /* end of as page load scripts */

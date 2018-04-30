@@ -11,14 +11,6 @@ HOMEPAGE STYLES
 *********************/
 
 .page-home{
-	.header{
-		background:none transparent;
-	}
-	.logo-block{
-		.header-title{
-			@include visuallyHidden;
-		}
-	}
 	#content{
 		margin-top:0;
 	}
