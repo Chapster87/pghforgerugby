@@ -251,6 +251,7 @@ and more scalable.
 		left:0;
 		top:4.5rem;
 		background-color:$black;
+		z-index:1;
 		@include breakpoint(desktop) {
 			display:flex;
 			justify-content: flex-end;
@@ -263,18 +264,37 @@ and more scalable.
 		&.active{
 			display:block;
 		}
-		li{
+		& > li{
 			float:left;
 			width:100%;
+			display:flex;
+			align-items:stretch;
+			flex-wrap:wrap;
+			padding-left:40px;
 			@include breakpoint(desktop) {
 				float:none;
 				width:auto;
+				display:block;
 			}
-			a{
+			.submenu-toggle{
+				display:none;
+				float:left;
+				width:40px;
+				background-color:red;
+				@include breakpoint(desktop) {
+					display:none;
+				}
+			}
+			&.menu-item-has-children{
+				padding:0;
+				.submenu-toggle{display:block;}
+			}
+			& > a{
 				color:$white;
 				font-weight:700;
 				border-bottom:0.25rem solid transparent;
 				transition:border ease 0.5s;
+				flex-grow:1;
 				@include breakpoint(desktop) {
 					color:$black;
 					&:hover{
@@ -289,11 +309,14 @@ and more scalable.
 					border-bottom:0.25rem solid $black;
 				}
 			}
+			.sub-menu{
+				flex-basis:100%;
+			}
 		}
 	}
 	@include breakpoint(desktop) {
 		.page-home & {
-			ul#menu-main li a{
+			ul#menu-main > li > a{
 				color:$white;
 				&:hover{
 					border-bottom:0.25rem solid $forge-gold;
