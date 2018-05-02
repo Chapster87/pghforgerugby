@@ -2814,9 +2814,10 @@ and more scalable.
     float: none;
     width: auto;
     display: block;
+    padding: 0;
   }
 }
-/* line 279, ../scss/modules/_header.scss */
+/* line 280, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li .submenu-toggle {
   display: none;
   float: left;
@@ -2824,20 +2825,20 @@ and more scalable.
   background-color: red;
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 279, ../scss/modules/_header.scss */
+  /* line 280, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li .submenu-toggle {
     display: none;
   }
 }
-/* line 288, ../scss/modules/_header.scss */
+/* line 289, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li.menu-item-has-children {
   padding: 0;
 }
-/* line 290, ../scss/modules/_header.scss */
+/* line 291, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li.menu-item-has-children .submenu-toggle {
   display: block;
 }
-/* line 292, ../scss/modules/_header.scss */
+/* line 293, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li > a {
   color: #fff;
   font-weight: 700;
@@ -2846,33 +2847,33 @@ and more scalable.
   flex-grow: 1;
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 292, ../scss/modules/_header.scss */
+  /* line 293, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li > a {
     color: #000;
   }
-  /* line 300, ../scss/modules/_header.scss */
+  /* line 301, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li > a:hover {
     color: inherit;
     border-bottom: 0.25rem solid #000;
   }
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 307, ../scss/modules/_header.scss */
+  /* line 308, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li.current_page_item a {
     color: inherit;
     border-bottom: 0.25rem solid #000;
   }
 }
-/* line 312, ../scss/modules/_header.scss */
+/* line 313, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li .sub-menu {
   flex-basis: 100%;
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 319, ../scss/modules/_header.scss */
+  /* line 320, ../scss/modules/_header.scss */
   .page-home .main-nav ul#menu-main > li > a {
     color: #fff;
   }
-  /* line 321, ../scss/modules/_header.scss */
+  /* line 322, ../scss/modules/_header.scss */
   .page-home .main-nav ul#menu-main > li > a:hover {
     border-bottom: 0.25rem solid #FFB81C;
   }
