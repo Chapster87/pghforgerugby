@@ -42,7 +42,7 @@
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		<script>
 		    (function() {
-		        $.getJSON( 'http://search.twitter.com/search.json?q=PGHHRFC&callback=?', function( data ) {
+		        $.getJSON( 'http://search.twitter.com/search.json?q=pittsburghrugby&callback=?', function( data ) {
 		            var user = data.results[0].from_user;
 		                tweet = data.results[0].text;
 		            $("#show_tweet").html('<span class="twitterUser">@' + user + ':</span> "' + tweet + '"');
