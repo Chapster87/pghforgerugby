@@ -55,6 +55,14 @@
 								</section> <?php // end article section ?>
 
 								<footer class="article-footer cf">
+									<div class="share-block">
+										<div class="facebook">
+											<div class="fb-share-button" data-type="button"></div>
+										</div>
+										<div class="twitter">
+											<a class="twitter-share-button" href="https://twitter.com/share" data-count="none">Tweet</a>
+										</div>
+					                </div>
 
 								</footer>
 

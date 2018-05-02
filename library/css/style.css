@@ -2893,6 +2893,31 @@ HOMEPAGE STYLES
   font-size: 3rem;
 }
 
+/* line 1, ../scss/modules/_share.scss */
+.share-block {
+  margin: 0 0 0.75rem 0;
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 6, ../scss/modules/_share.scss */
+.share-block div {
+  float: left;
+  margin-right: 0.25rem;
+}
+/* line 10, ../scss/modules/_share.scss */
+.share-block div.share-text h4 {
+  margin: 0;
+  color: #bf2025;
+  font-family: 'Courgette', cursive;
+}
+
+/* line 19, ../scss/modules/_share.scss */
+.fb-share-button {
+  float: left;
+  line-height: 0;
+}
+
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

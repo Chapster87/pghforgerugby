@@ -39,6 +39,7 @@
 									<footer class="article-footer">
 											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
 									</footer>
+
 							</article>
 
 						<?php endif; ?>
