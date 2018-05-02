@@ -161,7 +161,7 @@ LINK STYLES
 
 a, a:visited {
 	color: $link-color;
-	transition:color ease 0.5rem;
+	transition:color ease 0.5s;
 
 	/* on hover */
 	&:hover, &:focus {

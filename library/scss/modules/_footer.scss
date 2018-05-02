@@ -1,0 +1,20 @@
+.footer{
+	.copyright{
+		float:left;
+	}
+	.social-links{
+		float:right;
+		display:flex;
+		li{
+			margin:0 0.625rem;
+			a{
+				&:hover{
+					color:$white;
+				}
+			}
+		}
+		.fab{
+			font-size:2rem;
+		}
+	}
+}

@@ -1333,7 +1333,7 @@ LINK STYLES
 /* line 162, ../scss/modules/_base.scss */
 a, a:visited {
   color: #FFB81C;
-  transition: color ease 0.5rem;
+  transition: color ease 0.5s;
   /* on hover */
   /* on click */
   /* mobile tap color */
@@ -2844,6 +2844,28 @@ and more scalable.
   .page-home .main-nav ul#menu-main li a:hover {
     border-bottom: 0.25rem solid #FFB81C;
   }
+}
+
+/* line 2, ../scss/modules/_footer.scss */
+.footer .copyright {
+  float: left;
+}
+/* line 5, ../scss/modules/_footer.scss */
+.footer .social-links {
+  float: right;
+  display: flex;
+}
+/* line 8, ../scss/modules/_footer.scss */
+.footer .social-links li {
+  margin: 0 0.625rem;
+}
+/* line 11, ../scss/modules/_footer.scss */
+.footer .social-links li a:hover {
+  color: #fff;
+}
+/* line 16, ../scss/modules/_footer.scss */
+.footer .social-links .fab {
+  font-size: 2rem;
 }
 
 /******************************************************************
