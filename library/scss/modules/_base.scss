@@ -21,10 +21,10 @@ body {
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $gray;
-  	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
-  	background-size:100% auto !important;
-  	/* Ideal Background image height is 550px */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-size:100% auto !important;
+	/* Ideal Background image height is 550px */
 }
 
 #container{
@@ -209,9 +209,9 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
+	font-size: 1.5em;
+	line-height: 1;
+	margin: 0 0 0.375em;
 }
 
 h3, .h3 {
@@ -231,11 +231,11 @@ h5, .h5 {
 
 hr{
 	display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #999;
-    margin: 1em 0;
-    padding: 0; 
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #999;
+	margin: 1em 0;
+	padding: 0; 
 }
 
 /*********************
@@ -275,12 +275,26 @@ POSTS & CONTENT STYLES
 	margin-bottom: 1.5em;
 	border: 1px solid $border-color;
 	padding: 1.5em;
+	position:relative;
 
 	header {}
 
 	footer {
 		p {
 			margin: 0;
+		}
+	}
+	.hentry-quicklinks{
+		position:absolute;
+		top:2rem;
+		right:2rem;
+		a{
+			line-height: 32px;
+			display: flex;
+			color: black;
+		}
+		i{
+			margin-left:1rem;
 		}
 	}
 
@@ -324,7 +338,7 @@ POSTS & CONTENT STYLES
 	padding: 1.5em 0 0;
 
 	p {
-		margin: 0 0 1.5em;
+		margin: 0 0 1em;
 	}
 
 
@@ -342,10 +356,14 @@ POSTS & CONTENT STYLES
 
 	}
 
-	ol {
-
-		li {}
-
+	ol { 
+		list-style: decimal;
+		margin: initial;
+		padding: 0 0 0 2.5rem;
+		li{
+			padding-left:0.75rem;
+			margin-bottom:1rem;
+		}
 	}
 
 	table {
@@ -525,53 +543,53 @@ PAGE NAVI STYLES
 	margin: 1.5em 0;
 }
 	.pagination{
-    text-align: center;
+	text-align: center;
 
-    ul {
-      display: inline-block;
-      background-color: $white;
-      white-space: nowrap;
-      padding: 0;
-      clear: both;
-      border-radius: 3px;
-    }
+	ul {
+	  display: inline-block;
+	  background-color: $white;
+	  white-space: nowrap;
+	  padding: 0;
+	  clear: both;
+	  border-radius: 3px;
+	}
 
-    li {
-      padding: 0;
-      margin: 0;
-      float: left;
-      display: inline;
-      overflow: hidden;
-      border-right: 1px solid $gray;
-    }
+	li {
+	  padding: 0;
+	  margin: 0;
+	  float: left;
+	  display: inline;
+	  overflow: hidden;
+	  border-right: 1px solid $gray;
+	}
 
-    a, span {
-      margin: 0;
-      text-decoration: none;
-      padding: 0;
-      line-height: 1em;
-      font-size: 1em;
-      font-weight: normal;
-      padding: 0.75em;
-      min-width: 1em;
-      display: block;
-      color: $blue;
+	a, span {
+	  margin: 0;
+	  text-decoration: none;
+	  padding: 0;
+	  line-height: 1em;
+	  font-size: 1em;
+	  font-weight: normal;
+	  padding: 0.75em;
+	  min-width: 1em;
+	  display: block;
+	  color: $blue;
 
-      &:hover, &:focus {
-      	background-color: $blue;
-      	color: $white;
-      }
-    }
+	  &:hover, &:focus {
+		background-color: $blue;
+		color: $white;
+	  }
+	}
 
-    .current{
-    	cursor: default;
-    	color: $text-color;
+	.current{
+		cursor: default;
+		color: $text-color;
 
-    	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
-    	}
-    }
+		&:hover, &:focus {
+			background-color: $white;
+			color: $text-color;
+		}
+	}
 
   } /* end .bones_page_navi */
 

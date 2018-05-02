@@ -766,9 +766,9 @@ body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
 }
 /* line 81, ../scss/editor-style.scss */
 body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
-  font-size: 1.75em;
+  font-size: 1.5em;
   line-height: 1.4em;
-  margin-bottom: 0.375em;
+  margin-bottom: 0.75em;
 }
 /* line 87, ../scss/editor-style.scss */
 body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3 {
@@ -791,12 +791,23 @@ body#tinymce.wp-editor p {
   margin: 0 0 1.5em;
 }
 /* line 109, ../scss/editor-style.scss */
+body#tinymce.wp-editor ol {
+  list-style: decimal;
+  margin: initial;
+  padding: 0 0 0 2.5rem;
+}
+/* line 113, ../scss/editor-style.scss */
+body#tinymce.wp-editor ol li {
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+}
+/* line 119, ../scss/editor-style.scss */
 body#tinymce.wp-editor table {
   width: 100%;
   border: 1px solid #eaedf2;
   margin-bottom: 1.5em;
 }
-/* line 114, ../scss/editor-style.scss */
+/* line 124, ../scss/editor-style.scss */
 body#tinymce.wp-editor table caption {
   margin: 0 0 7px;
   font-size: 0.75em;
@@ -804,34 +815,34 @@ body#tinymce.wp-editor table caption {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 123, ../scss/editor-style.scss */
+/* line 133, ../scss/editor-style.scss */
 body#tinymce.wp-editor tr {
   border-bottom: 1px solid #eaedf2;
 }
-/* line 125, ../scss/editor-style.scss */
+/* line 135, ../scss/editor-style.scss */
 body#tinymce.wp-editor tr:nth-child(even) {
   background-color: #f8f9fa;
 }
-/* line 130, ../scss/editor-style.scss */
+/* line 140, ../scss/editor-style.scss */
 body#tinymce.wp-editor td {
   padding: 7px;
   border-right: 1px solid #eaedf2;
 }
-/* line 134, ../scss/editor-style.scss */
+/* line 144, ../scss/editor-style.scss */
 body#tinymce.wp-editor td:last-child {
   border-right: 0;
 }
-/* line 139, ../scss/editor-style.scss */
+/* line 149, ../scss/editor-style.scss */
 body#tinymce.wp-editor th {
   background-color: #f8f9fa;
   border-bottom: 1px solid #eaedf2;
   border-right: 1px solid #eaedf2;
 }
-/* line 144, ../scss/editor-style.scss */
+/* line 154, ../scss/editor-style.scss */
 body#tinymce.wp-editor th:last-child {
   border-right: 0;
 }
-/* line 149, ../scss/editor-style.scss */
+/* line 159, ../scss/editor-style.scss */
 body#tinymce.wp-editor blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
@@ -839,20 +850,20 @@ body#tinymce.wp-editor blockquote {
   font-style: italic;
   color: #9fa6b4;
 }
-/* line 160, ../scss/editor-style.scss */
+/* line 170, ../scss/editor-style.scss */
 body#tinymce.wp-editor dd {
   margin-left: 0;
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
 }
-/* line 167, ../scss/editor-style.scss */
+/* line 177, ../scss/editor-style.scss */
 body#tinymce.wp-editor img {
   margin: 0 0 1.5em 0;
   max-width: 100%;
   height: auto;
 }
-/* line 173, ../scss/editor-style.scss */
+/* line 183, ../scss/editor-style.scss */
 body#tinymce.wp-editor .size-auto,
 body#tinymce.wp-editor .size-full,
 body#tinymce.wp-editor .size-large,
@@ -861,7 +872,7 @@ body#tinymce.wp-editor .size-thumbnail {
   max-width: 100%;
   height: auto;
 }
-/* line 182, ../scss/editor-style.scss */
+/* line 192, ../scss/editor-style.scss */
 body#tinymce.wp-editor pre {
   background: #000;
   color: #f8f9fa;
@@ -875,19 +886,19 @@ body#tinymce.wp-editor pre {
   body#tinymce.wp-editor {
     /* at this larger size, we can start to align images */
   }
-  /* line 200, ../scss/editor-style.scss */
+  /* line 210, ../scss/editor-style.scss */
   body#tinymce.wp-editor .alignleft, body#tinymce.wp-editor img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 205, ../scss/editor-style.scss */
+  /* line 215, ../scss/editor-style.scss */
   body#tinymce.wp-editor .alignright, body#tinymce.wp-editor img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 210, ../scss/editor-style.scss */
+  /* line 220, ../scss/editor-style.scss */
   body#tinymce.wp-editor .aligncenter, body#tinymce.wp-editor img.aligncenter {
     margin-right: auto;
     margin-left: auto;
