@@ -3039,16 +3039,20 @@ HOMEPAGE STYLES
 .page-home .home-posts {
   display: none;
   width: 100%;
+  margin-top: 3.125rem;
 }
-/* line 66, ../scss/modules/_homepage.scss */
+/* line 67, ../scss/modules/_homepage.scss */
 .page-home .home-posts.slick-initialized {
   display: block;
 }
-/* line 69, ../scss/modules/_homepage.scss */
+/* line 70, ../scss/modules/_homepage.scss */
 .page-home .home-posts .post-tile {
-  margin: 0 15px;
+  margin: 0 0.625rem;
+  padding: 0.813rem;
+  background-color: #222;
+  border: 1px solid #FFB81C;
 }
-/* line 72, ../scss/modules/_homepage.scss */
+/* line 76, ../scss/modules/_homepage.scss */
 .page-home .home-posts .post-tile__link {
   display: flex;
   flex-flow: row wrap;
@@ -3056,18 +3060,25 @@ HOMEPAGE STYLES
   align-items: flex-start;
   text-decoration: none;
 }
-/* line 79, ../scss/modules/_homepage.scss */
+/* line 83, ../scss/modules/_homepage.scss */
 .page-home .home-posts .wp-post-image {
   max-width: 100%;
   max-height: 9.688rem;
   width: auto;
   height: auto;
 }
-/* line 85, ../scss/modules/_homepage.scss */
+/* line 89, ../scss/modules/_homepage.scss */
 .page-home .home-posts .post-tile__headline {
   flex-basis: 100%;
+  min-height: 3.75rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.875rem;
+  margin-bottom: 0.75rem;
 }
-/* line 88, ../scss/modules/_homepage.scss */
+/* line 99, ../scss/modules/_homepage.scss */
 .page-home .home-posts .post-tile__text {
   color: white;
   text-align: center;

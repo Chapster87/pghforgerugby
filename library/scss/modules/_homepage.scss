@@ -63,11 +63,15 @@ HOMEPAGE STYLES
 	.home-posts{
 		display:none;
 		width:100%;
+		margin-top:3.125rem;
 		&.slick-initialized{
 			display:block;
 		}
 		.post-tile{
-			margin:0 15px;
+			margin:0 0.625rem;
+			padding:0.813rem;
+			background-color: $ltblack;
+			border:1px solid $forge-gold;
 		}
 		.post-tile__link {
 			display:flex;
@@ -84,6 +88,13 @@ HOMEPAGE STYLES
 		}
 		.post-tile__headline {
 			flex-basis:100%;
+			min-height: 3.75rem;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content:center;
+			line-height: 1.875rem;
+			margin-bottom: 0.75rem;
 		}
 		.post-tile__text{
 			color:white;

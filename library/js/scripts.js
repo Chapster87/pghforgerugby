@@ -131,6 +131,17 @@ function loadGravatars() {
 }(jQuery,'smartresize'));
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//since multiple events can trigger a slider adjustment, we will control that adjustment here
+function jbResizeSlider(){
+	$slickSlider = jQuery('.home-posts');
+	$slickSlider.find('.slick-slide').height('auto');
+
+	var slickTrack = $slickSlider.find('.slick-track');
+	var slickTrackHeight = jQuery(slickTrack).height();
+
+	$slickSlider.find('.slick-slide').css('height', slickTrackHeight + 'px');
+}
+
 
 /*
  * Put all your regular jQuery in here.
@@ -165,6 +176,11 @@ jQuery(document).ready(function($) {
 		  ]
 	});
 
+	//when the slick slide initializes we want to set all of our slides to the same height
+	$('.home-posts').on('setPosition', function () {
+		jbResizeSlider();
+	});
+
   /*
    * Let's fire off the gravatar function
    * You can remove this if you don't need it
@@ -179,5 +195,7 @@ jQuery(window).smartresize(function($) {
 	if(wrapWidth >= 1024){
 		jQuery('#menu-main, .sub-menu').removeClass('active');
 	}
+
+	jbResizeSlider();
 
 });
