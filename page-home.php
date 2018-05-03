@@ -92,19 +92,25 @@
 
 		<div id="inner-content" class="wrap cf">
 
-			<?php
-			    query_posts( array('posts_per_page'=>5) );
-			    while ( have_posts() ) : the_post();
-			?>
-			    <h2><a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-			    <?php if ( has_post_thumbnail() ): // check for the featured image ?>
-			    <a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>" class="opacity"><?php the_post_thumbnail(); ?></a> <!--echo the featured image-->
-			<?php
-			    endif;
-			    the_excerpt(); // echo the excerpt
-			    endwhile;
-			    wp_reset_query(); // resets main query
-			?>
+			<ul class="home-posts">
+				<?php
+				    query_posts( array('posts_per_page'=>5) );
+				    while ( have_posts() ) : the_post();
+				?>
+					<li class="post-tile">
+					    <a href="<?php the_permalink(' ') ?>" class="post-tile__link" title="<?php the_title(); ?>">
+					    	<h2  class="post-tile__headline" ><?php the_title(); ?></h2>
+						    <?php if ( has_post_thumbnail() ): // check for the featured image
+					    		the_post_thumbnail( 'medium_large' ); // echo the featured image
+							endif; ?>
+						</a>
+					    <p class="post-tile__text"><?php echo get_the_excerpt(); ?></p>
+					</li>
+				<?php
+				    endwhile;
+				    wp_reset_query(); // resets main query
+				?>
+			</ul>
 
 			<?php /*get_sidebar('homepage');*/ ?>
 

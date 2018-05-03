@@ -60,4 +60,34 @@ HOMEPAGE STYLES
 	#content{
 		margin-top:0;
 	}
+	.home-posts{
+		display:none;
+		width:100%;
+		&.slick-initialized{
+			display:block;
+		}
+		.post-tile{
+			margin:0 15px;
+		}
+		.post-tile__link {
+			display:flex;
+			flex-flow: row wrap;
+			justify-content:center;
+			align-items:flex-start;
+			text-decoration:none;
+		}
+		.wp-post-image{
+			max-width:100%;
+			max-height:9.688rem;
+			width:auto;
+			height:auto;
+		}
+		.post-tile__headline {
+			flex-basis:100%;
+		}
+		.post-tile__text{
+			color:white;
+			text-align:center;
+		}
+	}
 }

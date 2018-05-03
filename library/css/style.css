@@ -2457,7 +2457,7 @@ input[type="search"] {
 }
 
 /* line 135, ../scss/modules/_forms.scss */
-button, .button {
+.button, button[type=submit] {
   display: inline-block;
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
@@ -2471,7 +2471,7 @@ button, .button {
   transition: background-color ease 0.5s;
 }
 /* line 147, ../scss/modules/_forms.scss */
-button:hover, .button:hover {
+.button:hover, button[type=submit]:hover {
   text-decoration: none;
   background-color: #fff;
   border-color: #FFB81C;
@@ -3034,6 +3034,43 @@ HOMEPAGE STYLES
 /* line 60, ../scss/modules/_homepage.scss */
 .page-home #content {
   margin-top: 0;
+}
+/* line 63, ../scss/modules/_homepage.scss */
+.page-home .home-posts {
+  display: none;
+  width: 100%;
+}
+/* line 66, ../scss/modules/_homepage.scss */
+.page-home .home-posts.slick-initialized {
+  display: block;
+}
+/* line 69, ../scss/modules/_homepage.scss */
+.page-home .home-posts .post-tile {
+  margin: 0 15px;
+}
+/* line 72, ../scss/modules/_homepage.scss */
+.page-home .home-posts .post-tile__link {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  text-decoration: none;
+}
+/* line 79, ../scss/modules/_homepage.scss */
+.page-home .home-posts .wp-post-image {
+  max-width: 100%;
+  max-height: 9.688rem;
+  width: auto;
+  height: auto;
+}
+/* line 85, ../scss/modules/_homepage.scss */
+.page-home .home-posts .post-tile__headline {
+  flex-basis: 100%;
+}
+/* line 88, ../scss/modules/_homepage.scss */
+.page-home .home-posts .post-tile__text {
+  color: white;
+  text-align: center;
 }
 
 /* line 2, ../scss/modules/_shortcodes.scss */

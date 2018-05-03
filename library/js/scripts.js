@@ -137,16 +137,33 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
-  $(".main-nav .mm-btn").on('click', function(event) {
-	event.preventDefault();
-	$(this).siblings('#menu-main').toggleClass('active');
-  });
+	$(".main-nav .mm-btn").on('click', function(event) {
+		event.preventDefault();
+		$(this).siblings('#menu-main').toggleClass('active');
+	});
 
-  $(".main-nav .submenu-toggle").on('click', function(event) {
-	event.preventDefault();
-	$(this).siblings('.sub-menu').toggleClass('active');
-	$(this).children('i.fas').toggleClass('fa-caret-right fa-caret-down')
-  });
+	$(".main-nav .submenu-toggle").on('click', function(event) {
+		event.preventDefault();
+		$(this).siblings('.sub-menu').toggleClass('active');
+		$(this).children('i.fas').toggleClass('fa-caret-right fa-caret-down')
+	});
+
+	$('.home-posts').slick({
+		infinite: true,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 1,
+		      }
+		    }
+		    // You can unslick at a given breakpoint now by adding:
+		    // settings: "unslick"
+		    // instead of a settings object
+		  ]
+	});
 
   /*
    * Let's fire off the gravatar function
