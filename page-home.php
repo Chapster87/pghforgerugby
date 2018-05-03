@@ -98,7 +98,7 @@
 				    while ( have_posts() ) : the_post();
 				?>
 					<li class="post-tile">
-					    <a href="<?php the_permalink(' ') ?>" class="post-tile__link" title="<?php the_title(); ?>">
+					    <a href="<?php the_permalink() ?>" class="post-tile__link" title="<?php the_title(); ?>">
 					    	<h2  class="post-tile__headline" ><?php the_title(); ?></h2>
 						    <?php if ( has_post_thumbnail() ): // check for the featured image
 					    		the_post_thumbnail( 'medium_large' ); // echo the featured image
