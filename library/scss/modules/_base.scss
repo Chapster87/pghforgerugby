@@ -23,8 +23,16 @@ body {
 	background-color: $gray;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-size:100% auto !important;
-	/* Ideal Background image height is 550px */
+	background-position: center -25% !important;
+	background-size: auto !important;
+	@include breakpoint(desktop) {
+		background-position: center top !important;
+		background-size:100% auto !important;
+		/* Ideal Background image height is 550px */
+	}
+	@include breakpoint(smDesktop) {
+		background-size: auto !important;
+	}
 }
 
 #container{
@@ -869,8 +877,7 @@ SIDEBARS & ASIDES
 *********************/
 
 	.sidebar {
-		color:#fff;
-
+		color:$black;
 		@include breakpoint(tabletUp) {
 			margin-top: 2.2em;
 		}
@@ -878,12 +885,10 @@ SIDEBARS & ASIDES
 	}
 
 	.widgettitle {
-
-		@include breakpoint(tabletUp) {
-			border-bottom: 2px solid #444;
-			margin-bottom: 0.75em;
-		}
-
+		color:$white;
+		border-bottom: 2px solid #444;
+		padding:0 0 0.5em;
+		margin-bottom: 0.5em;
 	}
 
 	.widget {

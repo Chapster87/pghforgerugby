@@ -11,20 +11,53 @@ HOMEPAGE STYLES
 *********************/
 
 .page-home{
-	#content{
-		margin-top:0;
+	.primary{
+		width:100%;
+	}
+	.hentry{
+		width:100%;
+		background-color:transparent;
+		border-radius:0;
+		margin-bottom:0;
+		border:0;
+		padding:0;
+		position:static;
+		header, footer{
+			display:none;
+		}
+		.entry-content{
+			padding:0;
+		}
 	}
 	.hero{
-		min-height:30.375rem;
+		min-height:23.75rem;
 		display:flex;
 		align-items:center;
 		justify-content: center;
 		color:white;
+		@include breakpoint(desktop) {
+			min-height:27.375rem;
+		}
 		h1{
 			color:$forge-gold;
 			font-family:$lemonmilk-regular;
-			font-size:3rem;
+			font-size:1.75rem;
 			letter-spacing:0.063rem;
+			margin:0 0 1rem;
+			@include breakpoint(tabletUp) {
+				font-size:3rem;
+			}
 		}
+		h2{
+			margin:0 0 1rem;
+		}
+		p{
+			max-width:62.5rem;
+			margin:0 auto;
+			hyphens:none;
+		}
+	}
+	#content{
+		margin-top:0;
 	}
 }

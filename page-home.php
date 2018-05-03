@@ -8,26 +8,6 @@
 
 	<div class="hero">
 		<div class="wrap cf">
-			<?php
-				$the_slug = 'homepage-hero';
-				$args = array(
-				  'name'        => $the_slug,
-				  'post_type'   => 'post',
-				  'post_status' => 'publish',
-				  'numberposts' => 1
-				);
-				$my_posts = get_posts($args);
-				if( $my_posts ) :
-				  echo $my_posts[0]->post_content;
-				endif;
-			?>
-		</div>
-	</div>
-
-	<div id="content">
-
-		<div id="inner-content" class="wrap cf">
-
 			<main id="main" class="primary cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -105,8 +85,28 @@
 				<?php endif; ?>
 
 			</main>
+		</div>
+	</div>
 
-			<?php get_sidebar(); ?>
+	<div id="content">
+
+		<div id="inner-content" class="wrap cf">
+
+			<?php
+			    query_posts( array('posts_per_page'=>5) );
+			    while ( have_posts() ) : the_post();
+			?>
+			    <h2><a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+			    <?php if ( has_post_thumbnail() ): // check for the featured image ?>
+			    <a href="<?php the_permalink(' ') ?>" title="<?php the_title(); ?>" class="opacity"><?php the_post_thumbnail(); ?></a> <!--echo the featured image-->
+			<?php
+			    endif;
+			    the_excerpt(); // echo the excerpt
+			    endwhile;
+			    wp_reset_query(); // resets main query
+			?>
+
+			<?php /*get_sidebar('homepage');*/ ?>
 
 		</div>
 
