@@ -161,7 +161,7 @@ and more scalable.
 				border: 1px solid #ccc;
 				border-top: 0;
 				position: absolute;
-				visibility: hidden;
+				display:none;
 				z-index: 8999;
 			}
 
@@ -207,7 +207,7 @@ and more scalable.
 			/* showing sub-menus */
 			&:hover > ul {
 				top: auto;
-				visibility:visible;
+				display:block;
 			}
 		}
 
@@ -270,25 +270,40 @@ and more scalable.
 			display:flex;
 			align-items:stretch;
 			flex-wrap:wrap;
-			padding-left:40px;
+			padding-left:2.5rem;
+			border-bottom: 1px solid #222;
+			height:100%;
 			@include breakpoint(desktop) {
 				float:none;
 				width:auto;
-				display:block;
 				padding:0;
+				border:0;
+				align-items:center;
 			}
 			.submenu-toggle{
 				display:none;
 				float:left;
-				width:40px;
-				background-color:red;
+				width:2.5rem;
+				cursor:pointer;
+				align-items: center;
+				justify-content: center;
+				background-color:#222;
 				@include breakpoint(desktop) {
 					display:none;
+				}
+				i{
+					color:#eaedf2;
+					font-size:1.5rem;
 				}
 			}
 			&.menu-item-has-children{
 				padding:0;
-				.submenu-toggle{display:block;}
+				& > .submenu-toggle{
+					display:flex;
+					@include breakpoint(desktop) {
+						display:none;
+					}
+				}
 			}
 			& > a{
 				color:$white;
@@ -311,7 +326,32 @@ and more scalable.
 				}
 			}
 			.sub-menu{
+				display:none;
 				flex-basis:100%;
+				background-color:#222;
+				margin:0;
+				li {
+					a{
+						padding-left:2.5rem;
+						@include breakpoint(desktop) {
+							padding:0.75rem;
+						}
+						&:hover{
+							color:$forge-gold;
+						}
+					}
+				}
+				&.active{
+					display:block;
+				}
+			}
+			@include breakpoint(desktop) {
+				&:hover{
+					.sub-menu{
+						display:block;
+						top:4.5rem;
+					}
+				}
 			}
 		}
 	}

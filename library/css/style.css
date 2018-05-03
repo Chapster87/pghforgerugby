@@ -2703,7 +2703,7 @@ and more scalable.
     border: 1px solid #ccc;
     border-top: 0;
     position: absolute;
-    visibility: hidden;
+    display: none;
     z-index: 8999;
   }
 }
@@ -2744,7 +2744,7 @@ and more scalable.
   /* line 208, ../scss/modules/_header.scss */
   .nav li:hover > ul {
     top: auto;
-    visibility: visible;
+    display: block;
   }
 }
 
@@ -2806,39 +2806,56 @@ and more scalable.
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  padding-left: 40px;
+  padding-left: 2.5rem;
+  border-bottom: 1px solid #222;
+  height: 100%;
 }
 @media screen and (min-width: 64.0625em) {
   /* line 267, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li {
     float: none;
     width: auto;
-    display: block;
     padding: 0;
+    border: 0;
+    align-items: center;
   }
 }
-/* line 280, ../scss/modules/_header.scss */
+/* line 283, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li .submenu-toggle {
   display: none;
   float: left;
-  width: 40px;
-  background-color: red;
+  width: 2.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 280, ../scss/modules/_header.scss */
+  /* line 283, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li .submenu-toggle {
     display: none;
   }
 }
-/* line 289, ../scss/modules/_header.scss */
+/* line 294, ../scss/modules/_header.scss */
+.main-nav ul#menu-main > li .submenu-toggle i {
+  color: #eaedf2;
+  font-size: 1.5rem;
+}
+/* line 299, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li.menu-item-has-children {
   padding: 0;
 }
-/* line 291, ../scss/modules/_header.scss */
-.main-nav ul#menu-main > li.menu-item-has-children .submenu-toggle {
-  display: block;
+/* line 301, ../scss/modules/_header.scss */
+.main-nav ul#menu-main > li.menu-item-has-children > .submenu-toggle {
+  display: flex;
 }
-/* line 293, ../scss/modules/_header.scss */
+@media screen and (min-width: 64.0625em) {
+  /* line 301, ../scss/modules/_header.scss */
+  .main-nav ul#menu-main > li.menu-item-has-children > .submenu-toggle {
+    display: none;
+  }
+}
+/* line 308, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li > a {
   color: #fff;
   font-weight: 700;
@@ -2847,33 +2864,61 @@ and more scalable.
   flex-grow: 1;
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 293, ../scss/modules/_header.scss */
+  /* line 308, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li > a {
     color: #000;
   }
-  /* line 301, ../scss/modules/_header.scss */
+  /* line 316, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li > a:hover {
     color: inherit;
     border-bottom: 0.25rem solid #000;
   }
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 308, ../scss/modules/_header.scss */
+  /* line 323, ../scss/modules/_header.scss */
   .main-nav ul#menu-main > li.current_page_item a {
     color: inherit;
     border-bottom: 0.25rem solid #000;
   }
 }
-/* line 313, ../scss/modules/_header.scss */
+/* line 328, ../scss/modules/_header.scss */
 .main-nav ul#menu-main > li .sub-menu {
+  display: none;
   flex-basis: 100%;
+  background-color: #222;
+  margin: 0;
+}
+/* line 334, ../scss/modules/_header.scss */
+.main-nav ul#menu-main > li .sub-menu li a {
+  padding-left: 2.5rem;
 }
 @media screen and (min-width: 64.0625em) {
-  /* line 320, ../scss/modules/_header.scss */
+  /* line 334, ../scss/modules/_header.scss */
+  .main-nav ul#menu-main > li .sub-menu li a {
+    padding: 0.75rem;
+  }
+}
+/* line 339, ../scss/modules/_header.scss */
+.main-nav ul#menu-main > li .sub-menu li a:hover {
+  color: #FFB81C;
+}
+/* line 344, ../scss/modules/_header.scss */
+.main-nav ul#menu-main > li .sub-menu.active {
+  display: block;
+}
+@media screen and (min-width: 64.0625em) {
+  /* line 350, ../scss/modules/_header.scss */
+  .main-nav ul#menu-main > li:hover .sub-menu {
+    display: block;
+    top: 4.5rem;
+  }
+}
+@media screen and (min-width: 64.0625em) {
+  /* line 360, ../scss/modules/_header.scss */
   .page-home .main-nav ul#menu-main > li > a {
     color: #fff;
   }
-  /* line 322, ../scss/modules/_header.scss */
+  /* line 362, ../scss/modules/_header.scss */
   .page-home .main-nav ul#menu-main > li > a:hover {
     border-bottom: 0.25rem solid #FFB81C;
   }

@@ -99,10 +99,37 @@ function loadGravatars() {
   // if the viewport is tablet or larger, we load in the gravatars
   if (viewport.width >= 768) {
   jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+	jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
   });
 	}
 } // end function
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(function($,sr){
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+	var timeout;
+	return function debounced () {
+		var obj = this, args = arguments;
+		function delayed () {
+		  if (!execAsap)
+			func.apply(obj, args);
+		  timeout = null;
+		};
+  
+		if (timeout)
+		  clearTimeout(timeout);
+		else if (execAsap)
+		  func.apply(obj, args);
+  
+		timeout = setTimeout(delayed, threshold || 500);
+	};
+  }
+  // smartresize
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+}(jQuery,'smartresize'));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*
@@ -111,8 +138,14 @@ function loadGravatars() {
 jQuery(document).ready(function($) {
 
   $(".main-nav .mm-btn").on('click', function(event) {
-    event.preventDefault();
-    $(this).siblings('#menu-main').toggleClass('active');
+	event.preventDefault();
+	$(this).siblings('#menu-main').toggleClass('active');
+  });
+
+  $(".main-nav .submenu-toggle").on('click', function(event) {
+	event.preventDefault();
+	$(this).siblings('.sub-menu').toggleClass('active');
+	$(this).children('i.fas').toggleClass('fa-caret-right fa-caret-down')
   });
 
   /*
@@ -122,3 +155,12 @@ jQuery(document).ready(function($) {
   loadGravatars();
 
 }); /* end of as page load scripts */
+
+jQuery(window).smartresize(function($) {
+	var wrapWidth = jQuery('#inner-header.wrap').outerWidth();
+
+	if(wrapWidth >= 1024){
+		jQuery('#menu-main, .sub-menu').removeClass('active');
+	}
+
+});

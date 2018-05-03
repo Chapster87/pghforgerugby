@@ -69,7 +69,7 @@
     					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
     					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
     					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '<div class="submenu-toggle"></div>',                                 // before the menu
+    					         'before' => '<div class="submenu-toggle"><i class="fas fa-caret-right"></i></div>',                                 // before the menu
         			             'after' => '',                                  // after the menu
         			             'link_before' => '',                            // before each link
         			             'link_after' => '',                             // after each link
