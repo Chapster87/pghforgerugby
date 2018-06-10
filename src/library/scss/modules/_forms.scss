@@ -151,6 +151,25 @@ input[type="search"] {
 	}
 }
 
+@mixin button{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.188rem;
+  vertical-align: middle;
+  cursor: pointer;
+  color: $black;
+  background-color: $forge-gold;
+  text-transform: uppercase;
+  font-family:$oswald;
+  transition:background-color ease 0.5s;
+  &:hover{
+    text-decoration: none;
+    background-color:$white;
+    border-color:$forge-gold;
+  }
+}
+
 /*********************
 NINJA FORMS RESETS
 *********************/

@@ -1139,8 +1139,11 @@ POSTS & CONTENT STYLES
   border-radius: 3px;
   margin-bottom: 1.5em;
   border: 1px solid #ccc;
-  padding: 1.5em;
+  padding: 0.625rem;
   position: relative; }
+  @media screen and (min-width: 48em) {
+    .hentry {
+      padding: 1rem; } }
   .hentry footer p {
     margin: 0; }
   .hentry .hentry-quicklinks {
@@ -2426,6 +2429,95 @@ HOMEPAGE STYLES
   .page-home .home-posts .post-tile__text {
     color: white;
     text-align: center; }
+
+.page-steel-city-7s .paypal-entry-header {
+  margin: 2rem 0;
+  text-align: center; }
+
+.page-steel-city-7s .entry-row-header {
+  padding-top: 1rem;
+  border-top: 2px dashed black; }
+  .page-steel-city-7s .entry-row-header h3 {
+    margin: 0;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0 0 1rem;
+    text-transform: uppercase; }
+
+.page-steel-city-7s .entry-row {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem; }
+  @media screen and (min-width: 48em) {
+    .page-steel-city-7s .entry-row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; } }
+  .page-steel-city-7s .entry-row .entry-row__btn {
+    text-align: center;
+    border: 0.1875rem solid #FFB81C;
+    border-radius: 0.188rem;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem; }
+    @media screen and (min-width: 48em) {
+      .page-steel-city-7s .entry-row .entry-row__btn {
+        width: 25%;
+        margin-bottom: 0; } }
+    .page-steel-city-7s .entry-row .entry-row__btn h2 {
+      margin-bottom: 1rem; }
+    .page-steel-city-7s .entry-row .entry-row__btn .wspsc_add_cart_submit {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+      border-radius: 0.188rem;
+      vertical-align: middle;
+      cursor: pointer;
+      color: #000;
+      background-color: #FFB81C;
+      text-transform: uppercase;
+      font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-transition: background-color ease 0.5s;
+      transition: background-color ease 0.5s; }
+      .page-steel-city-7s .entry-row .entry-row__btn .wspsc_add_cart_submit:hover {
+        text-decoration: none;
+        background-color: #fff;
+        border-color: #FFB81C; }
+
+.page-steel-city-7s .wp_cart_empty_cart_section, .page-steel-city-7s .wspsc_cart_header_image {
+  display: none; }
+
+.page-steel-city-7s .shopping_cart h2 {
+  text-align: center;
+  margin: 0 0 2rem 0;
+  text-decoration: underline; }
+
+.page-steel-city-7s .shopping_cart .wp_cart_checkout_button {
+  float: right;
+  margin: 2rem; }
+
+.page-steel-city-7s .shopping_cart .wspsc_cart_item_row th {
+  padding: 0.625rem;
+  background-color: #FFB81C; }
+
+.page-steel-city-7s .shopping_cart .wspsc_cart_item_name_td {
+  padding: 0.625rem; }
+
+.page-steel-city-7s .shopping_cart .wp_cart_item_name a {
+  color: #000;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: normal; }
+
+.page-steel-city-7s .shopping_cart .wspsc_cart_qty_td input[type="text"] {
+  text-align: center;
+  display: inline-block;
+  margin: 0.625rem 0; }
+
+.page-steel-city-7s .shopping_cart .wp_cart_remove_item_form {
+  margin: 0; }
 
 .shortcode__social-links {
   display: -webkit-box;
