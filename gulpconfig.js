@@ -33,6 +33,17 @@ module.exports = {
     }
   },
 
+  fonts: {
+    build: { // Copies fonts from `src` to `build`;
+      src: src+'library/fonts/**', 
+      dest: build+'library/fonts'
+    }, 
+    dist: {
+      src: [dist+'library/fonts/**'], // The source is actually `dist` since we are minifying images in place
+      dest: dist+'library/fonts'
+    }
+  },
+
   images: {
     build: { // Copies images from `src` to `build`; does not optimize
       src: src+'library/**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'

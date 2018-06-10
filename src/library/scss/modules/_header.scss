@@ -1,0 +1,369 @@
+/******************************************************************
+Site Name: Pittsburgh Forge Rugby Club
+Author: Andrew Chapman
+
+Stylesheet: Header Styles
+
+******************************************************************/
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+	background-color: $forge-gold;
+	background-image: url("../images/low-contrast-linen.png");
+	@include breakpoint(desktop) {
+		body.page-home &{
+			background-image:none;
+			background-color: transparent;
+		}
+	}
+}
+
+#inner-header{
+	height:4.5rem;
+	display:flex;
+	@include breakpoint(desktop) {
+		justify-content:space-between;
+		position:relative;
+		body.page-home & {
+			display:block;
+		}
+	}
+	&:after{
+		order:2;
+	}
+}
+
+.logo-block{
+	display: block;
+	height: 100%;
+	order:3;
+	@include breakpoint(desktop) {
+		order:1;
+		body.page-home & {
+			position: absolute;
+			top: 0.5rem;
+			left: 0.5rem;
+			display:flex;
+			align-items:center;
+			height:auto;
+		}
+	}
+	h1{
+		display:block;
+		height:100%;
+		font-size:inherit;
+		line-height:1;
+		margin:0;
+		@include breakpoint(desktop) {
+			body.page-home & {
+				font-size:inherit;
+				line-height:1;
+				margin:0;
+			}
+		}
+	}
+	.logo-link{
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0rem;
+		float: left;
+	}
+	.logo {
+		max-height:87%;
+		@include breakpoint(desktop) {
+			body.page-home & {
+				max-width: 12.188rem;
+				max-height:none;
+			}
+		}
+	}
+	.header-title{
+		font-family:$lemonmilk-regular;
+		font-size:1.5rem;
+		margin: 0 0 0 0.875rem;
+		letter-spacing:0.063rem;
+		color:$black;
+		@include breakpoint(tabletUp) {
+			font-size:1.938rem;
+		}
+		.title-rugbyclub{
+			@include visuallyHidden;
+			@include breakpoint(tablet) {
+				@include notVisuallyHidden;
+			}
+		}
+		@include breakpoint(desktop) {
+			body.page-home & {
+				@include visuallyHidden;
+			}
+		}
+	}
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+
+.nav {
+	border-bottom: 0;
+	margin: 0;
+	@include breakpoint(tabletUp) {
+		border:0;
+		ul {
+			background:$black;
+			margin-top:0;
+		}
+	}
+
+	li {
+		@include breakpoint(tabletUp) {
+			float: left;
+			position: relative;
+		}
+		a {
+			display: block;
+			color: $white;
+			text-decoration: none;
+			padding: 0.75em 0;
+			margin:0 1rem;
+			@include breakpoint(tabletUp) {
+				border-bottom:0;
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+		/*
+		so you really have to rethink your dropdowns for mobile.
+		you don't want to have it expand too much because the
+		screen is so small. How you manage your menu should
+		depend on the project. Here's some great info on it:
+		http://www.alistapart.com/articles/organizing-mobile/
+		*/
+		ul.sub-menu,
+		ul.children {
+			@include breakpoint(desktop) {
+				margin-top: 0;
+				border: 1px solid #ccc;
+				border-top: 0;
+				position: absolute;
+				display:none;
+				z-index: 8999;
+			}
+
+			li {
+
+				a {
+					padding-left: 30px;
+					@include breakpoint(desktop) {
+						padding-left: 10px;
+						border-right: 0;
+						display: block;
+						width: 180px;
+						border-bottom: 1px solid #ccc;
+					}
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				@include breakpoint(desktop) {
+					&:last-child {
+						a{
+							border-bottom:0;
+						}
+					}
+
+					ul{
+						top:0;
+						left:100%;
+					}
+				}
+
+			}
+
+		}
+
+		@include breakpoint(desktop) {
+			/* showing sub-menus */
+			&:hover > ul {
+				top: auto;
+				display:block;
+			}
+		}
+
+	} /* end .menu li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+
+		a {}
+
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+// Styles Specifically for the Main Site Nav
+
+.main-nav{
+	height:100%;
+	order:1;
+	display:flex;
+	align-items:center;
+	margin-right:0.875rem;
+	@include breakpoint(desktop) {
+		margin-right:0;
+		display:block;
+		order:3;
+	}
+	.mm-btn{
+		cursor:pointer;
+		color:$black;
+		float:left;
+		font-size:1.75rem;
+		margin: 12px 12px 12px 2px;
+	}
+	ul#menu-main{
+		display:none;
+		width:100%;
+		position:absolute;
+		left:0;
+		top:4.5rem;
+		background-color:$black;
+		z-index:1;
+		@include breakpoint(desktop) {
+			display:flex;
+			justify-content: flex-end;
+			align-items:center;
+			background-color:transparent;
+			width:auto;
+			height:100%;
+			position:static;
+		}
+		&.active{
+			display:block;
+		}
+		& > li{
+			float:left;
+			width:100%;
+			display:flex;
+			align-items:stretch;
+			flex-wrap:wrap;
+			padding-left:2.5rem;
+			border-bottom: 1px solid $ltblack;
+			height:100%;
+			@include breakpoint(desktop) {
+				float:none;
+				width:auto;
+				padding:0;
+				border:0;
+				align-items:center;
+			}
+			.submenu-toggle{
+				display:none;
+				float:left;
+				width:2.5rem;
+				cursor:pointer;
+				align-items: center;
+				justify-content: center;
+				background-color:$ltblack;
+				@include breakpoint(desktop) {
+					display:none;
+				}
+				i{
+					color:#eaedf2;
+					font-size:1.5rem;
+				}
+			}
+			&.menu-item-has-children{
+				padding:0;
+				& > .submenu-toggle{
+					display:flex;
+					@include breakpoint(desktop) {
+						display:none;
+					}
+				}
+			}
+			& > a{
+				color:$white;
+				font-weight:700;
+				border-bottom:0.25rem solid transparent;
+				transition:border ease 0.5s;
+				flex-grow:1;
+				@include breakpoint(desktop) {
+					color:$black;
+					&:hover{
+						color:inherit;
+						border-bottom:0.25rem solid $black;
+					}
+				}
+			}
+			@include breakpoint(desktop) {
+				&.current_page_item a{
+					color:inherit;
+					border-bottom:0.25rem solid $black;
+				}
+			}
+			.sub-menu{
+				display:none;
+				flex-basis:100%;
+				background-color:$ltblack;
+				margin:0;
+				border:0;
+				li {
+					a{
+						padding-left:2.5rem;
+						@include breakpoint(desktop) {
+							padding:0.75rem;
+						}
+						&:hover{
+							color:$forge-gold;
+						}
+					}
+				}
+				&.active{
+					display:block;
+				}
+			}
+			@include breakpoint(desktop) {
+				&:hover{
+					.sub-menu{
+						display:block;
+						top:4.5rem;
+					}
+				}
+			}
+		}
+	}
+	@include breakpoint(desktop) {
+		.page-home & {
+			ul#menu-main > li > a{
+				color:$white;
+				&:hover{
+					border-bottom:0.25rem solid $forge-gold;
+				}
+			}
+		}
+	}
+}
