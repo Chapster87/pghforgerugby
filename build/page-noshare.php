@@ -71,15 +71,6 @@
 
 					<footer class="article-footer">
 
-						<div class="share-block">
-							<div class="facebook">
-								<div class="fb-share-button" data-type="button"></div>
-							</div>
-							<div class="twitter">
-								<a class="twitter-share-button" href="https://twitter.com/share" data-count="none">Tweet</a>
-							</div>
-						</div>
-
       					<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
 					</footer>
