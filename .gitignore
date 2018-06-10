@@ -1,58 +1,37 @@
-# folders and files to be ignored by git
-
-############
-## Bones
-############
-
-Bones.esproj/
-
-############
-## IDEs
-############
-
-*.pydevproject
-.project
-.metadata
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-.externalToolBuilders/
-*.launch
-.cproject
-.buildpath
-nbproject/
-
-############
-## OSes
-############
-
-[Tt]humbs.db
-[Dd]esktop.ini
-*.DS_store
-.DS_store?
-
-############
-## Misc
-############
-
-bin/
-tmp/
-*.tmp
+## General
+.cvs
+.htaccess
+.svn
 *.bak
 *.log
-*.[Cc]ache
-*.cpr
-*.orig
-*.php.in
-.idea/
-temp/
-._*
-.Trashes
+*.swp
 
-.svn
+## Windows
+Desktop.ini
+Thumbs.db
 
-*.codekit
-*.scssc
+## Mac
+.DS_Store
+
+## WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/cache/supercache/*
+wp-content/cache/
+wp-content/backups/
+sitemap.xml
+sitemap.xml.gz
+
+## Development
+.sass-cache
+bower_components
+node_modules
+vendor
+assets/icons
+_normalize.scss
