@@ -39,7 +39,7 @@ module.exports = {
       dest: build+'library/fonts'
     }, 
     dist: {
-      src: [dist+'library/fonts/**'], // The source is actually `dist` since we are minifying images in place
+      src: src+'library/fonts/**', // The source is actually `dist` since we are minifying images in place
       dest: dist+'library/fonts'
     }
   },
@@ -141,12 +141,13 @@ module.exports = {
 
   watch: { // What to watch before triggering each specified task; if files matching the patterns below change it will trigger BrowserSync or Livereload
     src: {
-      styles:       src+'library/scss/**/**/*.scss'
-    , scripts:      src+'library/js/**/*.js' // You might also want to watch certain dependency trees but that's up to you
-    , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
-    , theme:        src+'**/*.php'
-    , livereload:   build+'**/*'
-    }
-  , watcher: 'browsersync' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
+      styles:       src+'library/scss/**/**/*.scss',
+      scripts:      src+'library/js/**/*.js', // You might also want to watch certain dependency trees but that's up to you
+      images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)',
+      fonts:        src+'library/fonts/**',
+      theme:        src+'**/*.php',
+      livereload:   build+'**/*'
+    },
+    watcher: 'browsersync' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
   }
 }

@@ -11,6 +11,7 @@ gulp.task('watch-browsersync', ['browsersync'], function() {
   gulp.watch(config.src.styles, ['styles']);
   gulp.watch(config.src.scripts, ['scripts']);
   gulp.watch(config.src.images, ['images']);
+  gulp.watch(config.src.fonts, ['fonts']);
   gulp.watch(config.src.theme, ['theme']);
 });
 
@@ -20,6 +21,7 @@ gulp.task('watch-livereload', ['livereload'], function() {
   gulp.watch(config.src.styles, ['styles']);
   gulp.watch(config.src.scripts, ['scripts']);
   gulp.watch(config.src.images, ['images']);
+  gulp.watch(config.src.fonts, ['fonts']);
   gulp.watch(config.src.theme, ['theme']);
   gulp.watch(config.src.livereload).on('change', function(file) {
     plugins.livereload.changed(file.path);
