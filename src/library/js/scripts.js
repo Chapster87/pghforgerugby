@@ -113,19 +113,22 @@ function loadGravatars() {
 	return function debounced () {
 		var obj = this, args = arguments;
 		function delayed () {
-		  if (!execAsap)
+		  if (!execAsap){
 			func.apply(obj, args);
-		  timeout = null;
-		};
+		 	timeout = null;
+		  }
+		}
   
-		if (timeout)
+		if (timeout){
 		  clearTimeout(timeout);
-		else if (execAsap)
+		}
+		else if (execAsap){
 		  func.apply(obj, args);
+		}
   
 		timeout = setTimeout(delayed, threshold || 500);
 	};
-  }
+  };
   // smartresize
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 }(jQuery,'smartresize'));
@@ -133,7 +136,7 @@ function loadGravatars() {
 
 //since multiple events can trigger a slider adjustment, we will control that adjustment here
 function jbResizeSlider(){
-	$slickSlider = jQuery('.home-posts');
+	var $slickSlider = jQuery('.home-posts');
 	$slickSlider.find('.slick-slide').height('auto');
 
 	var slickTrack = $slickSlider.find('.slick-track');
@@ -147,16 +150,17 @@ function jbResizeSlider(){
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
+	var $mainMenu = $('.main-nav #menu-main');
 
 	$(".main-nav .mm-btn").on('click', function(event) {
 		event.preventDefault();
-		$(this).siblings('#menu-main').toggleClass('active');
+		$mainMenu.toggleClass('active');
 	});
 
 	$(".main-nav .submenu-toggle").on('click', function(event) {
 		event.preventDefault();
 		$(this).siblings('.sub-menu').toggleClass('active');
-		$(this).children('i.fas').toggleClass('fa-caret-right fa-caret-down')
+		$(this).children('i.fas').toggleClass('fa-caret-right fa-caret-down');
 	});
 
 	$('.home-posts').slick({

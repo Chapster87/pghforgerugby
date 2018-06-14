@@ -67,7 +67,7 @@ module.exports = {
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
       scripts: ['core']
-    , pg8: ['pg8', 'core']
+    //, pg8: ['pg8', 'core']
     }
   , chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       core: [

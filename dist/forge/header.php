@@ -38,7 +38,6 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/js/slick/slick-theme.css"/>
 
 	</head>
 
