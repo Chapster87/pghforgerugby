@@ -2698,6 +2698,40 @@ HOMEPAGE STYLES
   float: left;
   line-height: 0; }
 
+/******************************************************************
+Site Name: Pittsburgh Forge Rugby Club
+Author: Andrew Chapman
+
+Stylesheet: Woocommerce Product Page Styles
+
+Styles specifically for pages build and managed within Woocommerce.
+
+******************************************************************/
+.woocommerce .type-product {
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  border: 1px solid #ccc;
+  padding: 0.625rem;
+  position: relative; }
+  @media screen and (min-width: 48em) {
+    .woocommerce .type-product {
+      padding: 1rem; } }
+  .woocommerce .type-product footer p {
+    margin: 0; }
+  .woocommerce .type-product .hentry-quicklinks {
+    position: absolute;
+    top: 2rem;
+    right: 2rem; }
+    .woocommerce .type-product .hentry-quicklinks a {
+      line-height: 32px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      color: black; }
+    .woocommerce .type-product .hentry-quicklinks i {
+      margin-left: 1rem; }
+
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

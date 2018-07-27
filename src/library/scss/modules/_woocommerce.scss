@@ -1,0 +1,44 @@
+/******************************************************************
+Site Name: Pittsburgh Forge Rugby Club
+Author: Andrew Chapman
+
+Stylesheet: Woocommerce Product Page Styles
+
+Styles specifically for pages build and managed within Woocommerce.
+
+******************************************************************/
+
+
+.woocommerce{
+    .type-product {
+        background-color: $white;
+        border-radius: 3px;
+        margin-bottom: 1.5em;
+        border: 1px solid $border-color;
+        padding:0.625rem;
+        position:relative;
+        @include breakpoint(tabletUp) {
+            padding:1rem;
+        }
+        header {}
+
+        footer {
+            p {
+                margin: 0;
+            }
+        }
+        .hentry-quicklinks{
+            position:absolute;
+            top:2rem;
+            right:2rem;
+            a{
+                line-height: 32px;
+                display: flex;
+                color: black;
+            }
+            i{
+                margin-left:1rem;
+            }
+        }
+    }
+}
