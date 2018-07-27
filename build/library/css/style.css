@@ -2707,7 +2707,7 @@ Stylesheet: Woocommerce Product Page Styles
 Styles specifically for pages build and managed within Woocommerce.
 
 ******************************************************************/
-.woocommerce .type-product {
+.woocommerce article.type-product {
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 1.5em;
@@ -2715,22 +2715,58 @@ Styles specifically for pages build and managed within Woocommerce.
   padding: 0.625rem;
   position: relative; }
   @media screen and (min-width: 48em) {
-    .woocommerce .type-product {
+    .woocommerce article.type-product {
       padding: 1rem; } }
-  .woocommerce .type-product footer p {
+  .woocommerce article.type-product footer p {
     margin: 0; }
-  .woocommerce .type-product .hentry-quicklinks {
+  .woocommerce article.type-product .hentry-quicklinks {
     position: absolute;
     top: 2rem;
     right: 2rem; }
-    .woocommerce .type-product .hentry-quicklinks a {
+    .woocommerce article.type-product .hentry-quicklinks a {
       line-height: 32px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       color: black; }
-    .woocommerce .type-product .hentry-quicklinks i {
+    .woocommerce article.type-product .hentry-quicklinks i {
       margin-left: 1rem; }
+  .woocommerce article.type-product .byline {
+    display: none; }
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: #000;
+  font-weight: 700; }
+
+.woocommerce div.product form.cart .button {
+  background-color: #FFB81C;
+  height: 2.5rem; }
+
+.woocommerce div.product .product_meta .sku_wrapper {
+  display: none; }
+
+.woocommerce ul.products li.product .price {
+  color: #000; }
+
+.woocommerce .woocommerce-message {
+  border-top-color: #FFB81C; }
+  .woocommerce .woocommerce-message:before {
+    color: #FFB81C; }
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: #FFB81C;
+  border: 1px solid transparent; }
+  .woocommerce #respond input#submit.alt:hover,
+  .woocommerce a.button.alt:hover,
+  .woocommerce button.button.alt:hover,
+  .woocommerce input.button.alt:hover {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000; }
 
 /*********************
 RETINA (2x RESOLUTION DEVICES)

@@ -10,7 +10,7 @@ Styles specifically for pages build and managed within Woocommerce.
 
 
 .woocommerce{
-    .type-product {
+    article.type-product {
         background-color: $white;
         border-radius: 3px;
         margin-bottom: 1.5em;
@@ -20,8 +20,6 @@ Styles specifically for pages build and managed within Woocommerce.
         @include breakpoint(tabletUp) {
             padding:1rem;
         }
-        header {}
-
         footer {
             p {
                 margin: 0;
@@ -40,5 +38,48 @@ Styles specifically for pages build and managed within Woocommerce.
                 margin-left:1rem;
             }
         }
+        .byline{
+            display:none;
+        }
+    }
+    div.product{
+        p,
+        span{
+            &.price{
+                color:$black;
+                font-weight:700;
+            }
+        }
+        form.cart .button{
+            background-color: $forge-gold;
+            height:2.5rem;
+        }
+        .product_meta{
+            .sku_wrapper{
+                display:none;
+            }
+        }
+    }
+    ul.products li.product .price{
+        color: $black;
+    }
+    .woocommerce-message{
+        border-top-color: $forge-gold;
+        &:before{
+            color: $forge-gold;
+        }
+    }
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt{
+    background-color:$forge-gold;
+    border:1px solid transparent;
+    &:hover{
+        background-color: $white;
+        border:1px solid $black;
+        color: $black;
     }
 }
