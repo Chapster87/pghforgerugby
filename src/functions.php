@@ -203,6 +203,13 @@ function bones_register_sidebars() {
 	*/
 } // don't remove this bracket!
 
+add_action( 'wp_head', 'inc_manifest_link' );
+
+// Creates the link tag
+function inc_manifest_link() {
+        echo '<link rel="manifest" href="'. get_template_directory_uri() . '/manifest.json">';
+}
+
 
 /************* COMMENT LAYOUT *********************/
 

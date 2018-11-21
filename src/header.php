@@ -38,8 +38,6 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.json">
-
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
