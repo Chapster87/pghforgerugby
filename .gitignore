@@ -34,5 +34,4 @@ bower_components
 node_modules
 vendor
 assets/icons
-_normalize.scss
 package-lock.json
