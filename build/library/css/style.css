@@ -1268,6 +1268,7 @@ POSTS & CONTENT STYLES
   background: transparent;
   background: -webkit-gradient(left top, left bottom, color-stop(0%, transparent), color-stop(2%, black), color-stop(99%, black));
   background: -webkit-linear-gradient(top, transparent 0%, black 2%, black 99%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(2%, black), color-stop(99%, black));
   background: linear-gradient(to bottom, transparent 0%, black 2%, black 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
 
