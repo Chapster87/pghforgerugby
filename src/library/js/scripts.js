@@ -12,6 +12,18 @@
  * not required. It's your world baby, you can do whatever you want.
 */
 
+var siteThemeURL = themeURL.template_url;
+
+/*
+ * Register Service Workers
+*/
+if('serviceWorker' in navigator){
+	navigator.serviceWorker
+		.register(siteThemeURL + '/sw.js')
+		.then(function() {
+			console.log('Service Worker Registered!')
+		});
+}
 
 /*
  * Get Viewport Dimensions

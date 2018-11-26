@@ -295,4 +295,10 @@ function bones_fonts() {
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
+wp_register_script('custom-js',WP_PLUGIN_URL.'/PLUGIN_NAME/js/custom.js',array(),NULL,true);
+wp_enqueue_script('custom-js');
+
+$themeURL = array( 'template_url' => get_bloginfo('template_url') );
+wp_localize_script( 'custom-js', 'themeURL', $themeURL );
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

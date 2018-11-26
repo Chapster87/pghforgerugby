@@ -10,7 +10,8 @@ gulp.task('copy', function() {
             './src/favicon.png',
             './src/favicon.ico',
 			'./src/screenshot.png',
-			'./src/manifest.json'
+			'./src/manifest.json',
+			'./src/sw.js'
         ], {
             "base": "./src"
         })
