@@ -18,14 +18,27 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
+		<?php // icons & favicons ?>
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		
+		<?php // manifest files ?>
+		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.json">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-57x57.png" sizes="57x57">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-60x60.png" sizes="60x60">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-72x72.png" sizes="72x72">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-76x76.png" sizes="76x76">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-114x114.png" sizes="114x114">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-120x120.png" sizes="120x120">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-144x144.png" sizes="144x144">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-152x152.png" sizes="152x152">
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-180x180.png" sizes="180x180">
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
 		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#f01d4f">
+		<meta name="msapplication-TileColor" content="#000">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
         <meta name="theme-color" content="#FFB81C">
 
@@ -38,8 +51,6 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.json">
-		<meta name="apple-mobile-web-app-capable">
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
