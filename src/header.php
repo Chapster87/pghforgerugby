@@ -27,7 +27,7 @@
 		<?php // or, set /favicon.ico for IE10 win ?>
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-            <meta name="theme-color" content="#121212">
+        <meta name="theme-color" content="#FFB81C">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -38,6 +38,8 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.json">
+		<meta name="apple-mobile-web-app-capable">
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
