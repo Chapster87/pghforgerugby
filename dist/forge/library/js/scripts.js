@@ -19,7 +19,7 @@ var siteThemeURL = themeURL.template_url;
 */
 if('serviceWorker' in navigator){
 	navigator.serviceWorker
-		.register(siteThemeURL + '/sw.js')
+		.register('/sw.js')
 		.then(function() {
 			console.log('Service Worker Registered!')
 		});
