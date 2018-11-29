@@ -2,7 +2,7 @@
 	"name": "Pittsburgh Forge Rugby Club",
 	"short_name": "The Forge",
 	"start_url": "/?utm_source=a2hs",
-	"scope": "./",
+	"scope": "/",
 	"display": "standalone",
 	"background_color": "#222",
 	"theme_color": "#FFB81C",

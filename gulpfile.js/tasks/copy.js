@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')({
         camelize: true
     }),
-    config = require('../../gulpconfig').bower;
+	config = require('../../gulpconfig').bower;
 
 gulp.task('copy', function() {
     gulp.src([
@@ -10,8 +10,7 @@ gulp.task('copy', function() {
             './src/favicon.png',
             './src/favicon.ico',
 			'./src/screenshot.png',
-			'./src/manifest.json',
-			'./src/sw.js'
+			'./src/manifest.json'
         ], {
             "base": "./src"
         })
