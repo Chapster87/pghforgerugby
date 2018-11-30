@@ -12,7 +12,7 @@
  * not required. It's your world baby, you can do whatever you want.
 */
 
-var siteThemeURL = themeURL.template_url;
+//var siteThemeURL = themeURL.template_url; <!-- Not being used
 
 /*
  * Register Service Workers
