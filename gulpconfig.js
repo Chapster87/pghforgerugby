@@ -132,6 +132,10 @@ module.exports = {
 		php: {
 			src: src + '**/*.php', // This simply copies PHP files over; both this and the previous task could be combined if you like
 			dest: build
+		},
+		html: {
+			src: src + '**/*.html', // This simply copies HTML files over
+			dest: build
 		}
 	},
 

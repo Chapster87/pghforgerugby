@@ -2769,6 +2769,20 @@ Styles specifically for pages build and managed within Woocommerce.
     border: 1px solid #000;
     color: #000; }
 
+.offline {
+  text-align: center; }
+  .offline .primary {
+    width: 100%; }
+  .offline .article-header {
+    text-align: center; }
+  .offline .logo {
+    max-width: 9.375rem; }
+  .offline h1 {
+    text-align: center;
+    font-size: 2rem; }
+  .offline .entry-content {
+    padding-top: 0; }
+
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
