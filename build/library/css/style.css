@@ -1130,7 +1130,7 @@ LAYOUT & GRID STYLES
 .wrap {
   display: block;
   min-width: 20em;
-  width: 20em;
+  width: 100%;
   margin: 0 auto;
   clear: both;
   padding: 0 0.625rem; }
@@ -1141,12 +1141,6 @@ LAYOUT & GRID STYLES
     font-size: 0;
     height: 0;
     visibility: hidden; }
-  @media screen and (min-width: 30em) and (max-width: 47.9375em) {
-    .wrap {
-      width: 30em; } }
-  @media screen and (min-width: 48em) and (max-width: 64em) {
-    .wrap {
-      width: 48em; } }
   @media screen and (min-width: 48em) {
     .wrap {
       width: 100%;
@@ -1199,16 +1193,20 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
-a, a:visited {
+a,
+a:visited {
   color: #FFB81C;
   -webkit-transition: color ease 0.5s;
   transition: color ease 0.5s;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
+  a:hover, a:focus,
+  a:visited:hover,
+  a:visited:focus {
     color: #eda300; }
-  a:link, a:visited:link {
+  a:link,
+  a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
 		so it basically works like the :hover selector
@@ -1219,7 +1217,16 @@ a, a:visited {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
   font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1228,25 +1235,39 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	http://css-tricks.com/watch-your-font-weight/
 	*/
   /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  h1 a,
+  .h1 a,
+  h2 a,
+  .h2 a,
+  h3 a,
+  .h3 a,
+  h4 a,
+  .h4 a,
+  h5 a,
+  .h5 a {
     text-decoration: none; }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.5em;
   line-height: 1.333em; }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1.5em;
   line-height: 1;
   margin: 0 0 0.375em; }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.125em; }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.1em; }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 0.846em;
   line-height: 2.09em;
   text-transform: uppercase;
@@ -1270,7 +1291,7 @@ POSTS & CONTENT STYLES
   background: -webkit-linear-gradient(top, transparent 0%, black 2%, black 99%);
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(2%, black), color-stop(99%, black));
   background: linear-gradient(to bottom, transparent 0%, black 2%, black 99%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0); }
 
 .primary {
   float: left;
@@ -1394,17 +1415,20 @@ POSTS & CONTENT STYLES
     max-width: 100%;
     height: auto; }
   @media screen and (min-width: 30.063em) {
-    .entry-content .alignleft, .entry-content img.alignleft {
+    .entry-content .alignleft,
+    .entry-content img.alignleft {
       margin-right: 1.5em;
       display: inline;
       float: left; } }
   @media screen and (min-width: 30.063em) {
-    .entry-content .alignright, .entry-content img.alignright {
+    .entry-content .alignright,
+    .entry-content img.alignright {
       margin-left: 1.5em;
       display: inline;
       float: right; } }
   @media screen and (min-width: 30.063em) {
-    .entry-content .aligncenter, .entry-content img.aligncenter {
+    .entry-content .aligncenter,
+    .entry-content img.aligncenter {
       margin-right: auto;
       margin-left: auto;
       display: block;
@@ -1469,7 +1493,8 @@ PAGE NAVI STYLES
     display: inline;
     overflow: hidden;
     border-right: 1px solid #eaedf2; }
-  .pagination a, .pagination span {
+  .pagination a,
+  .pagination span {
     margin: 0;
     text-decoration: none;
     padding: 0;
@@ -1480,7 +1505,9 @@ PAGE NAVI STYLES
     min-width: 1em;
     display: block;
     color: #2980b9; }
-    .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
+    .pagination a:hover, .pagination a:focus,
+    .pagination span:hover,
+    .pagination span:focus {
       background-color: #2980b9;
       color: #fff; }
   .pagination .current {
@@ -2120,11 +2147,21 @@ HEADER STYLES
 *********************/
 .header {
   background-color: #FFB81C;
-  background-image: url("../images/low-contrast-linen.png"); }
+  background-image: url("../images/low-contrast-linen.png");
+  border-top: 0.125rem solid #C60C30;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  width: 100%; }
   @media screen and (min-width: 64.0625em) {
-    body.page-home .header {
-      background-image: none;
-      background-color: transparent; } }
+    .header {
+      position: static;
+      border-bottom: 0.125rem solid #C60C30;
+      border-top: 0; }
+      body.page-home .header {
+        background-image: none;
+        background-color: transparent;
+        border: 0; } }
 
 #inner-header {
   height: 4.5rem;
@@ -2147,14 +2184,20 @@ HEADER STYLES
 .logo-block {
   display: block;
   height: 100%;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3; }
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
   @media screen and (min-width: 64.0625em) {
     .logo-block {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
-              order: 1; }
+              order: 1;
+      -webkit-box-flex: unset;
+          -ms-flex-positive: unset;
+              flex-grow: unset; }
       body.page-home .logo-block {
         position: absolute;
         top: 0.5rem;
@@ -2181,12 +2224,14 @@ HEADER STYLES
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     height: 100%;
-    padding: 0rem;
-    float: left; }
+    padding: 0rem; }
   .logo-block .logo {
     max-height: 87%; }
     @media screen and (min-width: 64.0625em) {
@@ -2195,13 +2240,14 @@ HEADER STYLES
         max-height: none; } }
   .logo-block .header-title {
     font-family: lemonmilk-regular, "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.375em;
     margin: 0 0 0 0.875rem;
     letter-spacing: 0.063rem;
-    color: #000; }
-    @media screen and (min-width: 48em) {
+    color: #000;
+    display: none; }
+    @media screen and (min-width: 30.063em) {
       .logo-block .header-title {
-        font-size: 1.938rem; } }
+        display: block; } }
     .logo-block .header-title .title-rugbyclub {
       border: 0;
       clip: rect(0 0 0 0);
@@ -2221,15 +2267,17 @@ HEADER STYLES
           overflow: auto;
           position: static; } }
     @media screen and (min-width: 64.0625em) {
-      body.page-home .logo-block .header-title {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px; } }
+      .logo-block .header-title {
+        font-size: 1.938rem; }
+        body.page-home .logo-block .header-title {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px; } }
 
 /*********************
 NAVIGATION STYLES
@@ -2321,10 +2369,13 @@ and more scalable.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 0.875rem; }
+  width: 22%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   @media screen and (min-width: 64.0625em) {
     .main-nav {
-      margin-right: 0;
+      width: auto;
       display: block;
       -webkit-box-ordinal-group: 4;
           -ms-flex-order: 3;
@@ -2334,13 +2385,16 @@ and more scalable.
     color: #000;
     float: left;
     font-size: 1.75rem;
-    margin: 12px 12px 12px 2px; }
+    margin: 0; }
+    @media screen and (min-width: 64.0625em) {
+      .main-nav .mm-btn {
+        margin: 0.75rem 0.75rem 0.75rem 0.125rem; } }
   .main-nav ul#menu-main {
     display: none;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 4.5rem;
+    bottom: 4.5rem;
     background-color: #000;
     z-index: 1; }
     @media screen and (min-width: 64.0625em) {
@@ -2424,11 +2478,11 @@ and more scalable.
             color: #000; }
             .main-nav ul#menu-main > li > a:hover {
               color: inherit;
-              border-bottom: 0.25rem solid #000; } }
+              border-bottom: 0.25rem solid #C60C30; } }
       @media screen and (min-width: 64.0625em) {
-        .main-nav ul#menu-main > li.current_page_item a {
+        .main-nav ul#menu-main > li.current_page_item > a {
           color: inherit;
-          border-bottom: 0.25rem solid #000; } }
+          border-bottom: 0.25rem solid #C60C30; } }
       .main-nav ul#menu-main > li .sub-menu {
         display: none;
         -ms-flex-preferred-size: 100%;
@@ -2455,20 +2509,155 @@ and more scalable.
       .page-home .main-nav ul#menu-main > li > a:hover {
         border-bottom: 0.25rem solid #FFB81C; } }
 
-.footer .copyright {
-  float: left; }
-
-.footer .social-links {
-  float: right;
+a.mm-contact {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  color: #000;
+  float: left;
+  font-size: 1.75rem;
+  height: 4.5rem;
+  width: 22%;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
-  .footer .social-links li {
-    margin: 0 0.625rem; }
-    .footer .social-links li a:hover {
-      color: #fff; }
-  .footer .social-links .fab {
-    font-size: 2rem; }
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none; }
+  a.mm-contact:hover {
+    color: #000; }
+
+.footer {
+  background-color: #FFB81C;
+  background-image: url("../images/low-contrast-linen.png");
+  border-top: 0.1875rem solid #C60C30;
+  padding: 1rem 0 0;
+  margin-bottom: 4.625rem; }
+  @media screen and (min-width: 64.0625em) {
+    .footer {
+      margin-bottom: 0; } }
+  .footer .footer__row {
+    display: block;
+    width: 100%;
+    clear: both; }
+    .footer .footer__row.row-1 {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      .footer .footer__row.row-1 .footer__row--left {
+        width: 100%; }
+        @media screen and (min-width: 64.0625em) {
+          .footer .footer__row.row-1 .footer__row--left {
+            width: 25%; } }
+      .footer .footer__row.row-1 .footer__row--right {
+        width: 100%; }
+        @media screen and (min-width: 64.0625em) {
+          .footer .footer__row.row-1 .footer__row--right {
+            width: 72%;
+            margin-left: 3%; } }
+    .footer .footer__row.row-2 {
+      text-align: center; }
+  .footer .join-forge {
+    text-align: center; }
+    .footer .join-forge .blast-logo {
+      max-width: 17.1875rem; }
+      @media screen and (min-width: 64.0625em) {
+        .footer .join-forge .blast-logo {
+          max-width: 100%; } }
+    .footer .join-forge .join-forge__headline {
+      text-decoration: none;
+      color: #000;
+      font-family: lemonmilk-regular, "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      -webkit-transition: color ease 0.3s;
+      transition: color ease 0.3s; }
+    .footer .join-forge .join-forge__link {
+      text-decoration: none; }
+      .footer .join-forge .join-forge__link:hover .join-forge__headline {
+        color: #C60C30; }
+  .footer .social {
+    float: left;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom: 0.1875rem solid #000;
+    padding: 0 0 1rem; }
+    .footer .social .social__header {
+      margin: 0;
+      text-transform: uppercase;
+      color: #C60C30; }
+    .footer .social .social__links {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0 0 0 2rem; }
+      .footer .social .social__links li {
+        margin: 0 0.625rem; }
+        .footer .social .social__links li a {
+          color: #C60C30; }
+          .footer .social .social__links li a:hover {
+            color: #000; }
+      .footer .social .social__links .fab {
+        font-size: 2rem; }
+  .footer nav {
+    width: 100%;
+    float: left;
+    padding-left: 2%;
+    display: none; }
+    @media screen and (min-width: 64.0625em) {
+      .footer nav {
+        display: block; } }
+  .footer .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%; }
+    .footer .nav li {
+      width: 100%;
+      float: none;
+      margin-bottom: 0.75rem; }
+      .footer .nav li > a {
+        color: #000;
+        padding: 0.75rem 0 0.5rem; }
+      .footer .nav li ul.sub-menu {
+        display: block;
+        position: static;
+        border: 0;
+        background: transparent; }
+        .footer .nav li ul.sub-menu li a {
+          border-bottom: 0;
+          width: 100%;
+          padding: 0;
+          -webkit-transition: color ease 0.3s;
+          transition: color ease 0.3s; }
+          .footer .nav li ul.sub-menu li a:hover {
+            color: #C60C30; }
+    .footer .nav > li > a {
+      font-family: lemonmilk-regular, "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.375rem;
+      -webkit-transition: color ease 0.3s;
+      transition: color ease 0.3s; }
+      .footer .nav > li > a:hover {
+        color: #C60C30; }
+  .footer .copyright {
+    display: inline-block; }
 
 /******************************************************************
 Site Name: Pittsburgh Forge Rugby Club
@@ -2497,7 +2686,7 @@ HOMEPAGE STYLES
     padding: 0; }
 
 .page-home .hero {
-  min-height: 23.75rem;
+  min-height: 17.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2533,6 +2722,8 @@ HOMEPAGE STYLES
   margin-top: 0;
   float: left;
   width: 100%; }
+  .page-home #content .tile-slider {
+    padding: 0 2rem; }
 
 .page-home .home-posts {
   display: none;
@@ -2584,6 +2775,28 @@ HOMEPAGE STYLES
   .page-home .home-posts .post-tile__text {
     color: white;
     text-align: center; }
+
+.sponsors__bar {
+  display: none;
+  background-color: #000; }
+  @media screen and (min-width: 64.0625em) {
+    .sponsors__bar {
+      display: block; } }
+  .sponsors__bar .sponsors__bar-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .sponsors__bar .sponsor__logo {
+    max-width: 12.5rem;
+    max-height: 12.5rem; }
+  .sponsors__bar .mhk .sponsor__logo {
+    max-width: 8.75rem; }
 
 .page-steel-city-7s .paypal-entry-header {
   margin: 2rem 0;

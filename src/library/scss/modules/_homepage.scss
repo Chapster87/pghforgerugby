@@ -30,7 +30,7 @@ HOMEPAGE STYLES
 		}
 	}
 	.hero{
-		min-height:23.75rem;
+		min-height:17.75rem;
 		display:flex;
 		align-items:center;
 		justify-content: center;
@@ -61,6 +61,9 @@ HOMEPAGE STYLES
 		margin-top:0;
 		float:left;
 		width:100%;
+		.tile-slider{
+			padding: 0 2rem;
+		}
 	}
 	.home-posts{
 		display:none;

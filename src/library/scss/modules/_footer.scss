@@ -1,20 +1,165 @@
-.footer{
-	.copyright{
-		float:left;
+.footer {
+	background-color: $forge-gold;
+	background-image: url("../images/low-contrast-linen.png");
+	border-top: 0.1875rem solid $forge-red;
+	padding: 1rem 0 0;
+	margin-bottom: 4.625rem;
+	@include breakpoint(desktop) {
+		margin-bottom: 0;
 	}
-	.social-links{
-		float:right;
-		display:flex;
-		li{
-			margin:0 0.625rem;
-			a{
-				&:hover{
-					color:$white;
+
+	.footer__row {
+		display: block;
+		width: 100%;
+		clear: both;
+
+		&.row-1 {
+			display: flex;
+			flex-wrap: wrap;
+
+			.footer__row--left {
+				width: 100%;
+				@include breakpoint(desktop) {
+					width: 25%;
+				}
+			}
+
+			.footer__row--right {
+				width: 100%;
+				@include breakpoint(desktop) {
+					width: 72%;
+					margin-left: 3%;
 				}
 			}
 		}
-		.fab{
-			font-size:2rem;
+
+		&.row-2 {
+			text-align: center;
 		}
 	}
+
+	.join-forge {
+		text-align: center;
+		.blast-logo {
+			max-width: 17.1875rem;
+			@include breakpoint(desktop) {
+				max-width: 100%;
+			}
+		}
+		.join-forge__headline{
+			text-decoration: none;
+			color: $black;
+			font-family: $lemonmilk-regular;
+			font-size: 1rem;
+			transition: color ease 0.3s;
+		}
+		.join-forge__link{
+			text-decoration: none;
+			&:hover {
+				.join-forge__headline{
+					color: $forge-red;
+				}
+			}
+		}
+	}
+
+	.social {
+		float: left;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 0.1875rem solid $black;
+		padding: 0 0 1rem;
+
+		.social__header {
+			margin: 0;
+			text-transform: uppercase;
+			color: $forge-red;
+		}
+
+		.social__links {
+			float: none;
+			display: flex;
+			margin: 0 0 0 2rem;
+
+			li {
+				margin: 0 0.625rem;
+
+				a {
+					color: $forge-red;
+
+					&:hover {
+						color: $black;
+					}
+				}
+			}
+
+			.fab {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	nav {
+		width: 100%;
+		float: left;
+		padding-left: 2%;
+		display:none;
+		@include breakpoint(desktop) {
+			display:block;
+		}
+	}
+
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		li {
+			width: 100%;
+			float: none;
+			margin-bottom: 0.75rem;
+
+			>a {
+				color: $black;
+				padding: 0.75rem 0 0.5rem;
+			}
+
+			ul.sub-menu {
+				display: block;
+				position: static;
+				border: 0;
+				background: transparent;
+
+				li {
+					a {
+						border-bottom: 0;
+						width: 100%;
+						padding: 0;
+						transition: color ease 0.3s;
+
+						&:hover {
+							color: $forge-red;
+						}
+					}
+				}
+			}
+		}
+
+		>li>a {
+			font-family: $lemonmilk-regular;
+			font-size: 1.375rem;
+			transition: color ease 0.3s;
+
+			&:hover {
+				color: $forge-red;
+			}
+		}
+	}
+
+	.copyright {
+		display: inline-block;
+	}
+
 }

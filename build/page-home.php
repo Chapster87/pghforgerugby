@@ -90,7 +90,7 @@
 
 	<div id="content">
 
-		<div id="inner-content" class="wrap cf">
+		<div id="inner-content" class="wrap cf tile-slider">
 
 			<ul class="home-posts">
 				<?php

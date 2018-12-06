@@ -13,90 +13,121 @@ HEADER STYLES
 .header {
 	background-color: $forge-gold;
 	background-image: url("../images/low-contrast-linen.png");
-	@include breakpoint(desktop) {
-		body.page-home &{
-			background-image:none;
-			background-color: transparent;
-		}
-	}
-}
+	border-top: 0.125rem solid $forge-red;
+	position: fixed;
+	bottom: 0;
+	z-index: 99;
+	width: 100%;
 
-#inner-header{
-	height:4.5rem;
-	display:flex;
 	@include breakpoint(desktop) {
-		justify-content:space-between;
-		position:relative;
+		position: static;
+		border-bottom: 0.125rem solid $forge-red;
+		border-top: 0;
+
 		body.page-home & {
-			display:block;
+			background-image: none;
+			background-color: transparent;
+			border: 0;
 		}
-	}
-	&:after{
-		order:2;
 	}
 }
 
-.logo-block{
+#inner-header {
+	height: 4.5rem;
+	display: flex;
+
+	@include breakpoint(desktop) {
+		justify-content: space-between;
+		position: relative;
+
+		body.page-home & {
+			display: block;
+		}
+	}
+
+	&:after {
+		order: 2;
+	}
+}
+
+.logo-block {
 	display: block;
 	height: 100%;
-	order:3;
+	order: 2;
+	flex-grow: 1;
+
 	@include breakpoint(desktop) {
-		order:1;
+		order: 1;
+		flex-grow: unset;
+
 		body.page-home & {
 			position: absolute;
 			top: 0.5rem;
 			left: 0.5rem;
-			display:flex;
-			align-items:center;
-			height:auto;
+			display: flex;
+			align-items: center;
+			height: auto;
 		}
 	}
-	h1{
-		display:block;
-		height:100%;
-		font-size:inherit;
-		line-height:1;
-		margin:0;
+
+	h1 {
+		display: block;
+		height: 100%;
+		font-size: inherit;
+		line-height: 1;
+		margin: 0;
+
 		@include breakpoint(desktop) {
 			body.page-home & {
-				font-size:inherit;
-				line-height:1;
-				margin:0;
+				font-size: inherit;
+				line-height: 1;
+				margin: 0;
 			}
 		}
 	}
-	.logo-link{
+
+	.logo-link {
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		height: 100%;
 		padding: 0rem;
-		float: left;
 	}
+
 	.logo {
-		max-height:87%;
+		max-height: 87%;
+
 		@include breakpoint(desktop) {
 			body.page-home & {
 				max-width: 12.188rem;
-				max-height:none;
+				max-height: none;
 			}
 		}
 	}
-	.header-title{
-		font-family:$lemonmilk-regular;
-		font-size:1.5rem;
+
+	.header-title {
+		font-family: $lemonmilk-regular;
+		font-size: 1.375em;
 		margin: 0 0 0 0.875rem;
-		letter-spacing:0.063rem;
-		color:$black;
-		@include breakpoint(tabletUp) {
-			font-size:1.938rem;
+		letter-spacing: 0.063rem;
+		color: $black;
+		display: none;
+
+		@include breakpoint(lgMobileUp) {
+			display: block;
 		}
-		.title-rugbyclub{
+
+		.title-rugbyclub {
 			@include visuallyHidden;
+
 			@include breakpoint(tablet) {
 				@include notVisuallyHidden;
 			}
 		}
+
 		@include breakpoint(desktop) {
+			font-size: 1.938rem;
+
 			body.page-home & {
 				@include visuallyHidden;
 			}
@@ -119,11 +150,13 @@ and more scalable.
 .nav {
 	border-bottom: 0;
 	margin: 0;
+
 	@include breakpoint(tabletUp) {
-		border:0;
+		border: 0;
+
 		ul {
-			background:$black;
-			margin-top:0;
+			background: $black;
+			margin-top: 0;
 		}
 	}
 
@@ -132,14 +165,16 @@ and more scalable.
 			float: left;
 			position: relative;
 		}
+
 		a {
 			display: block;
 			color: $white;
 			text-decoration: none;
 			padding: 0.75em 0;
-			margin:0 1rem;
+			margin: 0 1rem;
+
 			@include breakpoint(tabletUp) {
-				border-bottom:0;
+				border-bottom: 0;
 			}
 		}
 
@@ -161,7 +196,7 @@ and more scalable.
 				border: 1px solid #ccc;
 				border-top: 0;
 				position: absolute;
-				display:none;
+				display: none;
 				z-index: 8999;
 			}
 
@@ -169,6 +204,7 @@ and more scalable.
 
 				a {
 					padding-left: 30px;
+
 					@include breakpoint(desktop) {
 						padding-left: 10px;
 						border-right: 0;
@@ -188,14 +224,14 @@ and more scalable.
 
 				@include breakpoint(desktop) {
 					&:last-child {
-						a{
-							border-bottom:0;
+						a {
+							border-bottom: 0;
 						}
 					}
 
-					ul{
-						top:0;
-						left:100%;
+					ul {
+						top: 0;
+						left: 100%;
 					}
 				}
 
@@ -204,14 +240,17 @@ and more scalable.
 		}
 
 		@include breakpoint(desktop) {
+
 			/* showing sub-menus */
-			&:hover > ul {
+			&:hover>ul {
 				top: auto;
-				display:block;
+				display: block;
 			}
 		}
 
-	} /* end .menu li */
+	}
+
+	/* end .menu li */
 
 	/* highlight current page */
 	li.current-menu-item,
@@ -220,150 +259,201 @@ and more scalable.
 
 		a {}
 
-	}  /* end current highlighters */
+	}
 
-} /* end .nav */
+	/* end current highlighters */
+
+}
+
+/* end .nav */
 
 // Styles Specifically for the Main Site Nav
 
-.main-nav{
-	height:100%;
-	order:1;
-	display:flex;
-	align-items:center;
-	margin-right:0.875rem;
+.main-nav {
+	height: 100%;
+	order: 1;
+	display: flex;
+	align-items: center;
+	width: 22%;
+	justify-content: center;
+
 	@include breakpoint(desktop) {
-		margin-right:0;
-		display:block;
-		order:3;
+		width: auto;
+		display: block;
+		order: 3;
 	}
-	.mm-btn{
-		cursor:pointer;
-		color:$black;
-		float:left;
-		font-size:1.75rem;
-		margin: 12px 12px 12px 2px;
-	}
-	ul#menu-main{
-		display:none;
-		width:100%;
-		position:absolute;
-		left:0;
-		top:4.5rem;
-		background-color:$black;
-		z-index:1;
+
+	.mm-btn {
+		cursor: pointer;
+		color: $black;
+		float: left;
+		font-size: 1.75rem;
+		margin: 0;
+
 		@include breakpoint(desktop) {
-			display:flex;
+			margin: 0.75rem 0.75rem 0.75rem 0.125rem;
+		}
+	}
+
+	ul#menu-main {
+		display: none;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 4.5rem;
+		background-color: $black;
+		z-index: 1;
+
+		@include breakpoint(desktop) {
+			display: flex;
 			justify-content: flex-end;
-			align-items:center;
-			background-color:transparent;
-			width:auto;
-			height:100%;
-			position:static;
+			align-items: center;
+			background-color: transparent;
+			width: auto;
+			height: 100%;
+			position: static;
 		}
-		&.active{
-			display:block;
+
+		&.active {
+			display: block;
 		}
-		& > li{
-			float:left;
-			width:100%;
-			display:flex;
-			align-items:stretch;
-			flex-wrap:wrap;
-			padding-left:2.5rem;
+
+		&>li {
+			float: left;
+			width: 100%;
+			display: flex;
+			align-items: stretch;
+			flex-wrap: wrap;
+			padding-left: 2.5rem;
 			border-bottom: 1px solid $ltblack;
-			height:100%;
+			height: 100%;
+
 			@include breakpoint(desktop) {
-				float:none;
-				width:auto;
-				padding:0;
-				border:0;
-				align-items:center;
+				float: none;
+				width: auto;
+				padding: 0;
+				border: 0;
+				align-items: center;
 			}
-			.submenu-toggle{
-				display:none;
-				float:left;
-				width:2.5rem;
-				cursor:pointer;
+
+			.submenu-toggle {
+				display: none;
+				float: left;
+				width: 2.5rem;
+				cursor: pointer;
 				align-items: center;
 				justify-content: center;
-				background-color:$ltblack;
+				background-color: $ltblack;
+
 				@include breakpoint(desktop) {
-					display:none;
+					display: none;
 				}
-				i{
-					color:#eaedf2;
-					font-size:1.5rem;
+
+				i {
+					color: #eaedf2;
+					font-size: 1.5rem;
 				}
 			}
-			&.menu-item-has-children{
-				padding:0;
-				& > .submenu-toggle{
-					display:flex;
+
+			&.menu-item-has-children {
+				padding: 0;
+
+				&>.submenu-toggle {
+					display: flex;
+
 					@include breakpoint(desktop) {
-						display:none;
+						display: none;
 					}
 				}
 			}
-			& > a{
-				color:$white;
-				font-weight:700;
-				border-bottom:0.25rem solid transparent;
-				transition:border ease 0.5s;
-				flex-grow:1;
+
+			&>a {
+				color: $white;
+				font-weight: 700;
+				border-bottom: 0.25rem solid transparent;
+				transition: border ease 0.5s;
+				flex-grow: 1;
+
 				@include breakpoint(desktop) {
-					color:$black;
-					&:hover{
-						color:inherit;
-						border-bottom:0.25rem solid $black;
+					color: $black;
+
+					&:hover {
+						color: inherit;
+						border-bottom: 0.25rem solid $forge-red;
 					}
 				}
 			}
+
 			@include breakpoint(desktop) {
-				&.current_page_item a{
-					color:inherit;
-					border-bottom:0.25rem solid $black;
+				&.current_page_item>a {
+					color: inherit;
+					border-bottom: 0.25rem solid $forge-red;
 				}
 			}
-			.sub-menu{
-				display:none;
-				flex-basis:100%;
-				background-color:$ltblack;
-				margin:0;
-				border:0;
+
+			.sub-menu {
+				display: none;
+				flex-basis: 100%;
+				background-color: $ltblack;
+				margin: 0;
+				border: 0;
+
 				li {
-					a{
-						padding-left:2.5rem;
+					a {
+						padding-left: 2.5rem;
+
 						@include breakpoint(desktop) {
-							padding:0.75rem;
+							padding: 0.75rem;
 						}
-						&:hover{
-							color:$forge-gold;
+
+						&:hover {
+							color: $forge-gold;
 						}
 					}
 				}
-				&.active{
-					display:block;
+
+				&.active {
+					display: block;
 				}
 			}
+
 			@include breakpoint(desktop) {
-				&:hover{
-					.sub-menu{
-						display:block;
-						top:4.5rem;
+				&:hover {
+					.sub-menu {
+						display: block;
+						top: 4.5rem;
 					}
 				}
 			}
 		}
 	}
+
 	@include breakpoint(desktop) {
 		.page-home & {
-			ul#menu-main > li > a{
-				color:$white;
-				&:hover{
-					border-bottom:0.25rem solid $forge-gold;
+			ul#menu-main>li>a {
+				color: $white;
+
+				&:hover {
+					border-bottom: 0.25rem solid $forge-gold;
 				}
 			}
 		}
+	}
+}
+
+a.mm-contact {
+	order: 3;
+	color: $black;
+	float: left;
+	font-size: 1.75rem;
+	height: 4.5rem;
+	width: 22%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+	&:hover {
+		color: $black;
 	}
 }
