@@ -1,6 +1,8 @@
 .shortcode__{
 	&social-links{
 		display:flex;
+		list-style: none;
+		padding: 0;
 		li{
 			margin:0 0.625rem;
 			a{

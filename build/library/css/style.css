@@ -2890,7 +2890,9 @@ HOMEPAGE STYLES
 .shortcode__social-links {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  list-style: none;
+  padding: 0; }
   .shortcode__social-links li {
     margin: 0 0.625rem; }
     .shortcode__social-links li a:hover {
