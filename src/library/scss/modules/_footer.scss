@@ -9,32 +9,70 @@
 		width: 100%;
 		clear: both;
 
+		&.row-1 {
+			display: flex;
+
+			.footer__row--left {
+				width: 25%;
+			}
+
+			.footer__row--right {
+				width: 72%;
+				margin-left: 3%;
+			}
+		}
+
 		&.row-2 {
 			text-align: center;
 		}
 	}
 
-	.forge-blast{
-		width: 25%;
-		float: left;
-		.blast-logo{
+	.join-forge {
+		text-align: center;
+		.blast-logo {
 			max-width: 100%;
+		}
+		.join-forge__headline{
+			text-decoration: none;
+			color: $black;
+			font-family: $lemonmilk-regular;
+			font-size: 1rem;
+			transition: color ease 0.3s;
+		}
+		.join-forge__link{
+			&:hover {
+				.join-forge__headline{
+					color: $forge-red;
+				}
+			}
 		}
 	}
 
 	.social {
-		width: 75%;
 		float: left;
-		.social__links {
-			float: right;
-			display: flex;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 0.1875rem solid $black;
+		padding: 0 0 1rem;
+
+		.social__header {
 			margin: 0;
+			text-transform: uppercase;
+			color: $forge-red;
+		}
+
+		.social__links {
+			float: none;
+			display: flex;
+			margin: 0 0 0 2rem;
 
 			li {
 				margin: 0 0.625rem;
 
 				a {
-					color: $white;
+					color: $forge-red;
 
 					&:hover {
 						color: $black;
@@ -49,8 +87,9 @@
 	}
 
 	nav {
-		width: 75%;
+		width: 100%;
 		float: left;
+		padding-left: 2%;
 	}
 
 	.nav {
@@ -80,7 +119,8 @@
 						width: 100%;
 						padding: 0;
 						transition: color ease 0.3s;
-						&:hover{
+
+						&:hover {
 							color: $forge-red;
 						}
 					}
@@ -92,7 +132,8 @@
 			font-family: $lemonmilk-regular;
 			font-size: 1.375rem;
 			transition: color ease 0.3s;
-			&:hover{
+
+			&:hover {
 				color: $forge-red;
 			}
 		}
