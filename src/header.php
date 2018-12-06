@@ -92,6 +92,8 @@
 
 					</nav>
 
+					<a href="/contact" class="mm-contact mobile-tablet-only"><i class="fas fa-envelope"></i></a>
+
 				</div>
 
 			</header>
