@@ -13,6 +13,7 @@ HEADER STYLES
 .header {
 	background-color: $forge-gold;
 	background-image: url("../images/low-contrast-linen.png");
+	border-bottom: 0.125rem solid $forge-red;
 	@include breakpoint(desktop) {
 		body.page-home &{
 			background-image:none;
@@ -315,14 +316,14 @@ and more scalable.
 					color:$black;
 					&:hover{
 						color:inherit;
-						border-bottom:0.25rem solid $black;
+						border-bottom:0.25rem solid $forge-red;
 					}
 				}
 			}
 			@include breakpoint(desktop) {
-				&.current_page_item a{
+				&.current_page_item > a{
 					color:inherit;
-					border-bottom:0.25rem solid $black;
+					border-bottom:0.25rem solid $forge-red;
 				}
 			}
 			.sub-menu{

@@ -2117,7 +2117,8 @@ HEADER STYLES
 *********************/
 .header {
   background-color: #FFB81C;
-  background-image: url("../images/low-contrast-linen.png"); }
+  background-image: url("../images/low-contrast-linen.png");
+  border-bottom: 0.125rem solid #C60C30; }
   @media screen and (min-width: 64.0625em) {
     body.page-home .header {
       background-image: none;
@@ -2421,11 +2422,11 @@ and more scalable.
             color: #000; }
             .main-nav ul#menu-main > li > a:hover {
               color: inherit;
-              border-bottom: 0.25rem solid #000; } }
+              border-bottom: 0.25rem solid #C60C30; } }
       @media screen and (min-width: 64.0625em) {
-        .main-nav ul#menu-main > li.current_page_item a {
+        .main-nav ul#menu-main > li.current_page_item > a {
           color: inherit;
-          border-bottom: 0.25rem solid #000; } }
+          border-bottom: 0.25rem solid #C60C30; } }
       .main-nav ul#menu-main > li .sub-menu {
         display: none;
         -ms-flex-preferred-size: 100%;
@@ -2452,20 +2453,79 @@ and more scalable.
       .page-home .main-nav ul#menu-main > li > a:hover {
         border-bottom: 0.25rem solid #FFB81C; } }
 
-.footer .copyright {
-  float: left; }
-
-.footer .social-links {
-  float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .footer .social-links li {
-    margin: 0 0.625rem; }
-    .footer .social-links li a:hover {
-      color: #fff; }
-  .footer .social-links .fab {
-    font-size: 2rem; }
+.footer {
+  background-color: #FFB81C;
+  background-image: url("../images/low-contrast-linen.png");
+  border-top: 0.1875rem solid #C60C30;
+  padding: 1rem 0 0; }
+  .footer .footer__row {
+    display: block;
+    width: 100%;
+    clear: both; }
+    .footer .footer__row.row-2 {
+      text-align: center; }
+  .footer .forge-blast {
+    width: 25%;
+    float: left; }
+    .footer .forge-blast .blast-logo {
+      max-width: 100%; }
+  .footer .social {
+    width: 75%;
+    float: left; }
+    .footer .social .social__links {
+      float: right;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0; }
+      .footer .social .social__links li {
+        margin: 0 0.625rem; }
+        .footer .social .social__links li a {
+          color: #fff; }
+          .footer .social .social__links li a:hover {
+            color: #000; }
+      .footer .social .social__links .fab {
+        font-size: 2rem; }
+  .footer nav {
+    width: 75%;
+    float: left; }
+  .footer .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%; }
+    .footer .nav li {
+      width: 100%;
+      float: none;
+      margin-bottom: 0.75rem; }
+      .footer .nav li > a {
+        color: #000;
+        padding: 0.75rem 0 0.5rem; }
+      .footer .nav li ul.sub-menu {
+        display: block;
+        position: static;
+        border: 0;
+        background: transparent; }
+        .footer .nav li ul.sub-menu li a {
+          border-bottom: 0;
+          width: 100%;
+          padding: 0;
+          -webkit-transition: color ease 0.3s;
+          transition: color ease 0.3s; }
+          .footer .nav li ul.sub-menu li a:hover {
+            color: #C60C30; }
+    .footer .nav > li > a {
+      font-family: lemonmilk-regular, "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.375rem;
+      -webkit-transition: color ease 0.3s;
+      transition: color ease 0.3s; }
+      .footer .nav > li > a:hover {
+        color: #C60C30; }
+  .footer .copyright {
+    display: inline-block; }
 
 /******************************************************************
 Site Name: Pittsburgh Forge Rugby Club
@@ -2581,6 +2641,24 @@ HOMEPAGE STYLES
   .page-home .home-posts .post-tile__text {
     color: white;
     text-align: center; }
+
+.sponsors__bar {
+  background-color: #000; }
+  .sponsors__bar .sponsors__bar-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .sponsors__bar .sponsor__logo {
+    max-width: 12.5rem;
+    max-height: 12.5rem; }
+  .sponsors__bar .mhk .sponsor__logo {
+    max-width: 8.75rem; }
 
 .page-steel-city-7s .paypal-entry-header {
   margin: 2rem 0;
