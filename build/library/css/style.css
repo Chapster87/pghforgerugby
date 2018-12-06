@@ -1343,6 +1343,9 @@ POSTS & CONTENT STYLES
 	*/ }
   .entry-content p {
     margin: 0 0 1em; }
+  .entry-content ul, .entry-content ol {
+    list-style-type: disc;
+    padding-left: 2rem; }
   .entry-content ol {
     list-style: decimal;
     margin: initial;
