@@ -2891,8 +2891,8 @@ HOMEPAGE STYLES
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  padding: 0; }
+  list-style: none !important;
+  padding: 0 !important; }
   .shortcode__social-links li {
     margin: 0 0.625rem; }
     .shortcode__social-links li a:hover {
