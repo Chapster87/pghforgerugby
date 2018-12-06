@@ -13,11 +13,18 @@ HEADER STYLES
 .header {
 	background-color: $forge-gold;
 	background-image: url("../images/low-contrast-linen.png");
-	border-bottom: 0.125rem solid $forge-red;
+	border-top: 0.125rem solid $forge-red;
+	position: fixed;
+	bottom: 0;
+	z-index: 99;
+	width: 100%;
 	@include breakpoint(desktop) {
+		position: static;
+		border-bottom: 0.125rem solid $forge-red;
 		body.page-home &{
 			background-image:none;
 			background-color: transparent;
+			border: 0;
 		}
 	}
 }
@@ -250,7 +257,7 @@ and more scalable.
 		width:100%;
 		position:absolute;
 		left:0;
-		top:4.5rem;
+		bottom:4.5rem;
 		background-color:$black;
 		z-index:1;
 		@include breakpoint(desktop) {

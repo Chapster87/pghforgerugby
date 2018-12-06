@@ -3,6 +3,10 @@
 	background-image: url("../images/low-contrast-linen.png");
 	border-top: 0.1875rem solid $forge-red;
 	padding: 1rem 0 0;
+	margin-bottom: 4.625rem;
+	@include breakpoint(desktop) {
+		margin-bottom: 0;
+	}
 
 	.footer__row {
 		display: block;
@@ -40,6 +44,7 @@
 			transition: color ease 0.3s;
 		}
 		.join-forge__link{
+			text-decoration: none;
 			&:hover {
 				.join-forge__headline{
 					color: $forge-red;

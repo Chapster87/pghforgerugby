@@ -25,19 +25,21 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-position: center -25% !important;
 	background-size: auto !important;
+
 	@include breakpoint(desktop) {
 		background-position: center top !important;
-		background-size:100% auto !important;
+		background-size: 100% auto !important;
 		/* Ideal Background image height is 550px */
 	}
+
 	@include breakpoint(smDesktop) {
 		background-size: auto !important;
 	}
 }
 
-#container{
-	background-color:rgba(0,0,0,0.4);
-	position:relative;
+#container {
+	background-color: rgba(0, 0, 0, 0.4);
+	position: relative;
 }
 
 /********************
@@ -45,41 +47,111 @@ WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+.rtl {}
+
+/* for sites that are read right to left (i.e. hebrew) */
+.home {}
+
+/* home page */
+.blog {}
+
+/* blog template page */
+.archive {}
+
+/* archive page */
+.date {}
+
+/* date archive page */
+.date-paged-1 {}
+
+/* replace the number to the corresponding page number */
+.search {}
+
+/* search page */
+.search-results {}
+
+/* search result page */
+.search-no-results {}
+
+/* no results search page */
+.search-paged-1 {}
+
+/* individual paged search (i.e. body.search-paged-3) */
+.error404 {}
+
+/* 404 page */
+.single {}
+
+/* single post page */
+.postid-1 {}
+
+/* individual post page by id (i.e. body.postid-73) */
+.single-paged-1 {}
+
+/* individual paged single (i.e. body.single-paged-3) */
+.attachment {}
+
+/* attatchment page */
+.attachmentid-1 {}
+
+/* individual attatchment page (i.e. body.attachmentid-763) */
+.attachment-mime-type {}
+
+/* style mime type pages */
+.author {}
+
+/* author page */
+.author-nicename {}
+
+/* user nicename (i.e. body.author-samueladams) */
+.author-paged-1 {}
+
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {}
+
+/* category page */
+.category-1 {}
+
+/* individual category page (i.e. body.category-6) */
+.category-paged-1 {}
+
+/* replace the number to the corresponding page number */
+.tag {}
+
+/* tag page */
+.tag-slug {}
+
+/* individual tag page (i.e. body.tag-news) */
+.tag-paged-1 {}
+
+/* replace the number to the corresponding page number */
+.page-template {}
+
+/* custom page template page */
+.page-template-page-php {}
+
+/* individual page template (i.e. body.page-template-contact-php */
+.page-paged-1 {}
+
+/* replace the number to the corresponding page number */
+.page-parent {}
+
+/* parent page template */
+.page-child {}
+
+/* child page template */
+.parent-pageid-1 {}
+
+/* replace the number to the corresponding page number */
+.logged-in {}
+
+/* if user is logged in */
+.paged {}
+
+/* paged items like search results or archives */
+.paged-1 {}
+
+/* individual paged (i.e. body.paged-3) */
 
 /*********************
 LAYOUT & GRID STYLES
@@ -90,96 +162,107 @@ LAYOUT & GRID STYLES
 	margin: 0 auto;
 }*/
 
-.wrap{
-  display:block;
-  min-width:20em; // 320px
-  width:20em;
-  margin:0 auto;
-  clear:both;
-  padding:0 0.625rem;
-  &:after{
-	clear: both;
-	content: " "; 
+.wrap {
 	display: block;
-	font-size: 0;
-	height: 0;
-	visibility: hidden;
-  }
-  @include breakpoint(lgMobile) {
-	width: 30em; // (480px)
-  }
-  @include breakpoint(tablet) {
-	width: 48em; // (768px)
-  }
-  @include breakpoint(tabletUp) {
-	width:100%;
-	max-width: 75em;
-  }
-  @include breakpoint(desktop) {
-	max-width: 75em; // (1200px)
-	width:100%;
-	padding:0;
-  }
-  @include breakpoint(smDesktop) {
-	padding:0 0.625rem;
-  }
-}
+	min-width: 20em; // 320px
+	//width:20em;
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+	padding: 0 0.625rem;
 
-.wrap-desktop{
-  @include breakpoint(desktop) {
-	position:relative;
-	display:block;
-	max-width:75em; // (1200px)
-	width:100%;
-	margin:0 auto;
-	clear:both;
-	&:after{
-	  clear: both;
-	  content: " ";
-	  display: block;
-	  font-size: 0;
-	  height: 0;
-	  visibility: hidden;
+	&:after {
+		clear: both;
+		content: " ";
+		display: block;
+		font-size: 0;
+		height: 0;
+		visibility: hidden;
 	}
-  }
-  @include breakpoint(smDesktop) {
-	padding:0 0.625rem;
-  }
+
+	// @include breakpoint(lgMobile) {
+	// 	width: 30em; // (480px)
+	// }
+
+	// @include breakpoint(tablet) {
+	// 	width: 48em; // (768px)
+	// }
+
+	@include breakpoint(tabletUp) {
+		width: 100%;
+		max-width: 75em;
+	}
+
+	@include breakpoint(desktop) {
+		max-width: 75em; // (1200px)
+		width: 100%;
+		padding: 0;
+	}
+
+	@include breakpoint(smDesktop) {
+		padding: 0 0.625rem;
+	}
 }
 
-.wrap-mobile{
-  @include breakpoint(smMobile) {
-	width:20em; // (320px)
-	min-width:20em;
-	padding:0 0.625rem;
-	margin:0 auto;
-	clear:both;
-  }
-  @include breakpoint(lgMobile) {
-	width:30em; // (480px)
-  }
-  @include breakpoint(tablet) {
-	width:48em; // (768px)
-  }
+.wrap-desktop {
+	@include breakpoint(desktop) {
+		position: relative;
+		display: block;
+		max-width: 75em; // (1200px)
+		width: 100%;
+		margin: 0 auto;
+		clear: both;
+
+		&:after {
+			clear: both;
+			content: " ";
+			display: block;
+			font-size: 0;
+			height: 0;
+			visibility: hidden;
+		}
+	}
+
+	@include breakpoint(smDesktop) {
+		padding: 0 0.625rem;
+	}
+}
+
+.wrap-mobile {
+	@include breakpoint(smMobile) {
+		width: 20em; // (320px)
+		min-width: 20em;
+		padding: 0 0.625rem;
+		margin: 0 auto;
+		clear: both;
+	}
+
+	@include breakpoint(lgMobile) {
+		width: 30em; // (480px)
+	}
+
+	@include breakpoint(tablet) {
+		width: 48em; // (768px)
+	}
 }
 
 /*********************
 LINK STYLES
 *********************/
 
-a, a:visited {
+a,
+a:visited {
 	color: $link-color;
-	transition:color ease 0.5s;
+	transition: color ease 0.5s;
 
 	/* on hover */
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		color: $link-hover;
 	}
 
 	/* on click */
-	&:active {
-
-	}
+	&:active {}
 
 	/* mobile tap color */
 	&:link {
@@ -188,7 +271,7 @@ a, a:visited {
 		so it basically works like the :hover selector
 		for mobile devices.
 		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 	}
 }
 
@@ -196,7 +279,16 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
 	font-family: $oswald;
@@ -211,39 +303,44 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	}
 }
 
-h1, .h1 {
+h1,
+.h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
 }
 
-h2, .h2 {
+h2,
+.h2 {
 	font-size: 1.5em;
 	line-height: 1;
 	margin: 0 0 0.375em;
 }
 
-h3, .h3 {
+h3,
+.h3 {
 	font-size: 1.125em;
 }
 
-h4, .h4 {
+h4,
+.h4 {
 	font-size: 1.1em;
 }
 
-h5, .h5 {
+h5,
+.h5 {
 	font-size: 0.846em;
 	line-height: 2.09em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
-hr{
+hr {
 	display: block;
 	height: 1px;
 	border: 0;
 	border-top: 1px solid #999;
 	margin: 1em 0;
-	padding: 0; 
+	padding: 0;
 }
 
 /*********************
@@ -252,28 +349,31 @@ POSTS & CONTENT STYLES
 
 #content {
 	margin-top: 1.5em;
-	background: rgba(0,0,0,0);
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 99%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(2%, rgba(0,0,0,1)), color-stop(99%, rgba(0,0,0,1)));
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 99%);
-	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 99%);
-	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 99%);
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 99%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+	background: rgba(0, 0, 0, 0);
+	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 1) 99%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(2%, rgba(0, 0, 0, 1)), color-stop(99%, rgba(0, 0, 0, 1)));
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 1) 99%);
+	background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 1) 99%);
+	background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 1) 99%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 1) 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
 }
 
-.primary{
-	float:left;
-	width:100%;
+.primary {
+	float: left;
+	width: 100%;
+
 	@include breakpoint(tabletUp) {
-		width:75%;
+		width: 75%;
 	}
 }
-.secondary{
-	float:right;
-	width:100%;
+
+.secondary {
+	float: right;
+	width: 100%;
+
 	@include breakpoint(tabletUp) {
-		width:23%;
+		width: 23%;
 	}
 }
 
@@ -282,11 +382,13 @@ POSTS & CONTENT STYLES
 	border-radius: 3px;
 	margin-bottom: 1.5em;
 	border: 1px solid $border-color;
-	padding:0.625rem;
-	position:relative;
+	padding: 0.625rem;
+	position: relative;
+
 	@include breakpoint(tabletUp) {
-		padding:1rem;
+		padding: 1rem;
 	}
+
 	header {}
 
 	footer {
@@ -294,21 +396,26 @@ POSTS & CONTENT STYLES
 			margin: 0;
 		}
 	}
-	.hentry-quicklinks{
-		position:absolute;
-		top:2rem;
-		right:2rem;
-		a{
+
+	.hentry-quicklinks {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+
+		a {
 			line-height: 32px;
 			display: flex;
 			color: black;
 		}
-		i{
-			margin-left:1rem;
+
+		i {
+			margin-left: 1rem;
 		}
 	}
 
-} /* end .hentry */
+}
+
+/* end .hentry */
 
 .single-title,
 .page-title,
@@ -325,14 +432,30 @@ POSTS & CONTENT STYLES
 .archive-title {}
 
 /* want to style individual post classes? Booya! */
-.post-id {}         /* post by id (i.e. post-3) */
-.post {}            /* general post style */
-.page {}            /* general article on a page style */
-.attachment {}      /* general style on an attatchment */
-.sticky {}          /* sticky post style */
-.hentry {}          /* hentry class */
-.category-slug {}   /* style by category (i.e. category-videos) */
-.tag-slug {}        /* style by tag (i.e. tag-news) */
+.post-id {}
+
+/* post by id (i.e. post-3) */
+.post {}
+
+/* general post style */
+.page {}
+
+/* general article on a page style */
+.attachment {}
+
+/* general style on an attatchment */
+.sticky {}
+
+/* sticky post style */
+.hentry {}
+
+/* hentry class */
+.category-slug {}
+
+/* style by category (i.e. category-videos) */
+.tag-slug {}
+
+/* style by tag (i.e. tag-news) */
 
 /* post meta */
 .byline {
@@ -352,9 +475,13 @@ POSTS & CONTENT STYLES
 	}
 
 
-	ul, ol, table, dl {}
+	ul,
+	ol,
+	table,
+	dl {}
 
-	ul, ol {
+	ul,
+	ol {
 
 		li {}
 
@@ -366,13 +493,14 @@ POSTS & CONTENT STYLES
 
 	}
 
-	ol { 
+	ol {
 		list-style: decimal;
 		margin: initial;
 		padding: 0 0 0 2.5rem;
-		li{
-			padding-left:0.75rem;
-			margin-bottom:1rem;
+
+		li {
+			padding-left: 0.75rem;
+			margin-bottom: 1rem;
 		}
 	}
 
@@ -451,21 +579,26 @@ POSTS & CONTENT STYLES
 	and floating images at the next breakpoint,
 	but it's up to you. Feel free to change it up.
 	*/
-	.alignleft, img.alignleft {
+	.alignleft,
+	img.alignleft {
 		@include breakpoint(lgMobileUp) {
 			margin-right: 1.5em;
 			display: inline;
 			float: left;
 		}
 	}
-	.alignright, img.alignright {
+
+	.alignright,
+	img.alignright {
 		@include breakpoint(lgMobileUp) {
 			margin-left: 1.5em;
 			display: inline;
 			float: right;
 		}
 	}
-	.aligncenter, img.aligncenter {
+
+	.aligncenter,
+	img.aligncenter {
 		@include breakpoint(lgMobileUp) {
 			margin-right: auto;
 			margin-left: auto;
@@ -492,7 +625,9 @@ POSTS & CONTENT STYLES
 		border-radius: 3px;
 	}
 
-} /* end .entry-content */
+}
+
+/* end .entry-content */
 
 .wp-caption {
 	max-width: 100%;
@@ -512,7 +647,9 @@ POSTS & CONTENT STYLES
 		text-align: center;
 	}
 
-} /* end .wp-caption */
+}
+
+/* end .wp-caption */
 
 /* image gallery styles */
 .gallery {
@@ -529,14 +666,19 @@ POSTS & CONTENT STYLES
 
 	dd {}
 
-} /* end .gallery */
+}
+
+/* end .gallery */
 
 /* gallery caption styles */
 .gallery-caption {}
 
 .size-full {}
+
 .size-large {}
+
 .size-medium {}
+
 .size-thumbnail {}
 
 // the tag output
@@ -552,71 +694,79 @@ PAGE NAVI STYLES
 .wp-prev-next {
 	margin: 1.5em 0;
 }
-	.pagination{
+
+.pagination {
 	text-align: center;
 
 	ul {
-	  display: inline-block;
-	  background-color: $white;
-	  white-space: nowrap;
-	  padding: 0;
-	  clear: both;
-	  border-radius: 3px;
+		display: inline-block;
+		background-color: $white;
+		white-space: nowrap;
+		padding: 0;
+		clear: both;
+		border-radius: 3px;
 	}
 
 	li {
-	  padding: 0;
-	  margin: 0;
-	  float: left;
-	  display: inline;
-	  overflow: hidden;
-	  border-right: 1px solid $gray;
+		padding: 0;
+		margin: 0;
+		float: left;
+		display: inline;
+		overflow: hidden;
+		border-right: 1px solid $gray;
 	}
 
-	a, span {
-	  margin: 0;
-	  text-decoration: none;
-	  padding: 0;
-	  line-height: 1em;
-	  font-size: 1em;
-	  font-weight: normal;
-	  padding: 0.75em;
-	  min-width: 1em;
-	  display: block;
-	  color: $blue;
+	a,
+	span {
+		margin: 0;
+		text-decoration: none;
+		padding: 0;
+		line-height: 1em;
+		font-size: 1em;
+		font-weight: normal;
+		padding: 0.75em;
+		min-width: 1em;
+		display: block;
+		color: $blue;
 
-	  &:hover, &:focus {
-		background-color: $blue;
-		color: $white;
-	  }
+		&:hover,
+		&:focus {
+			background-color: $blue;
+			color: $white;
+		}
 	}
 
-	.current{
+	.current {
 		cursor: default;
 		color: $text-color;
 
-		&:hover, &:focus {
+		&:hover,
+		&:focus {
 			background-color: $white;
 			color: $text-color;
 		}
 	}
 
-  } /* end .bones_page_navi */
+}
 
-	/* fallback previous & next links */
-	.wp-prev-next {
+/* end .bones_page_navi */
 
-		ul {}
+/* fallback previous & next links */
+.wp-prev-next {
 
-		.prev-link {
-			float: left;
-		}
+	ul {}
 
-		.next-link {
-			float: right;
-		}
+	.prev-link {
+		float: left;
+	}
 
-	} /* end .wp-prev-next */
+	.next-link {
+		float: right;
+	}
+
+}
+
+/* end .wp-prev-next */
 
 /******************************************************************
 COMMENT STYLES
@@ -697,7 +847,9 @@ COMMENT STYLES
 			border-radius: 50%;
 		}
 
-	} /* end .commentlist .vcard */
+	}
+
+	/* end .commentlist .vcard */
 
 	&:last-child {
 		margin-bottom: 0;
@@ -708,17 +860,27 @@ COMMENT STYLES
 
 		li {}
 
-			/* variations */
-			.comment {}
-			.alt {}
-			.odd {}
-			.even {}
-			.depth-1 {}           /* change number for different depth */
-			.byuser {}
-			.bypostauthor {}
-			.comment-author-admin {}
+		/* variations */
+		.comment {}
 
-	} /* end children */
+		.alt {}
+
+		.odd {}
+
+		.even {}
+
+		.depth-1 {}
+
+		/* change number for different depth */
+		.byuser {}
+
+		.bypostauthor {}
+
+		.comment-author-admin {}
+
+	}
+
+	/* end children */
 
 
 	&[class*=depth-] {
@@ -737,76 +899,94 @@ COMMENT STYLES
 	}
 
 	&.depth-2 {}
+
 	&.depth-3 {}
+
 	&.depth-4 {}
+
 	&.depth-5 {}
 
 	/* general comment classes */
 	&.alt {}
+
 	&.odd {
 		background-color: $white;
 	}
+
 	&.even {
 		background: $light-gray;
 	}
+
 	&.parent {}
+
 	&.comment {}
+
 	&.children {}
+
 	&.pingback {}
+
 	&.bypostauthor {}
+
 	&.comment-author {}
+
 	&.comment-author-admin {}
+
 	&.thread-alt {}
+
 	&.thread-odd {}
+
 	&.thread-even {}
 }
 
 
 
 
-	/* comment meta */
-	.comment-meta {
+/* comment meta */
+.comment-meta {
 
-		a {}
+	a {}
 
+}
+
+.commentmetadata {
+
+	a {}
+
+}
+
+/* comment content */
+.comment_content {
+
+	p {
+		margin: 0.7335em 0 1.5em;
+		font-size: 1em;
+		line-height: 1.5em;
 	}
 
-	.commentmetadata {
+}
 
-		a {}
+/* end .commentlist .comment_content */
 
-	}
+/* comment reply link */
+.comment-reply-link {
+	@extend .blue-btn;
+	font-size: 0.9em;
+	float: right;
 
-	/* comment content */
-	.comment_content {
+	&:hover,
+	&:focus {}
 
-		p {
-			margin: 0.7335em 0 1.5em;
-			font-size: 1em;
-			line-height: 1.5em;
-		}
+}
 
-	} /* end .commentlist .comment_content */
+/* end .commentlist .comment-reply-link */
 
-	/* comment reply link */
-	.comment-reply-link {
-		@extend .blue-btn;
-		font-size: 0.9em;
-		float: right;
-
-		&:hover,
-		&:focus {
-		}
-
-	} /* end .commentlist .comment-reply-link */
-
-	/* edit comment link */
-	.comment-edit-link {
-		font-style: italic;
-		margin: 0 7px;
-		text-decoration: none;
-		font-size: 0.9em;
-	}
+/* edit comment link */
+.comment-edit-link {
+	font-style: italic;
+	margin: 0 7px;
+	text-decoration: none;
+	font-size: 0.9em;
+}
 
 
 
@@ -820,108 +1000,107 @@ COMMENT FORM STYLES
 	border-top: 1px solid $light-gray;
 }
 
-	#reply-title {
-		margin: 0;
+#reply-title {
+	margin: 0;
+}
+
+.logged-in-as {
+	color: $meta-gray;
+	font-style: italic;
+	margin: 0;
+
+	a {
+		color: $text-color;
 	}
+}
 
-	.logged-in-as {
-		color: $meta-gray;
-		font-style: italic;
-		margin: 0;
+.comment-form-comment {
+	margin: 1.5em 0 0.75em;
+}
 
-		a {
-			color: $text-color;
-		}
-	}
+.form-allowed-tags {
+	padding: 1.5em;
+	background-color: $light-gray;
+	font-size: 0.9em;
+}
 
-	.comment-form-comment {
-		margin: 1.5em 0 0.75em;
-	}
+/* comment submit button */
+#submit {
+	@extend .blue-btn;
+	float: right;
+	font-size: 1em;
+}
 
-	.form-allowed-tags {
-		padding: 1.5em;
-		background-color: $light-gray;
-		font-size: 0.9em;
-	}
+/* comment form title */
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
 
-	/* comment submit button */
-	#submit {
-		@extend .blue-btn;
-		float: right;
-		font-size: 1em;
-	}
+/* cancel comment reply link */
+#cancel-comment-reply {
+	a {}
+}
 
-	/* comment form title */
-	#comment-form-title {
-		margin: 0 0 1.1em;
-	}
+/* logged in comments */
+.comments-logged-in-as {}
 
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
+/* allowed tags */
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
 
-	/* logged in comments */
-	.comments-logged-in-as {}
-
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
-
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
+/* no comments */
+.nocomments {
+	margin: 0 20px 1.1em;
+}
 
 /*********************
 SIDEBARS & ASIDES
 *********************/
 
-	.sidebar {
-		color:$black;
-		@include breakpoint(tabletUp) {
-			margin-top: 2.2em;
-		}
+.sidebar {
+	color: $black;
 
+	@include breakpoint(tabletUp) {
+		margin-top: 2.2em;
 	}
 
-	.widgettitle {
-		color:$white;
-		border-bottom: 2px solid #444;
-		padding:0 0 0.5em;
-		margin-bottom: 0.5em;
+}
+
+.widgettitle {
+	color: $white;
+	border-bottom: 2px solid #444;
+	padding: 0 0 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.widget {
+
+	@include breakpoint(tabletUp) {
+		padding: 0 10px;
+		margin: 2.2em 0;
 	}
 
-	.widget {
+	ul {
 
-		@include breakpoint(tabletUp) {
-			padding: 0 10px;
-			margin: 2.2em 0;
-		}
+		li {
 
-		ul {
+			@include breakpoint(tabletUp) {
+				margin-bottom: 0.75em;
+			}
 
-			li {
+			&:first-child {}
+
+			&:last-child {}
+
+			a {}
+
+			/* deep nesting */
+			ul {
 
 				@include breakpoint(tabletUp) {
-					margin-bottom: 0.75em;
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-				a {}
-
-				/* deep nesting */
-				ul {
-
-					@include breakpoint(tabletUp) {
-						margin-top: 0.75em;
-						padding-left: 1em;
-					}
-
+					margin-top: 0.75em;
+					padding-left: 1em;
 				}
 
 			}
@@ -930,14 +1109,16 @@ SIDEBARS & ASIDES
 
 	}
 
-	.no-widgets {
-		background-color: $white;
-		padding: 1.5em;
-		text-align: center;
-		border: 1px solid $border-color;
-		border-radius: 2px;
-		margin-bottom: 1.5em;
-	}
+}
+
+.no-widgets {
+	background-color: $white;
+	padding: 1.5em;
+	text-align: center;
+	border: 1px solid $border-color;
+	border-radius: 2px;
+	margin-bottom: 1.5em;
+}
 
 /*********************
 FOOTER STYLES
@@ -949,7 +1130,7 @@ FOOTER STYLES
 	color: $light-gray;
 }
 
-	/*
+/*
 	if you checked out the link above:
 	http://www.alistapart.com/articles/organizing-mobile/
 	you'll want to style the footer nav
@@ -958,15 +1139,17 @@ FOOTER STYLES
 	override these styles for the desktop
 	view.
 	*/
-	.footer-links {
+.footer-links {
 
-		ul {
+	ul {
 
-			li {}
+		li {}
 
-		}
+	}
 
-	} /* end .footer-links */
+}
+
+/* end .footer-links */
 
 
-	.copyright {}
+.copyright {}

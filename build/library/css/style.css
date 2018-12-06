@@ -1130,7 +1130,7 @@ LAYOUT & GRID STYLES
 .wrap {
   display: block;
   min-width: 20em;
-  width: 20em;
+  width: 100%;
   margin: 0 auto;
   clear: both;
   padding: 0 0.625rem; }
@@ -1141,12 +1141,6 @@ LAYOUT & GRID STYLES
     font-size: 0;
     height: 0;
     visibility: hidden; }
-  @media screen and (min-width: 30em) and (max-width: 47.9375em) {
-    .wrap {
-      width: 30em; } }
-  @media screen and (min-width: 48em) and (max-width: 64em) {
-    .wrap {
-      width: 48em; } }
   @media screen and (min-width: 48em) {
     .wrap {
       width: 100%;
@@ -1199,16 +1193,20 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
-a, a:visited {
+a,
+a:visited {
   color: #FFB81C;
   -webkit-transition: color ease 0.5s;
   transition: color ease 0.5s;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
+  a:hover, a:focus,
+  a:visited:hover,
+  a:visited:focus {
     color: #eda300; }
-  a:link, a:visited:link {
+  a:link,
+  a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
 		so it basically works like the :hover selector
@@ -1219,7 +1217,16 @@ a, a:visited {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
   font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1228,25 +1235,39 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	http://css-tricks.com/watch-your-font-weight/
 	*/
   /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  h1 a,
+  .h1 a,
+  h2 a,
+  .h2 a,
+  h3 a,
+  .h3 a,
+  h4 a,
+  .h4 a,
+  h5 a,
+  .h5 a {
     text-decoration: none; }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.5em;
   line-height: 1.333em; }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1.5em;
   line-height: 1;
   margin: 0 0 0.375em; }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.125em; }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.1em; }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 0.846em;
   line-height: 2.09em;
   text-transform: uppercase;
@@ -1270,7 +1291,7 @@ POSTS & CONTENT STYLES
   background: -webkit-linear-gradient(top, transparent 0%, black 2%, black 99%);
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(2%, black), color-stop(99%, black));
   background: linear-gradient(to bottom, transparent 0%, black 2%, black 99%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0); }
 
 .primary {
   float: left;
@@ -1391,17 +1412,20 @@ POSTS & CONTENT STYLES
     max-width: 100%;
     height: auto; }
   @media screen and (min-width: 30.063em) {
-    .entry-content .alignleft, .entry-content img.alignleft {
+    .entry-content .alignleft,
+    .entry-content img.alignleft {
       margin-right: 1.5em;
       display: inline;
       float: left; } }
   @media screen and (min-width: 30.063em) {
-    .entry-content .alignright, .entry-content img.alignright {
+    .entry-content .alignright,
+    .entry-content img.alignright {
       margin-left: 1.5em;
       display: inline;
       float: right; } }
   @media screen and (min-width: 30.063em) {
-    .entry-content .aligncenter, .entry-content img.aligncenter {
+    .entry-content .aligncenter,
+    .entry-content img.aligncenter {
       margin-right: auto;
       margin-left: auto;
       display: block;
@@ -1466,7 +1490,8 @@ PAGE NAVI STYLES
     display: inline;
     overflow: hidden;
     border-right: 1px solid #eaedf2; }
-  .pagination a, .pagination span {
+  .pagination a,
+  .pagination span {
     margin: 0;
     text-decoration: none;
     padding: 0;
@@ -1477,7 +1502,9 @@ PAGE NAVI STYLES
     min-width: 1em;
     display: block;
     color: #2980b9; }
-    .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
+    .pagination a:hover, .pagination a:focus,
+    .pagination span:hover,
+    .pagination span:focus {
       background-color: #2980b9;
       color: #fff; }
   .pagination .current {
@@ -2118,11 +2145,19 @@ HEADER STYLES
 .header {
   background-color: #FFB81C;
   background-image: url("../images/low-contrast-linen.png");
-  border-bottom: 0.125rem solid #C60C30; }
+  border-top: 0.125rem solid #C60C30;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  width: 100%; }
   @media screen and (min-width: 64.0625em) {
-    body.page-home .header {
-      background-image: none;
-      background-color: transparent; } }
+    .header {
+      position: static;
+      border-bottom: 0.125rem solid #C60C30; }
+      body.page-home .header {
+        background-image: none;
+        background-color: transparent;
+        border: 0; } }
 
 #inner-header {
   height: 4.5rem;
@@ -2338,7 +2373,7 @@ and more scalable.
     width: 100%;
     position: absolute;
     left: 0;
-    top: 4.5rem;
+    bottom: 4.5rem;
     background-color: #000;
     z-index: 1; }
     @media screen and (min-width: 64.0625em) {
@@ -2457,7 +2492,11 @@ and more scalable.
   background-color: #FFB81C;
   background-image: url("../images/low-contrast-linen.png");
   border-top: 0.1875rem solid #C60C30;
-  padding: 1rem 0 0; }
+  padding: 1rem 0 0;
+  margin-bottom: 4.625rem; }
+  @media screen and (min-width: 64.0625em) {
+    .footer {
+      margin-bottom: 0; } }
   .footer .footer__row {
     display: block;
     width: 100%;
@@ -2484,8 +2523,10 @@ and more scalable.
       font-size: 1rem;
       -webkit-transition: color ease 0.3s;
       transition: color ease 0.3s; }
-    .footer .join-forge .join-forge__link:hover .join-forge__headline {
-      color: #C60C30; }
+    .footer .join-forge .join-forge__link {
+      text-decoration: none; }
+      .footer .join-forge .join-forge__link:hover .join-forge__headline {
+        color: #C60C30; }
   .footer .social {
     float: left;
     width: 100%;
@@ -2623,6 +2664,8 @@ HOMEPAGE STYLES
   margin-top: 0;
   float: left;
   width: 100%; }
+  .page-home #content .tile-slider {
+    padding: 0 2rem; }
 
 .page-home .home-posts {
   display: none;
