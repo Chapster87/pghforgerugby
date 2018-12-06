@@ -1,5 +1,9 @@
 .sponsors__bar{
+	display:none;
 	background-color: $black;
+	@include breakpoint(desktop) {
+		display:block;
+	}
 	.sponsors__bar-inner{
 		display: flex;
 		align-items: center;

@@ -2544,18 +2544,29 @@ a.mm-contact {
     .footer .footer__row.row-1 {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
       .footer .footer__row.row-1 .footer__row--left {
-        width: 25%; }
+        width: 100%; }
+        @media screen and (min-width: 64.0625em) {
+          .footer .footer__row.row-1 .footer__row--left {
+            width: 25%; } }
       .footer .footer__row.row-1 .footer__row--right {
-        width: 72%;
-        margin-left: 3%; }
+        width: 100%; }
+        @media screen and (min-width: 64.0625em) {
+          .footer .footer__row.row-1 .footer__row--right {
+            width: 72%;
+            margin-left: 3%; } }
     .footer .footer__row.row-2 {
       text-align: center; }
   .footer .join-forge {
     text-align: center; }
     .footer .join-forge .blast-logo {
-      max-width: 100%; }
+      max-width: 17.1875rem; }
+      @media screen and (min-width: 64.0625em) {
+        .footer .join-forge .blast-logo {
+          max-width: 100%; } }
     .footer .join-forge .join-forge__headline {
       text-decoration: none;
       color: #000;
@@ -2602,7 +2613,11 @@ a.mm-contact {
   .footer nav {
     width: 100%;
     float: left;
-    padding-left: 2%; }
+    padding-left: 2%;
+    display: none; }
+    @media screen and (min-width: 64.0625em) {
+      .footer nav {
+        display: block; } }
   .footer .nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2668,7 +2683,7 @@ HOMEPAGE STYLES
     padding: 0; }
 
 .page-home .hero {
-  min-height: 23.75rem;
+  min-height: 17.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2759,7 +2774,11 @@ HOMEPAGE STYLES
     text-align: center; }
 
 .sponsors__bar {
+  display: none;
   background-color: #000; }
+  @media screen and (min-width: 64.0625em) {
+    .sponsors__bar {
+      display: block; } }
   .sponsors__bar .sponsors__bar-inner {
     display: -webkit-box;
     display: -ms-flexbox;

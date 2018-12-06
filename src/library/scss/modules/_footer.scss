@@ -15,14 +15,21 @@
 
 		&.row-1 {
 			display: flex;
+			flex-wrap: wrap;
 
 			.footer__row--left {
-				width: 25%;
+				width: 100%;
+				@include breakpoint(desktop) {
+					width: 25%;
+				}
 			}
 
 			.footer__row--right {
-				width: 72%;
-				margin-left: 3%;
+				width: 100%;
+				@include breakpoint(desktop) {
+					width: 72%;
+					margin-left: 3%;
+				}
 			}
 		}
 
@@ -34,7 +41,10 @@
 	.join-forge {
 		text-align: center;
 		.blast-logo {
-			max-width: 100%;
+			max-width: 17.1875rem;
+			@include breakpoint(desktop) {
+				max-width: 100%;
+			}
 		}
 		.join-forge__headline{
 			text-decoration: none;
@@ -95,6 +105,10 @@
 		width: 100%;
 		float: left;
 		padding-left: 2%;
+		display:none;
+		@include breakpoint(desktop) {
+			display:block;
+		}
 	}
 
 	.nav {
