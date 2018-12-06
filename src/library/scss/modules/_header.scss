@@ -113,7 +113,7 @@ HEADER STYLES
 		color: $black;
 		display: none;
 
-		@include breakpoint(tabletUp) {
+		@include breakpoint(lgMobileUp) {
 			display: block;
 		}
 
