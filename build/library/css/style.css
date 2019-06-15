@@ -2721,7 +2721,8 @@ HOMEPAGE STYLES
 .page-home #content {
   margin-top: 0;
   float: left;
-  width: 100%; }
+  width: 100%;
+  background: transparent; }
   .page-home #content .tile-slider {
     padding: 0 2rem; }
 
@@ -2778,7 +2779,8 @@ HOMEPAGE STYLES
 
 .sponsors__bar {
   display: none;
-  background-color: #000; }
+  background-color: #000;
+  clear: both; }
   @media screen and (min-width: 64.0625em) {
     .sponsors__bar {
       display: block; } }

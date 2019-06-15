@@ -1,6 +1,7 @@
 .sponsors__bar{
 	display:none;
 	background-color: $black;
+	clear: both;
 	@include breakpoint(desktop) {
 		display:block;
 	}
