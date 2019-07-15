@@ -37,6 +37,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				$post_object        = get_post( $grouped_product_child->get_id() );
 				$quantites_required = $quantites_required || ( $grouped_product_child->is_purchasable() && ! $grouped_product_child->has_options() );
 				$post               = $post_object; // WPCS: override ok.
+				$productId          = $grouped_product_child->get_id();
 				setup_postdata( $post );
 
 				echo '<tr id="product-' . esc_attr( $grouped_product_child->get_id() ) . '" class="woocommerce-grouped-product-list-item ' . esc_attr( implode( ' ', wc_get_product_class( '', $grouped_product_child ) ) ) . '">';
@@ -50,8 +51,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							ob_start();
 
 							if ( ! $grouped_product_child->is_purchasable() || $grouped_product_child->has_options() || ! $grouped_product_child->is_in_stock() ) {
-								woocommerce_template_loop_add_to_cart();
-								echo '<h1>HERE</h1>';
+								//woocommerce_template_loop_add_to_cart();
+								echo '<button class="woosq-btn woosq-btn-' . $grouped_product_child->get_id() . '" data-id="' . $grouped_product_child->get_id() . '" data-effect="mfp-3d-unfold">Select Options</button>';
 							} elseif ( $grouped_product_child->is_sold_individually() ) {
 								echo '<input type="checkbox" name="' . esc_attr( 'quantity[' . $grouped_product_child->get_id() . ']' ) . '" value="1" class="wc-grouped-product-add-to-cart-checkbox" />';
 							} else {
