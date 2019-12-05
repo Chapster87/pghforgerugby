@@ -629,10 +629,11 @@ POSTS & CONTENT STYLES
 
 /* end .entry-content */
 
-.wp-caption {
+.wp-caption, .wp-block-image {
 	max-width: 100%;
 	background: #eee;
 	padding: 5px;
+	margin-bottom: 1rem;
 
 	/* images inside wp-caption */
 	img {
@@ -641,7 +642,7 @@ POSTS & CONTENT STYLES
 		width: 100%;
 	}
 
-	p.wp-caption-text {
+	p.wp-caption-text, figcaption {
 		font-size: 0.85em;
 		margin: 4px 0 7px;
 		text-align: center;
