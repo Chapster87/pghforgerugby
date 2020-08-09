@@ -1,8 +1,6 @@
 <div class="sponsors__bar">
 	<div class="sponsors__bar-inner wrap cf">
-		<a href="/dugan-associates-supports-pittsburghs-rugby-club" class="sponsor dugan"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/dugan.png" alt="Dugan & Associates" class="sponsor__logo"></a>
 		<a href="/pittsburgh-forge-partners-with-essmc" class="sponsor essmc"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/essmc.png" alt="Eastern Suburbs Sports Medicine" class="sponsor__logo"></a>
-		<a href="/mhk-supports-the-pittsburgh-forge" class="sponsor mhk"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/mhk.png" alt="Malec, Herring & Krause" class="sponsor__logo"></a>
 		<a href="http://ruggerspub.com/" class="sponsor ruggers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/ruggers.png" alt="Ruggers Pub" class="sponsor__logo"></a>
 	</div>
 </div>
