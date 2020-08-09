@@ -1,5 +1,7 @@
 <div class="sponsors__bar">
 	<div class="sponsors__bar-inner wrap cf">
+		<a href="/forge-partner-with-iron-city-beer" class="sponsor iron-city"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/ironcity.png" alt="Iron City Beer" class="sponsor__logo"></a>
+		<a href="/forge-partner-with-iron-city-beer" class="sponsor ic-light"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/iclight.png" alt="IC Light Beer" class="sponsor__logo"></a>
 		<a href="/pittsburgh-forge-partners-with-essmc" class="sponsor essmc"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/essmc.png" alt="Eastern Suburbs Sports Medicine" class="sponsor__logo"></a>
 		<a href="http://ruggerspub.com/" class="sponsor ruggers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/library/images/sponsors/ruggers.png" alt="Ruggers Pub" class="sponsor__logo"></a>
 	</div>
