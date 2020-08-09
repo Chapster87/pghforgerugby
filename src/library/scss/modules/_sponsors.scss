@@ -1,22 +1,33 @@
-.sponsors__bar{
-	display:none;
+.sponsors__bar {
+	display: none;
 	background-color: $black;
 	clear: both;
+	padding: 1.25rem 0;
+
 	@include breakpoint(desktop) {
-		display:block;
+		display: block;
 	}
-	.sponsors__bar-inner{
+
+	.sponsors__bar-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
-	.sponsor__logo{
+
+	.sponsor__logo {
 		max-width: 12.5rem;
 		max-height: 12.5rem;
 	}
-	.mhk{
-		.sponsor__logo{
-			max-width: 8.75rem;
+
+	.iron-city {
+		.sponsor__logo {
+			max-width: 11rem;
+		}
+	}
+
+	.ic-light {
+		.sponsor__logo {
+			max-width: 9rem;
 		}
 	}
 }

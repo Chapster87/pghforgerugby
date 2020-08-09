@@ -2781,7 +2781,8 @@ HOMEPAGE STYLES
 .sponsors__bar {
   display: none;
   background-color: #000;
-  clear: both; }
+  clear: both;
+  padding: 1.25rem 0; }
   @media screen and (min-width: 64.0625em) {
     .sponsors__bar {
       display: block; } }
@@ -2798,8 +2799,10 @@ HOMEPAGE STYLES
   .sponsors__bar .sponsor__logo {
     max-width: 12.5rem;
     max-height: 12.5rem; }
-  .sponsors__bar .mhk .sponsor__logo {
-    max-width: 8.75rem; }
+  .sponsors__bar .iron-city .sponsor__logo {
+    max-width: 11rem; }
+  .sponsors__bar .ic-light .sponsor__logo {
+    max-width: 9rem; }
 
 .page-steel-city-7s .paypal-entry-header {
   margin: 2rem 0;
