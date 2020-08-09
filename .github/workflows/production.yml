@@ -24,7 +24,5 @@ jobs:
         ftp-server: ${{ secrets.FTP_SERVER }}/
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        git-ftp-args: 
-          --insecure
-          --dry-run
+        git-ftp-args: --dry-run
         local-dir: dist/forge/
