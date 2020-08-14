@@ -28,6 +28,9 @@ Breakpoint Mixins
 	@else if $point == tablet {
 		@media screen and ( min-width:48em) and (max-width:64em) { @content ; } // (768px - 1024px)
 	}
+	@else if $point == lgTabletUp {
+		@media screen and ( min-width:60em) { @content ; } // (960px and up)
+	}
 	@else if $point == lgTablet {
 		@media screen and ( min-width:60em) and (max-width:64em) { @content ; } // (960px - 1024px)
 	}
