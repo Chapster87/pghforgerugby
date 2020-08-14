@@ -166,6 +166,7 @@ function jbResizeSlider(){
 */
 jQuery(document).ready(function($) {
 	var $mainMenu = $('.main-nav #menu-main');
+	var video = document.getElementById("bg-video");
 
 	$(".main-nav .mm-btn").on('click', function(event) {
 		event.preventDefault();
@@ -198,6 +199,13 @@ jQuery(document).ready(function($) {
 	//when the slick slide initializes we want to set all of our slides to the same height
 	$('.home-posts').on('setPosition', function () {
 		jbResizeSlider();
+	});
+
+	/**
+	 * Check if video can play, and play it
+	 */
+	video.addEventListener( "canplay", function() {
+		video.play();
 	});
 
   /*

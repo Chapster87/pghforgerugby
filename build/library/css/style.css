@@ -2681,7 +2681,8 @@ HOMEPAGE STYLES
   border: 0;
   padding: 0;
   position: static; }
-  .page-home .hentry header, .page-home .hentry footer {
+  .page-home .hentry header,
+  .page-home .hentry footer {
     display: none; }
   .page-home .hentry .entry-content {
     padding: 0; }
@@ -2697,7 +2698,8 @@ HOMEPAGE STYLES
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: white; }
+  color: white;
+  margin: 5.3125rem 0 0; }
   @media screen and (min-width: 64.0625em) {
     .page-home .hero {
       min-height: 27.375rem; } }
@@ -2777,6 +2779,19 @@ HOMEPAGE STYLES
   .page-home .home-posts .post-tile__text {
     color: white;
     text-align: center; }
+
+#bg-video {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
 
 .sponsors__bar {
   display: none;
