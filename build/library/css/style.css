@@ -2699,7 +2699,10 @@ HOMEPAGE STYLES
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
-  margin: 5.3125rem 0 0; }
+  padding: 1.25rem 0 0; }
+  @media screen and (min-width: 60em) {
+    .page-home .hero {
+      padding: 5.3125rem 0 0; } }
   @media screen and (min-width: 64.0625em) {
     .page-home .hero {
       min-height: 27.375rem; } }
@@ -2791,7 +2794,11 @@ HOMEPAGE STYLES
   height: auto;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%);
+  display: none; }
+  @media screen and (min-width: 60em) {
+    #bg-video {
+      display: inline-block; } }
 
 .sponsors__bar {
   display: none;

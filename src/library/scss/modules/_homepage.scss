@@ -40,7 +40,11 @@ HOMEPAGE STYLES
 		align-items: center;
 		justify-content: center;
 		color: white;
-		margin: 5.3125rem 0 0;
+		padding: 1.25rem 0 0;
+
+		@include breakpoint(lgTabletUp) {
+			padding: 5.3125rem 0 0;
+		}
 
 		@include breakpoint(desktop) {
 			min-height: 27.375rem;
@@ -139,4 +143,9 @@ HOMEPAGE STYLES
 	width: auto;
 	height: auto;
 	transform: translate(-50%, -50%);
+	display: none;
+
+	@include breakpoint(lgTabletUp) {
+		display: inline-block;
+	}
 }
