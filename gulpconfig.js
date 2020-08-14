@@ -60,6 +60,17 @@ module.exports = {
 		}
 	},
 
+	videos: {
+		build: { // Copies images from `src` to `build`; does not optimize
+			src: src + 'library/videos/**',
+			dest: build + 'library/videos'
+		},
+		dist: {
+			src: [dist + 'library/videos/**'], // The source is actually `dist` since we are minifying images in place
+			dest: dist + 'library/videos'
+		}
+	},
+
 	livereload: {
 		port: 35729 // This is a standard port number that should be recognized by your LiveReload helper; there's probably no need to change it
 	},
