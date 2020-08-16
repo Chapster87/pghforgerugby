@@ -1,0 +1,86 @@
+.page-template-page-spotlightlist {
+
+    .primary {
+        width: 100%;
+    }
+
+    .hentry {
+        color: $white;
+        background: transparent;
+        border-color: transparent;
+    }
+
+    .page-title {
+        color: $forge-gold;
+    }
+
+}
+
+
+.spotlight-list {
+    display: flex;
+    margin-bottom: rem(32);
+
+    .spotlight-icon {
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 0 rem(24) 0 0;
+    }
+
+    .player-photo {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        height: rem(200);
+        width: rem(200);
+        border: rem(4) solid $forge-gold;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .player-name-wrap {
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint(desktop) {
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            color: $black;
+        }
+
+        .player-name {
+            display: inline;
+            position: absolute;
+            bottom: rem(13);
+            background: $forge-gold;
+            color: $black;
+            padding: rem(5) rem(10);
+            line-height: 1;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: rem(16);
+            margin: 0;
+            font-weight: 600;
+            font-style: italic;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        .spotlight-icon:hover {
+            .player-name-wrap {
+                transform: scale(1);
+            }
+        }
+    }
+}
