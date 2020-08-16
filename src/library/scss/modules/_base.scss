@@ -194,7 +194,7 @@ LAYOUT & GRID STYLES
 	}
 
 	@include breakpoint(desktop) {
-		max-width: 75em; // (1200px)
+		max-width: rem(1440);
 		width: 100%;
 		padding: 0;
 	}
