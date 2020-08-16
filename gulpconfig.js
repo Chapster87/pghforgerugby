@@ -164,10 +164,11 @@ module.exports = {
 			styles: src + 'library/scss/**/**/*.scss',
 			scripts: src + 'library/js/**/*.js', // You might also want to watch certain dependency trees but that's up to you
 			images: src + '**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)',
+			videos: src + 'library/videos/**',
 			fonts: src + 'library/fonts/**',
 			theme: src + '**/*.php',
 			livereload: build + '**/*'
 		},
-		watcher: 'browsersync' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
+		watcher: 'livereload' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
 	}
 }

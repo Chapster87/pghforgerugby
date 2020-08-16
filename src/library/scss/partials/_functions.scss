@@ -64,3 +64,19 @@ width: 65%;
 @function cp($target, $container) {
   @return calc-percent($target, $container);
 }
+
+
+// PX to REM conversion
+$base-size: 16;
+
+@function rem($pixels, $context: $base-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
