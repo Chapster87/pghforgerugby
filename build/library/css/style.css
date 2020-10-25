@@ -1333,6 +1333,24 @@ POSTS & CONTENT STYLES
       margin-left: 1rem; }
 
 /* end .hentry */
+a.wp-block-button__link {
+  border-radius: 0;
+  background-color: #FFB81C;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  a.wp-block-button__link:visited {
+    color: #000; }
+  a.wp-block-button__link:active, a.wp-block-button__link:focus, a.wp-block-button__link:hover {
+    background-color: #000;
+    color: #FFB81C;
+    border: 2px solid #FFB81C; }
+
 .single-title,
 .page-title,
 .entry-title {
@@ -1364,7 +1382,8 @@ POSTS & CONTENT STYLES
 	*/ }
   .entry-content p {
     margin: 0 0 1em; }
-  .entry-content ul, .entry-content ol {
+  .entry-content ul,
+  .entry-content ol {
     list-style-type: disc;
     padding-left: 2rem; }
   .entry-content ol {
@@ -1449,17 +1468,22 @@ POSTS & CONTENT STYLES
     border-radius: 3px; }
 
 /* end .entry-content */
-.wp-caption, .wp-block-image {
+.wp-caption,
+.wp-block-image {
   max-width: 100%;
   background: #eee;
   padding: 5px;
   margin-bottom: 1rem;
   /* images inside wp-caption */ }
-  .wp-caption img, .wp-block-image img {
+  .wp-caption img,
+  .wp-block-image img {
     max-width: 100%;
     margin-bottom: 0;
     width: 100%; }
-  .wp-caption p.wp-caption-text, .wp-caption figcaption, .wp-block-image p.wp-caption-text, .wp-block-image figcaption {
+  .wp-caption p.wp-caption-text,
+  .wp-caption figcaption,
+  .wp-block-image p.wp-caption-text,
+  .wp-block-image figcaption {
     font-size: 0.85em;
     margin: 4px 0 7px;
     text-align: center; }
@@ -2163,6 +2187,10 @@ HEADER STYLES
         background-image: none;
         background-color: transparent;
         border: 0; } }
+  .simple-page .header {
+    position: static;
+    border-bottom: 0.125rem solid #C60C30;
+    border-top: 0; }
 
 #inner-header {
   height: 4.5rem;
@@ -2279,6 +2307,8 @@ HEADER STYLES
           padding: 0;
           position: absolute;
           width: 1px; } }
+    .simple-page .logo-block .header-title {
+      display: block; }
 
 /*********************
 NAVIGATION STYLES
@@ -2562,6 +2592,8 @@ a.mm-contact {
           .footer .footer__row.row-1 .footer__row--right {
             width: 72%;
             margin-left: 3%; } }
+      .footer .footer__row.row-1 .footer__row--full {
+        width: 100%; }
     .footer .footer__row.row-2 {
       text-align: center; }
   .footer .join-forge {
@@ -2614,6 +2646,8 @@ a.mm-contact {
             color: #000; }
       .footer .social .social__links .fab {
         font-size: 2rem; }
+    .simple-page .footer .social {
+      border: 0; }
   .footer nav {
     width: 100%;
     float: left;
@@ -2658,7 +2692,8 @@ a.mm-contact {
       .footer .nav > li > a:hover {
         color: #C60C30; }
   .footer .copyright {
-    display: inline-block; }
+    display: inline-block;
+    color: #000; }
 
 /******************************************************************
 Site Name: Pittsburgh Forge Rugby Club
@@ -2801,13 +2836,10 @@ HOMEPAGE STYLES
       display: inline-block; } }
 
 .sponsors__bar {
-  display: none;
+  display: block;
   background-color: #000;
   clear: both;
   padding: 1.25rem 0; }
-  @media screen and (min-width: 64.0625em) {
-    .sponsors__bar {
-      display: block; } }
   .sponsors__bar .sponsors__bar-inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2817,14 +2849,45 @@ HOMEPAGE STYLES
             align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .sponsors__bar .sponsor {
+    width: 50%;
+    text-align: center; }
+    @media screen and (min-width: 30.063em) {
+      .sponsors__bar .sponsor {
+        width: 25%; } }
+    @media screen and (min-width: 48em) {
+      .sponsors__bar .sponsor {
+        width: auto; } }
   .sponsors__bar .sponsor__logo {
-    max-width: 12.5rem;
-    max-height: 12.5rem; }
+    max-width: 6.5rem;
+    max-height: 6.5rem; }
+    @media screen and (min-width: 30.063em) {
+      .sponsors__bar .sponsor__logo {
+        max-width: 9.5rem;
+        max-height: 9.5rem; } }
+    @media screen and (min-width: 48em) {
+      .sponsors__bar .sponsor__logo {
+        max-width: 12.5rem;
+        max-height: 12.5rem; } }
   .sponsors__bar .iron-city .sponsor__logo {
-    max-width: 11rem; }
+    max-width: 5rem; }
+    @media screen and (min-width: 30.063em) {
+      .sponsors__bar .iron-city .sponsor__logo {
+        max-width: 8rem; } }
+    @media screen and (min-width: 48em) {
+      .sponsors__bar .iron-city .sponsor__logo {
+        max-width: 11rem; } }
   .sponsors__bar .ic-light .sponsor__logo {
-    max-width: 9rem; }
+    max-width: 4.5rem; }
+    @media screen and (min-width: 30.063em) {
+      .sponsors__bar .ic-light .sponsor__logo {
+        max-width: 6.5rem; } }
+    @media screen and (min-width: 48em) {
+      .sponsors__bar .ic-light .sponsor__logo {
+        max-width: 9rem; } }
 
 .page-steel-city-7s .paypal-entry-header {
   margin: 2rem 0;
@@ -2914,6 +2977,30 @@ HOMEPAGE STYLES
 
 .page-steel-city-7s .shopping_cart .wp_cart_remove_item_form {
   margin: 0; }
+
+.link-list #inner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.link-list .primary {
+  max-width: 20rem; }
+
+.link-list .hentry {
+  background: transparent;
+  border: 0; }
+
+.link-list .article-header {
+  text-align: center; }
+
+.link-list .page-title {
+  color: #fff; }
+
+.link-list .wp-block-button {
+  width: 100%; }
 
 .shortcode__social-links {
   display: -webkit-box;

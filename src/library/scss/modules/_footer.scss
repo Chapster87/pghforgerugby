@@ -4,6 +4,7 @@
 	border-top: 0.1875rem solid $forge-red;
 	padding: 1rem 0 0;
 	margin-bottom: 4.625rem;
+
 	@include breakpoint(desktop) {
 		margin-bottom: 0;
 	}
@@ -19,6 +20,7 @@
 
 			.footer__row--left {
 				width: 100%;
+
 				@include breakpoint(desktop) {
 					width: 25%;
 				}
@@ -26,10 +28,15 @@
 
 			.footer__row--right {
 				width: 100%;
+
 				@include breakpoint(desktop) {
 					width: 72%;
 					margin-left: 3%;
 				}
+			}
+
+			.footer__row--full {
+				width: 100%;
 			}
 		}
 
@@ -40,23 +47,28 @@
 
 	.join-forge {
 		text-align: center;
+
 		.blast-logo {
 			max-width: 17.1875rem;
+
 			@include breakpoint(desktop) {
 				max-width: 100%;
 			}
 		}
-		.join-forge__headline{
+
+		.join-forge__headline {
 			text-decoration: none;
 			color: $black;
 			font-family: $lemonmilk-regular;
 			font-size: 1rem;
 			transition: color ease 0.3s;
 		}
-		.join-forge__link{
+
+		.join-forge__link {
 			text-decoration: none;
+
 			&:hover {
-				.join-forge__headline{
+				.join-forge__headline {
 					color: $forge-red;
 				}
 			}
@@ -99,15 +111,20 @@
 				font-size: 2rem;
 			}
 		}
+
+		.simple-page & {
+			border: 0;
+		}
 	}
 
 	nav {
 		width: 100%;
 		float: left;
 		padding-left: 2%;
-		display:none;
+		display: none;
+
 		@include breakpoint(desktop) {
-			display:block;
+			display: block;
 		}
 	}
 
@@ -160,6 +177,7 @@
 
 	.copyright {
 		display: inline-block;
+		color: $black;
 	}
 
 }
