@@ -1,15 +1,15 @@
 <?php
 /*
- Template Name: Simple Page
+ Template Name: Links Page Template
  *
  * This template renders a very simple version fo the website comprised of the crest and the site title.
  * It is used primarly for rendering the link list used on social media.
 */
 ?>
 
-<<?php get_header(); ?>
+<?php get_header('simple'); ?>
 
-	<div id="content">
+	<div id="content" class="link-list">
 
 		<div id="inner-content" class="wrap cf">
 
@@ -63,21 +63,6 @@
 						?>
 					</section>
 
-					<footer class="article-footer">
-
-						<div class="share-block">
-							<div class="facebook">
-								<div class="fb-share-button" data-type="button"></div>
-							</div>
-							<div class="twitter">
-								<a class="twitter-share-button" href="https://twitter.com/share" data-count="none">Tweet</a>
-							</div>
-						</div>
-
-      					<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-					</footer>
-
 					<?php comments_template(); ?>
 
 				</article>
@@ -100,10 +85,8 @@
 
 			</main>
 
-			<?php get_sidebar(); ?>
-
 		</div>
 
 	</div>
 
-<?php get_footer(); ?>
+<?php get_footer('simple'); ?>
