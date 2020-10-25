@@ -30,6 +30,12 @@ HEADER STYLES
 			border: 0;
 		}
 	}
+
+	.simple-page &{
+		position: static;
+		border-bottom: 0.125rem solid $forge-red;
+		border-top: 0;
+	}
 }
 
 #inner-header {
@@ -131,6 +137,10 @@ HEADER STYLES
 			body.page-home & {
 				@include visuallyHidden;
 			}
+		}
+
+		.simple-page &{
+			display: block;
 		}
 	}
 }
