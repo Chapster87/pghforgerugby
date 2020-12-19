@@ -25,6 +25,7 @@ wp-content/cache/*
 wp-content/cache/supercache/*
 wp-content/cache/
 wp-content/backups/
+wp-content/themes/forge/build
 sitemap.xml
 sitemap.xml.gz
 
