@@ -87,9 +87,11 @@
 
 .player-spotlight {
     .photo {
-        float: right;
-        max-width: 50%;
-        margin: 0 0 0 1.25rem;
+        @include breakpoint(lgMobile) {
+            float: right;
+            max-width: 50%;
+            margin: 0 0 0 1.25rem;
+        }
     }
 
     .attributes {

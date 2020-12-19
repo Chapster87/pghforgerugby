@@ -16,7 +16,11 @@ Are You Serious? Yes.
 # Dev (Becasue i keep forgetting)
 Use MAMP & command is simply 'gulp'
 
-
+Commands
+- gulp
+- gulp build
+- gulp dist
+- gulp watch
 #### Special Thanks to:
 Paul Irish & the HTML5 Boilerplate
 Yoast for some WP functions & optimization ideas
