@@ -1062,6 +1062,7 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
+  letter-spacing: 0.00625rem;
   color: #000;
   background-color: #000;
   -webkit-font-smoothing: antialiased;
@@ -1256,7 +1257,7 @@ h2,
 .h2 {
   font-size: 1.5em;
   line-height: 1;
-  margin: 0 0 0.375em; }
+  margin: 0 0 0.75em; }
 
 h3,
 .h3 {
@@ -2995,6 +2996,23 @@ HOMEPAGE STYLES
       -webkit-transform: scale(1);
           -ms-transform: scale(1);
               transform: scale(1); } }
+
+.player-spotlight .photo {
+  float: right;
+  max-width: 50%;
+  margin: 0 0 0 1.25rem; }
+
+.player-spotlight .attributes {
+  margin-bottom: 2rem; }
+
+.player-spotlight .interview .question {
+  font-weight: bold;
+  margin: 0 0 0.3125rem; }
+  .player-spotlight .interview .question .qa-text {
+    text-decoration: underline; }
+
+.player-spotlight .interview .answer .qa-label {
+  font-weight: bold; }
 
 .shortcode__social-links {
   display: -webkit-box;

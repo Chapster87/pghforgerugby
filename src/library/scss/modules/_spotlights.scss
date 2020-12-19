@@ -84,3 +84,32 @@
         }
     }
 }
+
+.player-spotlight {
+    .photo {
+        float: right;
+        max-width: 50%;
+        margin: 0 0 0 1.25rem;
+    }
+
+    .attributes {
+        margin-bottom: 2rem;
+    }
+
+    .interview {
+        .question {
+            font-weight: bold;
+            margin: 0 0 rem(5);
+
+            .qa-text {
+                text-decoration: underline;
+            }
+        }
+
+        .answer {
+            .qa-label {
+                font-weight: bold;
+            }
+        }
+    }
+}
