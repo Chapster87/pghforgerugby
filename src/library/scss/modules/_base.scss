@@ -418,6 +418,30 @@ POSTS & CONTENT STYLES
 
 /* end .hentry */
 
+a.wp-block-button__link {
+	border-radius: 0;
+	background-color: $forge-gold;
+	color: $black;
+	font-family: $sans-serif;
+	font-weight: bold;
+	width: 100%;
+	display: block;
+	border: 2px solid transparent;
+	transition: all 0.3s ease;
+
+	&:visited {
+		color: $black;
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: $black;
+		color: $forge-gold;
+		border: 2px solid $forge-gold;
+	}
+}
+
 .single-title,
 .page-title,
 .entry-title {
@@ -481,9 +505,11 @@ POSTS & CONTENT STYLES
 	table,
 	dl {}
 
-	ul, ol {
+	ul,
+	ol {
 		list-style-type: disc;
 		padding-left: 2rem;
+
 		li {}
 
 	}
@@ -630,7 +656,8 @@ POSTS & CONTENT STYLES
 
 /* end .entry-content */
 
-.wp-caption, .wp-block-image {
+.wp-caption,
+.wp-block-image {
 	max-width: 100%;
 	background: #eee;
 	padding: 5px;
@@ -643,7 +670,8 @@ POSTS & CONTENT STYLES
 		width: 100%;
 	}
 
-	p.wp-caption-text, figcaption {
+	p.wp-caption-text,
+	figcaption {
 		font-size: 0.85em;
 		margin: 4px 0 7px;
 		text-align: center;
