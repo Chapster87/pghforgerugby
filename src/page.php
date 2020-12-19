@@ -12,9 +12,9 @@
 
 								<header class="article-header">
 
-									<?php if ( get_field(alt_page_title) ) : ?>
+									<?php if ( get_field('alt_page_title') ) : ?>
 
-										<h1 class="page-title" itemprop="headline"><?php the_field(alt_page_title); ?></h1>
+										<h1 class="page-title" itemprop="headline"><?php the_field('alt_page_title'); ?></h1>
 
 									<?php else : ?>
 

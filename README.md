@@ -13,6 +13,10 @@ License: WTFPL
 License URI: http://sam.zoy.org/wtfpl/
 Are You Serious? Yes.
 
+# Dev (Becasue i keep forgetting)
+Use MAMP & command is simply 'gulp'
+
+
 #### Special Thanks to:
 Paul Irish & the HTML5 Boilerplate
 Yoast for some WP functions & optimization ideas

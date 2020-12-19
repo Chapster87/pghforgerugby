@@ -11,6 +11,11 @@ HOMEPAGE STYLES
 *********************/
 
 .page-home {
+
+	#container {
+		overflow: hidden;
+	}
+
 	.primary {
 		width: 100%;
 	}
