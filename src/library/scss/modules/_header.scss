@@ -28,10 +28,11 @@ HEADER STYLES
 			background-image: none;
 			background-color: transparent;
 			border: 0;
+
 		}
 	}
 
-	.simple-page &{
+	.simple-page & {
 		position: static;
 		border-bottom: 0.125rem solid $forge-red;
 		border-top: 0;
@@ -139,7 +140,7 @@ HEADER STYLES
 			}
 		}
 
-		.simple-page &{
+		.simple-page & {
 			display: block;
 		}
 	}
@@ -465,5 +466,34 @@ a.mm-contact {
 
 	&:hover {
 		color: $black;
+	}
+}
+
+.headline-links {
+	display: flex;
+	justify-content: center;
+	margin: rem(10) 0 rem(-13px);
+	width: 75%;
+
+	.notice-link {
+		color: $white;
+		border: 1px solid $forge-gold;
+		padding: rem(10) rem(16);
+
+		h3 {
+			margin: 0;
+		}
+	}
+
+	body.page-home & {
+		width: 100%;
+
+		&.in-header {
+			display: none;
+		}
+
+		.notice-link {
+			background-color: $ltblack;
+		}
 	}
 }

@@ -109,3 +109,9 @@
 				</div>
 
 			</header>
+
+			<div class="wrap">
+				<div class="headline-links in-header">
+					<div class="notice-link"><h3>Check out our <a href="/covid-19-rtp-plan">Return to Play Safety Plan</a> or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBmsIIINm8mthgQtKACouU1cnivvNtLpRTG8cTem85yVQPpg/viewform?embedded=true" class="fancybox-iframe">Sign the Participation Waiver</a>.</h3></div>
+				</div>
+			</div>
