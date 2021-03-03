@@ -99,7 +99,8 @@
 		<div id="inner-content" class="wrap cf tile-slider">
 
 			<div class="headline-links">
-				<div class="notice-link"><h3>Check out our <a href="/covid-19-rtp-plan">Return to Play Safety Plan</a> or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBmsIIINm8mthgQtKACouU1cnivvNtLpRTG8cTem85yVQPpg/viewform?embedded=true" class="fancybox-iframe">Sign the Participation Waiver</a>.</h3></div>
+				<div class="notice-link"><h3>Check out our <a href="/covid-19-rtp-plan">Return to Play Safety Plan</a>,<br/>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSfBmsIIINm8mthgQtKACouU1cnivvNtLpRTG8cTem85yVQPpg/viewform?embedded=true" class="fancybox-iframe">Sign the Participation Waiver</a>, or <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYenqyxnPkFdAYqKXNT85vFWRIqsLblkfs1QcOr_5rq9riqw/viewform?embedded=true" class="fancybox-iframe">Fill out the Symptom Checker</a>.</h3></div>
 			</div>
 
 			<ul class="home-posts">
