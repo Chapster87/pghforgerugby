@@ -473,12 +473,17 @@ a.mm-contact {
 	display: flex;
 	justify-content: center;
 	margin: rem(10) 0 rem(-13px);
-	width: 75%;
+	width: 100%;
+
+	@include breakpoint(desktop) {
+		width: 75%;
+	}
 
 	.notice-link {
 		color: $white;
 		border: 1px solid $forge-gold;
 		padding: rem(10) rem(16);
+		text-align: center;
 
 		h3 {
 			margin: 0;
