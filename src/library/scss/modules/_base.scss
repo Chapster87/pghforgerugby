@@ -1025,7 +1025,7 @@ COMMENT FORM STYLES
 ******************************************************************/
 
 .comment-respond {
-	@extend .cf;
+	//@extend .cf;
 	padding: 1.5em;
 	border-top: 1px solid $light-gray;
 }
@@ -1180,6 +1180,9 @@ FOOTER STYLES
 }
 
 /* end .footer-links */
-
-
 .copyright {}
+
+.enable-notifications,
+.main-nav ul#menu-main > li.enable-notifications {
+	display: none;
+}

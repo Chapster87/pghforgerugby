@@ -21,7 +21,8 @@
 		"livereload"
 	],
 	"scripts": {
-		"postinstall": "bower install"
+		"postinstall": "bower install",
+		"web-push": "web-push"
 	},
 	"author": "Alexander Synaptic <alexander@synapticism.com>",
 	"license": "GPL-3.0",
@@ -29,7 +30,7 @@
 	"private": true,
 	"devDependencies": {
 		"autoprefixer": "^6.1.0",
-		"browser-sync": "^2.26.12",
+		"browser-sync": "^2.26.14",
 		"del": "^2.0.2",
 		"gulp": "^3.9.0",
 		"gulp-changed": "^1.3.0",
@@ -51,5 +52,9 @@
 		"require-dir": "^0.3.0",
 		"spin.js": "^2.3.2",
 		"wp-ajax-page-loader": "^0.2.0"
+	},
+	"dependencies": {
+		"bower": "^1.8.12",
+		"web-push": "^3.4.4"
 	}
 }

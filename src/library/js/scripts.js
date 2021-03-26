@@ -14,6 +14,23 @@
 
 //var siteThemeURL = themeURL.template_url; <!-- Not being used
 
+// Utility
+
+function urlBase64ToUint8Array(base64String) {
+    var padding = '='.repeat((4 - base64String.length % 4) % 4);
+    var base64 = (base64String + padding)
+      .replace(/\-/g, '+')
+      .replace(/_/g, '/');
+
+    var rawData = window.atob(base64);
+    var outputArray = new Uint8Array(rawData.length);
+
+    for (var i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
+}
+
 /*
  * Register Service Workers
 */
@@ -21,7 +38,7 @@ if('serviceWorker' in navigator){
 	navigator.serviceWorker
 		.register('/sw.js')
 		.then(function() {
-			console.log('Service Worker Registered!');
+			//console.log('Service Worker Registered!');
 		})
 		.catch(function(err) {
 			console.log(err);
@@ -160,6 +177,98 @@ function jbResizeSlider(){
 	$slickSlider.find('.slick-slide').css('height', slickTrackHeight + 'px');
 }
 
+function displayConfirmNotification() {
+	if('serviceWorker' in navigator) {
+		var options = {
+			body: "You've enabled notifications from the Pittsburgh Forge!",
+			icon: '/wp-content/themes/forge/src/library/images/app-icon-96x96.png',
+			dir: 'ltr',
+			lang: 'en-US',
+			badge: '/wp-content/themes/forge/src/library/images/forge-icon-96x96.png',
+			tag: 'confirm-notification',
+			actions: [
+				{ action: 'confirm', title: 'Okay', icon: '/wp-content/themes/forge/src/library/images/forge-icon-96x96.png'}
+			]
+		};
+
+		navigator.serviceWorker.ready
+			.then(function(swreg) {
+				swreg.showNotification('Notifications Enabled', options);
+			});
+	}
+}
+
+function configurePushSub() {
+	if(!('serviceWorker' in navigator)) {
+		return;
+	}
+
+	var reg;
+
+	navigator.serviceWorker.ready
+		.then(function(swreg) {
+			reg = swreg;
+			return swreg.pushManager.getSubscription();
+		})
+		.then(function(sub) {
+			if(sub === null) {
+				//Create a new subscription
+				var vapidPublicKey = 'BKqY0QFEqEzLuwbFqqOa_Z6anfLnvH1xkMTMSNumDXnLX81AFBHl8Um9zP9N7OuholMU_y3ITZV3Py-FKY-aIMI';
+				var publicKey = urlBase64ToUint8Array(vapidPublicKey);
+				return reg.pushManager.subscribe({
+					userVisibleOnly: true,
+					applicationServerKey: publicKey
+				});
+			} else {
+				// Subscription exists
+			}
+		})
+		.then(function(newSub){
+			return fetch('https://pittsburgh-forge-rugby-club.firebaseio.com/subscriptions.json', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				},
+				body: JSON.stringify(newSub)
+			});
+		})
+		.then(function(res) {
+			if (res.ok) {
+				displayConfirmNotification();
+			}
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
+function askForNotificationPermission() {
+	var $enableNotificationsButtons = jQuery('.enable-notifications');
+
+	Notification.requestPermission(function(result) {
+		console.log('User Choice', result);
+		if (result !== 'granted') {
+			console.log('No notification permission granted.');
+		} else {
+			$enableNotificationsButtons.hide();
+			configurePushSub();
+		}
+	});
+}
+
+function enablePushNotifications() {
+	var $enableNotificationsButtons = jQuery('.enable-notifications');
+
+	if ('Notification' in window && 'serviceWorker' in navigator) {
+		$enableNotificationsButtons.show();
+
+		$enableNotificationsButtons.on('click', function(event) {
+			askForNotificationPermission();
+		});
+	}
+}
+
 
 /*
  * Put all your regular jQuery in here.
@@ -167,6 +276,8 @@ function jbResizeSlider(){
 jQuery(document).ready(function($) {
 	var $mainMenu = $('.main-nav #menu-main');
 	var video = document.getElementById("bg-video");
+
+	enablePushNotifications();
 
 	$(".main-nav .mm-btn").on('click', function(event) {
 		event.preventDefault();
@@ -190,9 +301,6 @@ jQuery(document).ready(function($) {
 		        slidesToShow: 1,
 		      }
 		    }
-		    // You can unslick at a given breakpoint now by adding:
-		    // settings: "unslick"
-		    // instead of a settings object
 		  ]
 	});
 
