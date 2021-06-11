@@ -1,0 +1,61 @@
+.match-graphic {
+	width: 1080px;
+	height: 1080px;
+	color: $forge-gold;
+	padding: 14px 25px;
+
+	.headline {
+		border-bottom: 4px solid $forge-gold;
+		padding-bottom: 20px;
+		margin: 0;
+		font-size: 64px;
+		text-transform: uppercase;
+	}
+
+	.mg-main {
+		display: flex;
+	}
+
+	.mg-main-left,
+	.mg-main-right {
+		flex: 1;
+	}
+
+	.roster-top,
+	.roster-bottom {
+		display: flex;
+	}
+
+	.roster-col {
+		flex: 1;
+
+		&.forwards {
+			padding-right: 17px;
+		}
+
+		&.backs {
+			padding-left: 17px;
+		}
+	}
+
+	.roster-head {
+		background-color: $forge-gold;
+		color: $black;
+		padding: 16px 14px;
+		font-size: 34px;
+		text-transform: uppercase;
+
+		h4 {
+			margin: 0;
+			line-height: 1;
+		}
+	}
+
+	.roster-list {
+		color: $white;
+		list-style: none;
+		font-size: 34px;
+		text-transform: uppercase;
+	}
+
+}
