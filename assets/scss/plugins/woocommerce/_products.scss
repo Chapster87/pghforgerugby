@@ -1,0 +1,45 @@
+ul.products {
+    margin: 0;
+    padding: 0;
+
+    li.product {
+        list-style: none;
+        position: relative;
+        margin-bottom: 2em;
+
+        img {
+            display: block;
+        }
+
+        .button {
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 48em) {
+
+    ul.products {
+
+        li.product {
+            float: left;
+
+            &.first {
+                clear: both;
+            }
+
+            &.last {
+                margin-right: 0;
+            }
+        }
+    }
+
+    ul.products.columns-1 {
+
+        li.product {
+            float: none;
+            width: 100%;
+        }
+
+    }
+}

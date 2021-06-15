@@ -1,0 +1,13 @@
+.widget-area {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+#sidebar {
+    margin-top: rem(60);
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+    }
+}

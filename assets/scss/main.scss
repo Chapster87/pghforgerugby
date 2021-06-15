@@ -1,0 +1,169 @@
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "./bootstrapComponents";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "./utilities/utils";
+@import "./common";
+@import "./utilities/edit";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/sidebar";
+
+/* WordPress Embeds */
+
+.post-thumbnail,
+.wp-video,
+.embed-responsive {
+	margin: 5px 0;
+	width: 100% !important;
+}
+
+.post,
+.post-thumbnail {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Author */
+
+.author-avatar {
+	.avatar {
+		width: 64px;
+		height: auto;
+	}
+}
+
+.author-info {
+	margin: 40px 0;
+
+	h2,
+	h3 {
+		margin-top: 0;
+	}
+}
+
+/* Posts */
+
+.sticky {
+	.card {
+		background-color: $gray-100;
+	}
+}
+
+.entry-meta {
+	font-size: small;
+	margin-top: $grid-gutter-width/2;
+}
+
+.single {
+
+	.entry-content,
+	.post-navigation,
+	#comments-title {
+		margin: $grid-gutter-width 0;
+	}
+}
+
+#comments {
+	margin-top: $grid-gutter-width;
+}
+
+.comment-meta {
+	height: 40px;
+}
+
+.comment-reply-title {
+	margin: $grid-gutter-width 0 $grid-gutter-width/2;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0 auto;
+	width: 68.9%;
+
+	>li.comment {
+		margin: 0 0 1.625em;
+		padding: 1.625em;
+		position: relative;
+	}
+
+	.children {
+		list-style: none;
+		margin-top: $grid-gutter-width;
+
+		>li.comment {
+			border-top: 1px solid $gray-300;
+			padding-top: $grid-gutter-width;
+			position: relative;
+		}
+	}
+
+	.avatar {
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		box-shadow: 0 1px 2px $gray-600;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: -102px;
+	}
+}
+
+/* WordPress Blocks */
+
+// Buttons
+
+.wp-block-button {
+	&.is-style-outline {
+		.wp-block-button__link {
+			@extend .btn;
+			@extend .btn-outline-primary;
+		}
+	}
+
+	&.btn-lg {
+		.wp-block-button__link {
+			@extend .btn-lg;
+		}
+	}
+
+	&.btn-sm {
+		.wp-block-button__link {
+			@extend .btn-sm;
+		}
+	}
+
+	.wp-block-button__link {
+		@extend .btn;
+		@extend .btn-primary;
+		text-decoration: none;
+	}
+}
+
+// Image, Media and Text
+
+.wp-block-image,
+.wp-block-media-text__media {
+
+	img,
+	video {
+		height: auto;
+	}
+}
+
+/**
+ * Responsive Design using "mixins/_breakpoints.scss"
+ */
+
+@media (max-width: breakpoint-max(sm)) {
+	#sidebar {
+		margin-top: 60px;
+	}
+}

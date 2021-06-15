@@ -1,0 +1,35 @@
+$base-font-size: 16px;
+
+html {
+    font-size: $base-font-size;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: inherit;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+// Table
+
+.wp-block-table {
+
+    td,
+    th {
+        border: inherit;
+    }
+
+    table {
+        @extend .table;
+    }
+}
