@@ -21,8 +21,17 @@
 <a href="#main" class="visually-hidden-focusable"><?php esc_html_e( 'Skip to main content', 'forge' ); ?></a>
 
 <div id="wrapper">
-	<header>
-		<nav id="header" class="navbar navbar-expand-md <?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
+	<header id="header" class="<?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
+		<div class="header-top">
+			<div class="container">
+				<div class="row justify-content-end">
+					<div class="col-2">
+						<?php get_template_part( 'sociallinks' ); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="header-main navbar navbar-expand-md">
 			<div class="container">
 				<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php
@@ -49,7 +58,7 @@
 							array(
 								'theme_location' => 'main-menu',
 								'container'      => '',
-								'menu_class'     => 'navbar-nav me-auto',
+								'menu_class'     => 'navbar-nav',
 								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 								'walker'         => new WP_Bootstrap_Navwalker(),
 							)
@@ -63,7 +72,6 @@
 									<button type="submit" name="submit" class="btn btn-outline-secondary"><?php esc_html_e( 'Search', 'forge' ); ?></button>
 								</div>
 							</form>
-							<i class="las la-search"></i>
 					<?php
 						endif;
 					?>

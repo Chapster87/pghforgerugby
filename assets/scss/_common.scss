@@ -20,6 +20,15 @@ img {
     max-width: 100%;
 }
 
+a {
+    color: var(--color-secondary);
+    transition: color 0.5s ease;
+
+    &:hover {
+        color: var(--color-secondary-invert);
+    }
+}
+
 // Table
 
 .wp-block-table {
