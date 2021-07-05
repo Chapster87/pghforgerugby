@@ -9,6 +9,9 @@
 					?>
 
 				</div><!-- /.row -->
+			<?php else: ?>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
 			<?php
 				endif;
 			?>
