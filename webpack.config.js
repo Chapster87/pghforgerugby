@@ -1,25 +1,26 @@
-const path = require( 'path' ),
-	webpack = require( 'webpack' );
+var path = require( 'path' )
+var webpack = require( 'webpack' );
+var glob = require( 'glob' );
 
 module.exports = {
-	context: path.resolve( __dirname, 'assets/js' ),
-	entry: {
-		main: [ './main.js' ],
-	},
-	output: {
-		path: path.resolve( __dirname, 'assets/static/js' ),
-		filename: '[name].bundle.js',
-	},
-	externals: {
-		jquery: 'jQuery'
-	},
-	plugins: [
-		new webpack.ProvidePlugin( {
-			$: 'jquery',
-			jQuery: 'jquery',
-			'window.jQuery': 'jquery',
-		} ),
-	],
-	devtool: 'source-map',
-	watch: true,
+    entry: glob.sync('./assets/js/**.js').reduce(function(obj, el){
+        obj[path.parse(el).name] = el;
+        return obj
+    },{}),
+    output: {
+        path: path.resolve(__dirname, 'assets/static/js'),
+        filename: "[name].js"
+    },
+    externals: {
+        jquery: 'jQuery'
+    },
+    plugins: [
+        new webpack.ProvidePlugin( {
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+        } ),
+    ],
+    devtool: 'source-map',
+    watch: true,
 };
