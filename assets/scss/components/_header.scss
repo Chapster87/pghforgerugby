@@ -1,5 +1,6 @@
 header {
     border-bottom: rem(2) solid var(--color-secondary);
+    position: relative;
 
     .header-top {
         padding: rem(10) 0;
@@ -37,18 +38,19 @@ header {
 
     .header-main {
         background-color: var(--color-gray-800);
-        position: relative;
     }
 
-    .navbar-brand {
+    .navbar-logo {
         position: absolute;
         max-width: rem(135);
+        top: 0;
+        left: 0;
+        background-color: var(--color-gray-800);
+        border-right: rem(2) solid var(--color-secondary);
+        border-bottom: rem(2) solid var(--color-secondary);
     }
 
-    #navbar {
-        justify-content: flex-end;
-        margin-left: rem(145);
-    }
+    #navbar {}
 
     .navbar-static-top {
         margin-bottom: $grid-gutter-width;

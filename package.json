@@ -10,6 +10,8 @@
     "url": "git://github.com/them-es/themes-starter.git"
   },
   "scripts": {
+    "compile:scss": "gulp scss",
+    "compile:js": "gulp js",
     "watch": "gulp watch"
   },
   "browserslist": [

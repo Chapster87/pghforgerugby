@@ -9,11 +9,16 @@
 @import "./thirdParty/line-awesome";
 @import "./thirdParty/slick-theme";
 @import "./utilities/utils";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "./components/animations";
 @import "./common";
 @import "./utilities/edit";
 @import "./components/header";
+@import "./components/menu";
 @import "./components/footer";
 @import "./components/sidebar";
+
+@import "./skin/skin";
 
 /* WordPress Embeds */
 
