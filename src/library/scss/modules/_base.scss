@@ -573,14 +573,18 @@ a.wp-block-button__link {
 	}
 
 	blockquote {
-		margin: 0 0 1.5em 0.75em;
-		padding: 0 0 0 0.75em;
-		border-left: 3px solid $blue;
+		margin: 0 2rem 1.5em;
+		padding: 14px 12px;
+		border-left: 5px solid $forge-gold;
 		font-style: italic;
-		color: $meta-gray;
+		color: $ltblack;
+		background-color: $gray;
 
 		&:before {}
 
+		p {
+			margin: 0;
+		}
 	}
 
 	dl {}
