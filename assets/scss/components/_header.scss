@@ -1,56 +1,59 @@
 header {
     border-bottom: rem(2) solid var(--color-secondary);
     position: relative;
+    @include frosted-glass-dk();
 
     .header-top {
         padding: rem(10) 0;
+        border-bottom: 1px solid var(--color-gray-800);
 
         .social-links {
-            float: none;
             display: flex;
-            margin: 0 0 0 2rem;
+            margin: 0;
+            padding: 0;
             list-style: none;
 
             li {
-                border: 1px solid var(--color-secondary);
-                border-radius: 50%;
-                width: rem(30);
-                height: rem(30);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
                 &:not(:last-child) {
                     margin-right: rem(10);
                 }
             }
 
+            .social-links-label {
+                white-space: nowrap;
+            }
+
+            .social-link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+            }
+
             .lab {
-                font-size: rem(20);
+                font-size: rem(18);
+                margin-right: rem(3);
 
                 &:before {
                     position: relative;
-                    top: 2px;
+                    top: 1px;
                 }
             }
         }
     }
 
-    .header-main {
-        background-color: var(--color-gray-800);
+    .header-main-inner {
+        position: relative;
     }
 
     .navbar-logo {
         position: absolute;
-        max-width: rem(135);
-        top: 0;
+        max-width: rem(220);
+        top: rem(-38);
         left: 0;
-        background-color: var(--color-gray-800);
-        border-right: rem(2) solid var(--color-secondary);
-        border-bottom: rem(2) solid var(--color-secondary);
+        border-radius: 50%;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 1);
+        background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
     }
-
-    #navbar {}
 
     .navbar-static-top {
         margin-bottom: $grid-gutter-width;

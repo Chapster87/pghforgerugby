@@ -51,7 +51,7 @@
 	$search_enabled  = get_theme_mod( 'search_enabled', '1' ); // Get custom meta-value.
 ?>
 
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class('preload'); ?> itemscope itemtype="http://schema.org/WebPage">
 
 <?php wp_body_open(); ?>
 
@@ -59,17 +59,17 @@
 
 <div id="wrapper">
 	<header id="header" class="<?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>" itemscope itemtype="http://schema.org/WPHeader">
-		<div class="header-top">
+		<div class="header-top d-none d-lg-block">
 			<div class="container">
-				<div class="row justify-content-end">
-					<div class="col-2">
+				<div class="row">
+					<div class="col-6 offset-6 d-flex justify-content-end">
 						<?php get_template_part( 'sociallinks' ); ?>
 					</div>
 				</div>
 			</div>
 		</div>
 		<nav class="header-main">
-			<div class="container">
+			<div class="header-main-inner container">
 				<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" itemscope itemtype="http://schema.org/Organization">
 					<?php
 						$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
@@ -116,7 +116,7 @@
 		</nav><!-- /#header -->
 	</header>
 
-	<main id="main" class="container-fluid"<?php if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' style="padding-top: 100px;"'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' style="padding-bottom: 100px;"'; endif; ?>>
+	<main id="main" class="container">
 		<?php
 			// If Single or Archive (Category, Tag, Author or a Date based page).
 			if ( is_single() || is_archive() ) :

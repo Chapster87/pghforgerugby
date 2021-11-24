@@ -6,18 +6,20 @@
     @include media-breakpoint-up(md) {
         height: rem(72);
         display: flex;
-        justify-content: flex-end;
+        margin-left: rem(260);
     }
 
     &>.menu-item {
         display: flex;
         align-items: center;
+        position: relative;
 
-        a {
+        &>a {
             padding: rem(12) 0;
-            margin: 0 rem(16);
+            margin: 0 0 0 2.5rem;
             text-decoration: none;
             font-size: rem(18);
+
             @include media-breakpoint-up(lg) {
                 position: relative;
                 overflow: hidden;
@@ -45,14 +47,51 @@
             }
         }
 
+        &:first-child>a {
+            margin-left: 0;
+        }
+
         // Level 2
         &>.sub-menu {
-            display: none;
+            position: absolute;
+            top: 100%;
             list-style: none;
             margin: 0;
             padding: 0;
+            height: auto;
+            max-height: 0;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.9);
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            overflow: hidden;
+            white-space: nowrap;
 
-            &>.menu-item {}
+            &>.menu-item {
+                margin: 0 rem(16) rem(10);
+                animation: fade-out-up 0.5s forwards;
+
+                &:first-child {
+                    margin-top: rem(24);
+                }
+
+                &:last-child {
+                    margin-bottom: rem(24);
+                }
+
+                &>a {
+                    color: var(--color-white);
+                    text-decoration: none;
+                }
+            }
+
+            &.js-active {
+                max-height: rem(200);
+                opacity: 1;
+
+                &>.menu-item {
+                    animation: fade-in-down 0.5s forwards;
+                }
+            }
         }
 
     }

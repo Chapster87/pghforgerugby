@@ -1,8 +1,10 @@
+'use strict';
+
 // Webpack Imports
 import * as bootstrap from 'bootstrap';
+var processInclude = require('./util');
 
-( function () {
-	'use strict';
+$(document).ready(function () {
 
 	// Focus input if Searchform is empty
 	[].forEach.call( document.querySelectorAll( '.search-form' ), ( el ) => {
@@ -22,6 +24,11 @@ import * as bootstrap from 'bootstrap';
 			trigger: 'focus',
 		} );
 	} );
-} )();
+
+    processInclude(require('./components/common'));
+	processInclude(require('./components/header'));
+	processInclude(require('./components/menu'));
+});
 
 require('./thirdParty/smartResize');
+require('./thirdParty/hoverIntent');

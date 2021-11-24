@@ -487,6 +487,16 @@ function forge_scripts_loader() {
 		wp_enqueue_style( 'homepage', get_template_directory_uri() . '/assets/static/css/homepage.css', $theme_version, 'all' );
 	}
 
+	// post style
+	// if ( is_page_template( 'content-index.php' ) || is_page_template( 'content-none.php' ) || is_page_template( 'content-single.php' ) || is_page_template( 'content.php' ) ) {
+	// 	wp_enqueue_style( 'post', get_template_directory_uri() . '/assets/static/css/post.css', $theme_version, 'all' );
+	// }
+
+	// post style
+	// if ( is_page_template( 'page.php' ) ) {
+	// 	wp_enqueue_style( 'page', get_template_directory_uri() . '/assets/static/css/page.css', $theme_version, 'all' );
+	// }
+
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'rtl', get_template_directory_uri() . '/assets/static/css/rtl.css', array(), $theme_version, 'all' );
 	}
@@ -495,9 +505,9 @@ function forge_scripts_loader() {
 	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/static/js/main.js', array(), $theme_version, true );
 	wp_enqueue_script( 'slickjs', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
 
-	// homepage styles
+	// homepage scripts
 	if ( is_page_template( 'page-home.php' ) ) {
-		wp_enqueue_script( 'homepage', get_template_directory_uri() . '/assets/static/js/homepage.js', array(), $theme_version, true );
+		wp_enqueue_script( 'homepagejs', get_template_directory_uri() . '/assets/static/js/homepage.js', array(), $theme_version, true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

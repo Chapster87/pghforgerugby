@@ -29,6 +29,13 @@ a {
     }
 }
 
+#main {
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(119);
+    }
+}
+
 // Table
 
 .wp-block-table {

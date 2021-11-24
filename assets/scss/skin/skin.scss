@@ -18,6 +18,9 @@
     --color-success: #{$green};
     --color-danger: #{$red};
     --background-dark: #{$gray-900};
+
+    --util-box-shadow: 0 0 10px 0 rgb(119 119 119 / 50%);
+    --util-box-shadow-active: 0 0 10px 0 rgb(119 119 119);
 }
 
 @import "./header";
