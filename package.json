@@ -31,6 +31,17 @@
     "fancy-log": "^1.3.3",
     "webpack": "^4.1.0",
     "webpack-stream": "^5.2.1",
-    "glob": "^7.1.7"
+    "glob": "^7.1.7",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "lint-staged": "^10.5.3",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.scss": "stylelint --fix"
   }
 }
