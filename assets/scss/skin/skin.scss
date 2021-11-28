@@ -1,23 +1,23 @@
 :root {
     --color-white: #{$white};
     --color-black: #{$black};
-    --color-gray-100: #{$gray-100};
-    --color-gray-200: #{$gray-200};
-    --color-gray-300: #{$gray-300};
-    --color-gray-400: #{$gray-400};
-    --color-gray-500: #{$gray-500};
-    --color-gray-600: #{$gray-600};
-    --color-gray-700: #{$gray-700};
-    --color-gray-800: #{$gray-800};
-    --color-gray-900: #{$gray-900};
+    --color-grey-100: #{$grey-100};
+    --color-grey-200: #{$grey-200};
+    --color-grey-300: #{$grey-300};
+    --color-grey-400: #{$grey-400};
+    --color-grey-500: #{$grey-500};
+    --color-grey-600: #{$grey-600};
+    --color-grey-700: #{$grey-700};
+    --color-grey-800: #{$grey-800};
+    --color-grey-900: #{$grey-900};
     --color-primary: #{$black};
-    --color-primary-invert: #{$gray-900};
+    --color-primary-invert: #{$grey-900};
     --color-secondary: #{$gold};
     --color-secondary-invert: #{$gold-600};
     --color-accent: #{$red};
     --color-success: #{$green};
     --color-danger: #{$red};
-    --background-dark: #{$gray-900};
+    --background-dark: #{$grey-900};
 
     --util-box-shadow: 0 0 10px 0 rgb(119 119 119 / 50%);
     --util-box-shadow-active: 0 0 10px 0 rgb(119 119 119);

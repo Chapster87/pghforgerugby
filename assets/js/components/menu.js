@@ -24,6 +24,11 @@ function navInit() {
             out: navMouseLeave,
             timeout: 200
         });
+    } else {
+        // unbind the hoverIntent
+        $('.menu-item-has-children').unbind('mouseenter').unbind('mouseleave');
+        $('.menu-item-has-children').removeProp('hoverIntent_t');
+        $('.menu-item-has-children').removeProp('hoverIntent_s');
     }
 }
 
@@ -31,6 +36,6 @@ module.exports = function () {
     navInit();
 
     $(window).smartresize(function () {
-        menuInit();
+        navInit();
     });
 };

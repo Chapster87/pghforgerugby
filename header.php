@@ -60,32 +60,39 @@
 <div id="wrapper">
 	<header id="header" class="<?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>" itemscope itemtype="http://schema.org/WPHeader">
 		<div class="header-top d-none d-lg-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-6 offset-6 d-flex justify-content-end">
-						<?php get_template_part( 'sociallinks' ); ?>
+			<div class="header-top-inner">	
+				<div class="container">
+					<div class="row">
+						<div class="col-6 offset-6 d-flex justify-content-end">
+							<?php get_template_part( 'sociallinks' ); ?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<nav class="header-main">
 			<div class="header-main-inner container">
-				<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" itemscope itemtype="http://schema.org/Organization">
-					<?php
-						$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
+				<div class="navbar-logo">
+					<a class="navbar-logo-link" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" itemscope itemtype="http://schema.org/Organization">
+						<?php
+							$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
 
-						if ( ! empty( $header_logo ) ) :
-					?>
-						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-					<?php
-						else :
-							echo esc_attr( get_bloginfo( 'name', 'display' ) );
-						endif;
-					?>
-				</a>
+							if ( ! empty( $header_logo ) ) :
+						?>
+							<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+						<?php
+							else :
+								echo esc_attr( get_bloginfo( 'name', 'display' ) );
+							endif;
+						?>
+						<span class="sr-only">Pittsburgh Forge Rugby Club</span>
+					</a>
+				</div>
 
-				<button class="navbar-toggler d-md-none" type="button" aria-controls="navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'forge' ); ?>">
-					<span class="navbar-toggler-icon"></span>
+				<button class="navbar-toggler d-lg-none hamburger hamburger--squeeze" type="button" aria-controls="navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'forge' ); ?>">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
 				</button>
 
 				<div id="navbar" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -112,6 +119,7 @@
 						 // endif;
 					?>
 				</div><!-- /.navbar-collapse -->
+				<a href="/contact" class="mm-contact d-block d-lg-none"><i class="las la-envelope"></i></a>
 			</div><!-- /.container -->
 		</nav><!-- /#header -->
 	</header>

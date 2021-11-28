@@ -62,6 +62,7 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</footer><!-- /#footer -->
+		<div class="edge-bottom"></div>
 	</div><!-- /#wrapper -->
 	<?php
 		wp_footer();
