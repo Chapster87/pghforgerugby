@@ -1,0 +1,15 @@
+#footer {
+    background-color: #fff;
+
+    p {
+        margin-top: 10px;
+    }
+
+    .menu-item {
+        a {
+            &[aria-current="page"] {
+                color: $link-hover-color;
+            }
+        }
+    }
+}

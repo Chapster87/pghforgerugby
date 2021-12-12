@@ -1,0 +1,18 @@
+/* If WP-Adminbar is visible */
+body.admin-bar {
+	#header.fixed-top {
+		top: 32px;
+	}
+
+	.edit-link a {
+		color: #fff !important;
+		font-weight: normal !important;
+		text-decoration: none !important;
+
+		&::before {
+			content: "\270E";
+			display: inline-block;
+			margin-right: 5px;
+		}
+	}
+}
