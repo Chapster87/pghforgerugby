@@ -1,2 +1,5 @@
 archive
 node_modules
+
+assets/static/css/*
+assets/static/js/*

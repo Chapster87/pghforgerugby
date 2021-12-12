@@ -1,0 +1,136 @@
+#navbar {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: -100%;
+	width: 100%;
+    background: rgba(0,0,0,0.9);
+    overflow: auto;
+    padding-top: rem(38);
+    transition: left 0.5s ease;
+    animation: fade-out-left 0.5s forwards;
+
+    &.js-active {
+        left: 0;
+        animation: fade-in-left 0.5s forwards;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        position: static;
+        width: auto;
+        background: none;
+        overflow: visible;
+        animation: none;
+        padding-top: 0;
+    }
+}
+
+#primary-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+        height: rem(72);
+        display: flex;
+        margin-left: rem(260);
+        transition: margin-left 0.5s ease;
+
+        body.is-scrolled & {
+            margin-left: rem(135);
+        }
+    }
+
+    &>.menu-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &>a {
+            padding: rem(12) 0;
+            margin: 0 0 0 rem(30);
+            text-decoration: none;
+            font-size: rem(18);
+
+            @include media-breakpoint-up(lg) {
+                position: relative;
+                overflow: hidden;
+                margin: 0 0 0 2.5rem;
+            }
+
+            &:after {
+                @include media-breakpoint-up(lg) {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    height: rem(3);
+                    animation: line-hover-out 0.3s forwards;
+                    border: 0;
+                    width: 100%;
+                    bottom: 0;
+                }
+            }
+
+            &:hover {
+                &:after {
+                    @include media-breakpoint-up(lg) {
+                        animation: line-hover 0.3s forwards;
+                    }
+                }
+            }
+        }
+
+        &:first-child>a {
+            @include media-breakpoint-up(lg) {
+                margin-left: 0;
+            }
+        }
+
+        // Level 2
+        &>.sub-menu {
+            position: absolute;
+            top: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            max-height: 0;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.9);
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            overflow: hidden;
+            white-space: nowrap;
+
+            &>.menu-item {
+                margin: 0 rem(16) rem(10);
+                animation: fade-out-up 0.5s forwards;
+
+                &:first-child {
+                    margin-top: rem(24);
+                }
+
+                &:last-child {
+                    margin-bottom: rem(24);
+                }
+
+                &>a {
+                    color: var(--color-white);
+                    text-decoration: none;
+                }
+            }
+
+            &.js-active {
+                max-height: rem(200);
+                opacity: 1;
+
+                &>.menu-item {
+                    animation: fade-in-down 0.5s forwards;
+                }
+            }
+        }
+
+    }
+}

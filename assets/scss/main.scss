@@ -6,14 +6,23 @@
 @import "./bootstrapComponents";
 @import "../../node_modules/bootstrap/scss/helpers";
 @import "../../node_modules/bootstrap/scss/utilities/api";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 @import "./thirdParty/line-awesome";
 @import "./thirdParty/slick-theme";
 @import "./utilities/utils";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "./utilities/mixins";
+@import "./utilities/animations";
 @import "./common";
 @import "./utilities/edit";
 @import "./components/header";
+@import "./components/menu";
 @import "./components/footer";
+@import "./components/edges";
+@import "./components/social";
 @import "./components/sidebar";
+
+@import "./skin/skin";
 
 /* WordPress Embeds */
 
@@ -54,7 +63,7 @@
 
 .sticky {
 	.card {
-		background-color: $gray-100;
+		background-color: $grey-100;
 	}
 }
 
@@ -100,7 +109,7 @@
 		margin-top: $grid-gutter-width;
 
 		>li.comment {
-			border-top: 1px solid $gray-300;
+			border-top: 1px solid $grey-300;
 			padding-top: $grid-gutter-width;
 			position: relative;
 		}
@@ -110,7 +119,7 @@
 		width: 64px;
 		height: 64px;
 		border-radius: 50%;
-		box-shadow: 0 1px 2px $gray-600;
+		box-shadow: 0 1px 2px $grey-600;
 		padding: 0;
 		position: absolute;
 		top: 0;

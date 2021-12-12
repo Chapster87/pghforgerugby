@@ -1,0 +1,15 @@
+#primary-nav {
+
+    &>.menu-item {
+        a {
+            @include sans();
+            color: var(--color-white);
+
+            &:after {
+                @include media-breakpoint-up(lg) {
+                    background-color: var(--color-secondary);
+                }
+            }
+        }
+    }
+}

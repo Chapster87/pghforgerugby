@@ -64,9 +64,8 @@ function forge_customize( $wp_customize ) {
 			'label'    => __( 'Navbar Scheme', 'forge' ),
 			'section'  => 'theme_header_section',
 			'choices'  => array(
-				'navbar-light bg-light'  => __( 'Default', 'forge' ),
-				'navbar-dark bg-dark'    => __( 'Dark', 'forge' ),
-				'navbar-dark bg-primary' => __( 'Primary', 'forge' ),
+				'navbar-dark'    => __( 'Dark', 'forge' ),
+				'navbar-light' => __( 'Light', 'forge' ),
 			),
 			'settings' => 'navbar_scheme',
 			'priority' => 1,

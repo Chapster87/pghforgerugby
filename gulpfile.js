@@ -91,19 +91,37 @@ function build_css() {
 }
 
 /**
+ * Build CSS
+ *
+ * $ gulp scss
+ */
+
+gulp.task('scss', async function () {
+	return build_css();
+});
+
+/**
+ * Build JS
+ *
+ * $ gulp js
+ */
+
+ gulp.task('js', async function () {
+	build_js();
+});
+
+/**
  * Watch task: Webpack + SASS
  *
  * $ gulp watch
  */
 
-gulp.task('watch',
-	function () {
-		// Modify "dev_url" constant and uncomment "server.init()" to use browser sync
-		/*server.init({
-			proxy: dev_url,
-		} );*/
+ gulp.task('watch', function () {
+	// Modify "dev_url" constant and uncomment "server.init()" to use browser sync
+	/*server.init({
+		proxy: dev_url,
+	} );*/
 
-		gulp.watch([paths.scripts.src, './assets/js/**/*.js'], build_js);
-		gulp.watch([paths.styles.src, './assets/scss/*.scss', './assets/scss/**/*.scss'], build_css);
-	}
-);
+	gulp.watch([paths.scripts.src, './assets/js/**/*.js'], build_js);
+	gulp.watch([paths.styles.src, './assets/scss/*.scss', './assets/scss/**/*.scss'], build_css);
+});

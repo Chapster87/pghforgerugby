@@ -20,6 +20,53 @@ img {
     max-width: 100%;
 }
 
+a {
+    color: var(--color-secondary);
+    transition: color 0.5s ease;
+
+    &:hover {
+        color: var(--color-secondary-invert);
+    }
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        box-shadow: none;
+        outline: -webkit-focus-ring-color auto 1px;
+    }
+}
+
+button {
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        box-shadow: none;
+        outline: -webkit-focus-ring-color auto 1px;
+    }
+}
+
+#wrapper {
+    &.js-screen-sized {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+#main {
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(119);
+    }
+}
+
 // Table
 
 .wp-block-table {
