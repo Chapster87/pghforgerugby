@@ -1,0 +1,134 @@
+@font-face {
+	font-family: 'lemonmilk-regular';
+	src: url('../../static/fonts/lemonmilk/lemonmilk-webfont.woff2') format('woff2'),
+		 url('../../static/fonts/lemonmilk/lemonmilk-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lemonmilk-regular__italic';
+	src: url('../../static/fonts/lemonmilk/lemonmilkitalic-webfont.woff2') format('woff2'),
+		 url('../../static/fonts/lemonmilk/lemonmilkitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lemonmilk-bold';
+	src: url('../../static/fonts/lemonmilk/lemonmilkbold-webfont.woff2') format('woff2'),
+		 url('../../static/fonts/lemonmilk/lemonmilkbold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lemonmilk-bold-italic';
+	src: url('../../static/fonts/lemonmilk/lemonmilkbolditalic-webfont.woff2') format('woff2'),
+		 url('../../static/fonts/lemonmilk/lemonmilkbolditalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lemonmilk-light';
+	src: url('../../static/fonts/lemonmilk/lemonmilklight-webfont.woff2') format('woff2'),
+		 url('../../static/fonts/lemonmilk/lemonmilklight-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lemonmilk-light-italic';
+	src: url('../../static/fonts/lemonmilk/lemonmilklightitalic-webfont.woff2') format('woff2'),
+		 url('../../static/fonts/lemonmilk/lemonmilklightitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// font stacks
+$sans-serif:			"Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:						"Georgia", Cambria, Times New Roman, Times, serif;
+$lato:						'Lato', $sans-serif;
+$oswald: 					'Oswald', $sans-serif;
+$lemonmilk-regular:			lemonmilk-regular, $lato;
+$lemonmilk-regular-italic:	lemonmilk-regular__italic, $lato;
+$lemonmilk-bold:			lemonmilk-bold, $lato;
+$lemonmilk-bold-italic:	lemonmilk-bold-italic, $lato;
+$lemonmilk-light:			lemonmilk-light, $lato;
+$lemonmilk-light-italic:	lemonmilk-light-italic, $lato;
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      $lato, $sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable value-keyword-case
+$font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
+$font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
+
+
+// Font Mixins
+@mixin sans() {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}
+
+@mixin sansBold() {
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+}
+
+@mixin serif() {
+  font-family: $serif;
+  font-weight: 400;
+}
+
+@mixin serifBold() {
+  font-family: $serif;
+  font-weight: 700;
+}
+
+@mixin sansAltLight() {
+    font-family: $oswald;
+    font-weight: 300;
+}
+
+@mixin sansAlt() {
+    font-family: $oswald;
+    font-weight: 400;
+}
+
+@mixin sansAltMed() {
+    font-family: $oswald;
+    font-weight: 500;
+}
+
+@mixin sansAltBold() {
+    font-family: $oswald;
+    font-weight: 600;
+}
+
+@mixin lemonmilk() {
+  font-family: $lemonmilk-regular;
+}
+
+@mixin lemonmilkItalic() {
+  font-family: $lemonmilk-regular-italic;
+}
+
+@mixin lemonmilkBold() {
+  font-family: $lemonmilk-bold;
+}
+
+@mixin lemonmilkBoldItalic() {
+  font-family: $lemonmilk-bold-italic;
+}
+
+@mixin lemonmilkLight() {
+  font-family: $lemonmilk-light;
+}
+
+@mixin lemonmilkLightItalic() {
+  font-family: $lemonmilk-light-italic;
+}
+

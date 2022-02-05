@@ -19,7 +19,7 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
 		public function start_lvl( &$output, $depth = 0, $args = null ) {
-			$output .= '<ul role="menu" class="dropdown-menu">';
+			$output .= '<ul role="menu" class="sub-menu">';
 		}
 
 		/**
