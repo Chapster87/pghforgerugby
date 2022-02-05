@@ -8,7 +8,7 @@ header,
 
         li {
             &:not(:last-child) {
-                margin-right: rem(10);
+                margin-right: rem(14);
             }
         }
 
@@ -22,9 +22,9 @@ header,
             text-decoration: none;
         }
 
-        .lab {
+        .fab {
             font-size: rem(18);
-            margin-right: rem(3);
+            margin-right: rem(8);
 
             &:before {
                 position: relative;

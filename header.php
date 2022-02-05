@@ -119,7 +119,7 @@
 						 // endif;
 					?>
 				</div><!-- /.navbar-collapse -->
-				<a href="/contact" class="mm-contact d-block d-lg-none"><i class="las la-envelope"></i></a>
+				<a href="/contact" class="mm-contact d-block d-lg-none"><i class="fas fa-envelope"></i></a>
 			</div><!-- /.container -->
 		</nav><!-- /#header -->
 	</header>
