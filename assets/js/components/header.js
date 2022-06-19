@@ -3,7 +3,7 @@
 var $scrollTop = $(window).scrollTop();
 var $body = $('body');
 var $siteWrapper = $('#wrapper');
-var $header = $('header');
+var $header = $('header#header');
 var $menuBtn = $('.navbar-toggler');
 var $navMenu = $menuBtn.next('#navbar');
 
