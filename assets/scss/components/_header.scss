@@ -94,6 +94,12 @@ header#header {
                 body.is-scrolled & {
                     animation: scale-logo-down 0.5s forwards;
                 }
+
+                body:not(.page-template-page-home) & {
+                    animation: none;
+                    max-width: rem(105);
+                    top: rem(5);
+                }
             }
         }
     }

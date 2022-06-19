@@ -5,3 +5,28 @@
     color: var(--color-black);
     background-color: var(--color-white);
 }
+
+.wp-caption,
+.wp-block-image {
+    max-width: 100%;
+    background: var(--color-gray-200);
+    padding: rem(5);
+    margin-bottom: 1rem;
+    border-radius: rem(3);
+
+    /* images inside wp-caption */
+    img {
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+        border-radius: rem(3);
+    }
+
+    p.wp-caption-text,
+    figcaption {
+        font-size: rem(14);
+        margin: rem(12) 0 rem(8);
+        text-align: center;
+    }
+
+}

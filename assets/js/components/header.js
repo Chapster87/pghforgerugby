@@ -13,9 +13,9 @@ var $navMenu = $menuBtn.next('#navbar');
  * @param {number} offset - The current header offset.
  * @param {string} device - The device size to test against.
  */
- function setScrollFx(scrollPos, offset, device) {
-    var scrollDir = scrollPos > $scrollTop ? 'down' : 'up';
-    var hOffset = parseInt($header.css('top'), 10);
+function setScrollFx(scrollPos, offset, device) {
+    // var scrollDir = scrollPos > $scrollTop ? 'down' : 'up';
+    // var hOffset = parseInt($header.css('top'), 10);
 
     // Toggle utility class on scroll
     if (scrollPos > 1) {
@@ -24,17 +24,20 @@ var $navMenu = $menuBtn.next('#navbar');
         $body.removeClass('is-scrolled');
     }
 
-    if (!$body.hasClass('admin-bar')) {
-        $('#main').css('padding-top', $header.outerHeight());
-    } else {
+    if ($body.is('.admin-bar')) {
         // subtract admin bar height
         $('#main').css('padding-top', $header.outerHeight() - 32);
+    } else {
+        $('#main').css('padding-top', $header.outerHeight());
     }
 
     // Reset scroll position, prevent negative scroll
     $scrollTop = scrollPos <= 0 ? 0 : scrollPos;
 }
 
+/**
+ * Set Header state
+ */
 function setHeader() {
     var scrollPos = $(window).scrollTop();
     var offsetH = -($header.outerHeight());
@@ -50,12 +53,18 @@ function setHeader() {
     setScrollFx(scrollPos, offsetH, deviceSize);
 }
 
+/**
+ * Reset state of navigation
+ */
 function resetNav() {
     $navMenu.removeClass('js-active');
     $menuBtn.attr('aria-expanded', 'false').removeClass('is-active');
     $siteWrapper.removeClass('js-screen-sized');
 }
 
+/**
+ * Mobile Menu Toggle
+ */
 function mobileMenuToggle() {
     $menuBtn.on('click', function () {
         if (!$navMenu.is('.js-active')) {
@@ -71,7 +80,6 @@ function mobileMenuToggle() {
 }
 
 module.exports = function () {
-
     setHeader();
     mobileMenuToggle();
 
@@ -82,5 +90,4 @@ module.exports = function () {
 
     var throttledHeader = _.throttle(setHeader, 200);
     $(window).on('scroll', throttledHeader);
-
 };
