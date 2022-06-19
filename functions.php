@@ -475,27 +475,30 @@ if ( is_readable( $custom_walker_footer ) ) {
  * @since v1.0
  */
 function forge_scripts_loader() {
+	global $template;
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// 1. Styles.
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), $theme_version, 'all' );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/static/css/main.css', array(), $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles.
-	wp_enqueue_style( 'slickcss', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+	wp_enqueue_style( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 
 	// homepage styles
-	if ( is_page_template( 'page-home.php' ) ) {
+	if ( basename( $template ) === 'page-home.php' ) {
 		wp_enqueue_style( 'homepage', get_template_directory_uri() . '/assets/static/css/homepage.css', $theme_version, 'all' );
 	}
 
-	// post style
-	// if ( is_page_template( 'content-index.php' ) || is_page_template( 'content-none.php' ) || is_page_template( 'content-single.php' ) || is_page_template( 'content.php' ) ) {
-	// 	wp_enqueue_style( 'post', get_template_directory_uri() . '/assets/static/css/post.css', $theme_version, 'all' );
-	// }
+	// page style
+	// if ( basename( $template ) === 'page.php' || basename( $template ) === 'page-full.php' ) {
+	if ( is_page() ) {
+		wp_enqueue_style( 'page', get_template_directory_uri() . '/assets/static/css/page.css' );
+	}
 
 	// post style
-	// if ( is_page_template( 'page.php' ) ) {
-	// 	wp_enqueue_style( 'page', get_template_directory_uri() . '/assets/static/css/page.css', $theme_version, 'all' );
-	// }
+	// if ( basename( $template ) === 'content-index.php' ||  basename( $template ) === 'content-none.php' ||  basename( $template ) === 'content-single.php' ||  basename( $template ) === 'content.php' ) {
+	if ( is_single() ) {
+		wp_enqueue_style( 'post', get_template_directory_uri() . '/assets/static/css/post.css' );
+	}
 
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'rtl', get_template_directory_uri() . '/assets/static/css/rtl.css', array(), $theme_version, 'all' );
