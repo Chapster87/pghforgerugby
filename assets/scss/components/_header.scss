@@ -95,7 +95,7 @@ header#header {
                     animation: scale-logo-down 0.5s forwards;
                 }
 
-                body:not(.page-template-page-home) & {
+                body:not(.home) & {
                     animation: none;
                     max-width: rem(105);
                     top: rem(5);

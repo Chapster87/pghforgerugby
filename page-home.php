@@ -31,7 +31,7 @@ the_post();
 
 <div class="post-cards-home">
     <div class="container">
-        <div class="row post-card-row row-cols-1 row-cols-md-4">
+        <div class="row post-card-row">
         <?php
             query_posts( array('posts_per_page'=>5) );
             while ( have_posts() ) : the_post();

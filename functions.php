@@ -509,7 +509,7 @@ function forge_scripts_loader() {
 	wp_enqueue_script( 'slickjs', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
 
 	// homepage scripts
-	if ( is_page_template( 'page-home.php' ) ) {
+	if ( basename( $template ) === 'page-home.php' ) {
 		wp_enqueue_script( 'homepagejs', get_template_directory_uri() . '/assets/static/js/homepage.js', array(), $theme_version, true );
 	}
 

@@ -40,7 +40,7 @@
         transition: margin-left 0.5s ease;
 
         body.is-scrolled &,
-        body:not(.page-template-page-home) & {
+        body:not(.home) & {
             margin-left: rem(135);
         }
     }

@@ -4,6 +4,27 @@
     margin: rem(24) 0 1.5rem;
     color: var(--color-black);
     background-color: var(--color-white);
+    position: relative;
+
+    .hentry-quicklinks {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        a {
+            line-height: 32px;
+            display: flex;
+            color: black;
+        }
+
+        i {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.entry-title {
+    margin-bottom: 2rem;
 }
 
 .wp-caption,
