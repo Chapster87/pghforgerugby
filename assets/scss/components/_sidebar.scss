@@ -1,4 +1,6 @@
 .widget-area {
+    margin-top: rem(24);
+
     ul {
         list-style: none;
         padding: 0;
@@ -7,7 +9,12 @@
 
 #sidebar {
     margin-top: rem(60);
+
     @include media-breakpoint-up(sm) {
         margin-top: 0;
     }
+}
+
+.search-form {
+    margin-bottom: 2rem;
 }

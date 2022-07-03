@@ -60,7 +60,7 @@
 <div id="wrapper">
 	<header id="header" class="<?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>" itemscope itemtype="http://schema.org/WPHeader">
 		<div class="header-top d-none d-lg-block">
-			<div class="header-top-inner">	
+			<div class="header-top-inner">
 				<div class="container">
 					<div class="row">
 						<div class="col-6 offset-6 d-flex justify-content-end">

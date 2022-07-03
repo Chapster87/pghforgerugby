@@ -39,7 +39,8 @@
         margin-left: rem(260);
         transition: margin-left 0.5s ease;
 
-        body.is-scrolled & {
+        body.is-scrolled &,
+        body:not(.home) & {
             margin-left: rem(135);
         }
     }

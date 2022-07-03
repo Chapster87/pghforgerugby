@@ -1,10 +1,11 @@
-header {
+header#header {
     border-bottom: rem(2) solid var(--color-secondary);
     position: relative;
     @include frosted-glass-dk();
 
     &.fixed-top {
         top: 0;
+        position: fixed;
 
         @include media-breakpoint-up(lg) {
             animation: header-down 0.5s forwards;
@@ -92,6 +93,12 @@ header {
 
                 body.is-scrolled & {
                     animation: scale-logo-down 0.5s forwards;
+                }
+
+                body:not(.home) & {
+                    animation: none;
+                    max-width: rem(105);
+                    top: rem(5);
                 }
             }
         }
