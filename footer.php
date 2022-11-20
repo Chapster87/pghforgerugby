@@ -91,8 +91,40 @@
 		</footer><!-- /#footer -->
 		<div class="edge-bottom"></div>
 	</div><!-- /#wrapper -->
-	<?php
-		wp_footer();
-	?>
+	<?php wp_footer(); ?>
+
+	<div id="fb-root"></div>
+	<script>
+		// Facebook Share
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		// Twitter Share
+		! function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "https://platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, "script", "twitter-wjs");
+	</script>
+	<script>
+		(function () {
+			$.getJSON('http://search.twitter.com/search.json?q=pittsburghrugby&callback=?', function (data) {
+				var user = data.results[0].from_user;
+				tweet = data.results[0].text;
+				$("#show_tweet").html('<span class="twitterUser">@' + user + ':</span> "' + tweet + '"');
+			});
+		})();
+	</script>
+
 </body>
 </html>

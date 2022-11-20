@@ -4,6 +4,14 @@ Theme Name: Forge
 WooCommerce styles override
 */
 
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "./utilities/utils";
+@import "./utilities/mixins";
+@import "./utilities/animations";
+
 // WooCommerce color variables
 $woocommerce__color-error: #e2401c;
 $woocommerce__color-success: #0f834d;

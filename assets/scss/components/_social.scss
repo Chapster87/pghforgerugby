@@ -36,6 +36,7 @@ header,
 
 .edge-bottom {
     display: none;
+
     @include media-breakpoint-up(lg) {
         display: flex;
         animation: edge-bottom-out 0.5s forwards;
@@ -47,8 +48,36 @@ header,
 
     .social-links {
         padding: rem(12);
-        background: rgba(0,0,0,.8);
+        background: rgba(0, 0, 0, .8);
         border-top: rem(2) solid var(--color-gray-800);
         border-left: rem(2) solid var(--color-gray-800);
     }
+}
+
+.social-share {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+    .share-badge {
+        &.share-text {
+            h4 {
+                margin: 0;
+                color: var(--color-red);
+                font-family: 'Courgette', cursive;
+            }
+        }
+
+        &.facebook {
+            margin-right: rem(5);
+        }
+    }
+}
+
+.fb-share-button {
+    float: left;
+    line-height: 0;
 }

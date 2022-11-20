@@ -1,7 +1,12 @@
 .single-product {
 
-    div.product {
+   article.type-product {
         position: relative;
+        padding: 1rem;
+        border-radius: rem(3);
+        margin: rem(24) 0 1.5rem;
+        color: var(--color-black);
+        background-color: var(--color-white);
 
         .woocommerce-product-gallery {
             position: relative;
