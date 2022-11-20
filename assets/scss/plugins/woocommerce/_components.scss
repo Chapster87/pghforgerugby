@@ -204,6 +204,30 @@ p.stars {
 	}
 }
 
+.wcpa_form_item,
+.variations_form {
+	label {
+		@extend .form-label;
+	}
+
+	input {
+		[type='text'] {
+			@extend .form-control;
+		}
+	}
+
+	select {
+		@extend .form-control;
+		@extend .form-select;
+	}
+}
+
+.quantity {
+	input {
+		@extend .form-control;
+	}
+}
+
 .required {
 	color: #f00;
 }

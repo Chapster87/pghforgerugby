@@ -13,7 +13,12 @@
 @import "./utilities/mixins";
 @import "./utilities/animations";
 @import "./common";
+
 @import "./utilities/edit";
+
+@import "./components/typography";
+@import "./components/buttons";
+@import "./components/forms";
 @import "./components/header";
 @import "./components/menu";
 @import "./components/footer";

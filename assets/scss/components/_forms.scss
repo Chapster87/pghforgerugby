@@ -1,0 +1,22 @@
+@import "tooltip";
+
+.form-group {
+    &.required .form-label::before {
+        content: "*";
+        color: var(--color-danger);
+    }
+}
+
+.form-control {
+     background-color: var(--color-white);
+     color: var(--color-black);
+
+    &:focus {
+        color: var(--color-black);
+    }
+}
+
+::placeholder,
+.form-control::placeholder {
+    color: var(--color-gray-600);
+}
