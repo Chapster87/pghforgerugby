@@ -64,7 +64,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-6 offset-6 d-flex justify-content-end">
-							<?php get_template_part( 'social-links' ); ?>
+							<?php get_template_part('templates/social/social-links'); ?>
 						</div>
 					</div>
 				</div>
