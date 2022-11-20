@@ -10,9 +10,9 @@ get_header();
 the_post();
 ?>
 <div class="row">
-	<div class="col-md-9 col-sm-12">
+	<div class="col-12 col-md-9">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content' ); ?>>
-			<h1 class="entry-title">PAGE:<?php the_title(); ?></h1>
+			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php
 				the_content();
 
@@ -24,6 +24,11 @@ the_post();
 				);
 				edit_post_link( esc_html__( 'Edit', 'forge' ), '<span class="edit-link">', '</span>' );
 			?>
+			<div class="row mt-2">
+				<div class="col-12">
+					<?php get_template_part( 'social-share' ); ?>
+				</div>
+			</div>
 		</div><!-- /#post-<?php the_ID(); ?> -->
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template.
