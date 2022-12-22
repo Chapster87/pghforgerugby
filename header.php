@@ -16,7 +16,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<?php // icons & favicons ?>
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
 
 	<?php // manifest files ?>
 	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.json">
@@ -32,7 +32,7 @@
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-152x152.png" sizes="152x152">
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-180x180.png" sizes="180x180">
 	<!--[if IE]>
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
 	<![endif]-->
 	<?php // or, set /favicon.ico for IE10 win ?>
 	<meta name="msapplication-TileColor" content="#000">
