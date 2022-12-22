@@ -36,7 +36,7 @@
 
 	<footer class="entry-meta row">
 		<div class="col-12">
-			<?php get_template_part( 'social-share' ); ?>
+			<?php get_template_part('templates/social/social-share'); ?>
 		</div>
 		<div class="col-12">
 			<hr>

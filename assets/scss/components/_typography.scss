@@ -50,3 +50,10 @@ h5,
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+.page-title {
+    // default page title to white
+    // this is because pages like archives,
+    // and categories render title outside on content body
+    color: var(--color-white);
+}

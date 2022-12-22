@@ -10,10 +10,10 @@
     --color-gray-700: #{$gray-700};
     --color-gray-800: #{$gray-800};
     --color-gray-900: #{$gray-900};
-    --color-primary: #{$black};
-    --color-primary-invert: #{$gray-900};
-    --color-secondary: #{$gold};
-    --color-secondary-invert: #{$gold-600};
+    --color-primary: #{$gold};
+    --color-primary-invert: #{$gold-600};
+    --color-secondary: #{$black};
+    --color-secondary-invert: #{$gray-900};
     --color-accent: #{$red};
     --color-success: #{$green};
     --color-danger: #{$red};
@@ -23,5 +23,5 @@
     --util-box-shadow-active: 0 0 10px 0 rgb(119 119 119);
 }
 
-@import "./typography";
+// @import "./typography"; - Will add when a skin is needed
 @import "./header";

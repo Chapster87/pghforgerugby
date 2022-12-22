@@ -2,7 +2,7 @@
 
 #footer {
     .footer-main {
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary);
         background-image: url("../../images/low-contrast-linen.png");
         border-top: 0.1875rem solid var(--color-accent);
         padding: 1rem 0 0;
@@ -43,7 +43,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-bottom: rem(3) solid var(--color-primary);
+        border-bottom: rem(3) solid var(--color-secondary);
         padding: 0 0 rem(16);
 
         .social__header {
@@ -66,7 +66,7 @@
                     color: var(--color-accent);
 
                     &:hover {
-                        color: var(--color-primary);
+                        color: var(--color-secondary);
                     }
                 }
             }
@@ -114,7 +114,7 @@
         li.nav-item {
 
             .nav-link {
-                color: var(--color-primary);
+                color: var(--color-secondary);
                 padding: 0.75rem 0 rem(14);
             }
 

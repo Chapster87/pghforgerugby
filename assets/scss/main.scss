@@ -13,7 +13,12 @@
 @import "./utilities/mixins";
 @import "./utilities/animations";
 @import "./common";
+
 @import "./utilities/edit";
+
+@import "./components/typography";
+@import "./components/buttons";
+@import "./components/forms";
 @import "./components/header";
 @import "./components/menu";
 @import "./components/footer";
@@ -22,6 +27,8 @@
 @import "./components/sidebar";
 
 @import "./skin/skin";
+
+@import "./styleguide";
 
 /* WordPress Embeds */
 
@@ -78,6 +85,10 @@
 	#comments-title {
 		margin: $grid-gutter-width 0;
 	}
+
+	.post-navigation {
+		display: none;
+	}
 }
 
 #comments {
@@ -128,34 +139,6 @@
 
 /* WordPress Blocks */
 
-// Buttons
-
-.wp-block-button {
-	&.is-style-outline {
-		.wp-block-button__link {
-			@extend .btn;
-			@extend .btn-outline-primary;
-		}
-	}
-
-	&.btn-lg {
-		.wp-block-button__link {
-			@extend .btn-lg;
-		}
-	}
-
-	&.btn-sm {
-		.wp-block-button__link {
-			@extend .btn-sm;
-		}
-	}
-
-	.wp-block-button__link {
-		@extend .btn;
-		@extend .btn-primary;
-		text-decoration: none;
-	}
-}
 
 // Image, Media and Text
 

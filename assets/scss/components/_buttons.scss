@@ -1,0 +1,65 @@
+@import "./utilities/utils";
+
+button {
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        box-shadow: none;
+    }
+}
+
+.btn {
+    letter-spacing: 0.25px;
+    text-transform: none;
+    font-size: rem(16);
+    font-weight: 600;
+    padding: rem(9) rem(12);
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        box-shadow: inset 0 0 0 1px black, 0 0 6px 2px var(--color-primary);
+        outline: none;
+    }
+}
+
+.wp-block-button {
+    &.is-style-outline {
+        .wp-block-button__link {
+            @extend .btn;
+            @extend .btn-outline-primary;
+        }
+    }
+
+    &.btn-lg {
+        .wp-block-button__link {
+            @extend .btn-lg;
+        }
+    }
+
+    &.btn-sm {
+        .wp-block-button__link {
+            @extend .btn-sm;
+        }
+    }
+
+    .wp-block-button__link {
+        @extend .btn;
+        @extend .btn-primary;
+        text-decoration: none;
+    }
+}
+
+.wp-block-search__button {
+    @extend .btn;
+    @extend .btn-primary;
+}

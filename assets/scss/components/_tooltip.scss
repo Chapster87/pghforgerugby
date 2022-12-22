@@ -1,0 +1,23 @@
+.info-icon {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    background: inherit;
+
+    .icon {
+        border-radius: 1.25rem;
+        background-color: var(--color-secondary);
+        width: 1.5625rem;
+        display: inline-block;
+        text-align: center;
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+
+    .tooltip {
+        display: none;
+    }
+
+}

@@ -1,0 +1,58 @@
+.style-guide {
+    padding-bottom: rem(50);
+
+    .guide-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--color-secondary);
+        padding-top: rem(10);
+        padding-bottom: rem(10);
+        margin-top: rem(30);
+        margin-bottom: rem(20);
+        border-bottom: 1px solid var(--color-gray-500);
+    }
+
+    .guide-subheading {
+        margin-top: rem(25);
+    }
+
+    .heading-code-switch {
+        display: none;
+        margin-right: 1rem;
+    }
+
+    pre.prettyprint {
+        display: none;
+
+        &.prettyprinted {
+            background-color: #efefef;
+            border: 1px solid #ddd;
+            margin: rem(20) 0;
+            font-size: rem(11);
+            padding: rem(10);
+
+            xmp {
+                margin: 0;
+            }
+        }
+    }
+
+    .code-active {
+        pre.prettyprint {
+            display: block;
+        }
+    }
+
+    button {
+        margin-bottom: rem(5);
+    }
+
+    // .font-family-oswald {
+    //     @include sansAltMed();
+    // }
+
+    // .font-family-lemonmilk {
+    //     @include lemonmilk();
+    // }
+}

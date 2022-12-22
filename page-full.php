@@ -20,6 +20,11 @@ the_post();
 		) );
 		edit_post_link( __( 'Edit', 'forge' ), '<span class="edit-link">', '</span>' );
 	?>
+	<div class="row mt-2">
+		<div class="col-12">
+			<?php get_template_part('templates/social/social-share'); ?>
+		</div>
+	</div>
 </div><!-- /#post-<?php the_ID(); ?> -->
 <?php
 	// If comments are open or we have at least one comment, load up the comment template.
