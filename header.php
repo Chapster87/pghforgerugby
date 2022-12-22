@@ -131,10 +131,10 @@
 				if ( is_woocommerce() ) :
 		?>
 			<div class="row">
-				<div class="col-12 col-md-10 mt-4">
+				<div class="col-12 col-lg-9 col-xl-10 mt-4">
 			<?php else: ?>
 			<div class="row">
-				<div class="col-12 col-md-10 mt-4">
+				<div class="col-12 col-lg-9 col-xl-10 mt-4">
 			<?php endif; ?>
 		<?php else: ?>
 			<div class="row">
