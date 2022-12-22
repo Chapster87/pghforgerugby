@@ -72,8 +72,8 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       $black !default;
-$secondary:     $gold !default;
+$primary:       $gold !default;
+$secondary:     $black !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -418,7 +418,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $gray-900 !default;
-$body-color:                $gray-300 !default;
+$body-color:                $black !default;
 $body-text-align:           null !default;
 
 // Utilities maps

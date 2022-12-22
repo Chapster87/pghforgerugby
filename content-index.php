@@ -30,9 +30,9 @@
 		<div class="card-body">
 			<div class="card-text entry-content">
 				<?php
-					if ( has_post_thumbnail() ) :
-						echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
-					endif;
+					// if ( has_post_thumbnail() ) :
+					// 	echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
+					// endif;
 
 					if ( is_search() ) :
 						the_excerpt();

@@ -4,9 +4,13 @@
         position: relative;
         padding: 1rem;
         border-radius: rem(3);
-        margin: rem(24) 0 1.5rem;
+        margin: rem(-20) 0 1.5rem;
         color: var(--color-black);
         background-color: var(--color-white);
+
+        @include media-breakpoint-up(md) {
+            margin: 0 0 1.5rem;
+        }
 
         .woocommerce-product-gallery {
             position: relative;

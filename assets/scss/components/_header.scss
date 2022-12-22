@@ -1,5 +1,5 @@
 header#header {
-    border-bottom: rem(2) solid var(--color-secondary);
+    border-bottom: rem(2) solid var(--color-primary);
     position: relative;
     @include frosted-glass-dk();
 
@@ -98,7 +98,7 @@ header#header {
                 body:not(.home) & {
                     animation: none;
                     max-width: rem(105);
-                    top: rem(5);
+                    top: rem(-16);
                 }
             }
         }

@@ -7,7 +7,7 @@
 
             &:after {
                 @include media-breakpoint-up(lg) {
-                    background-color: var(--color-secondary);
+                    background-color: var(--color-primary);
                 }
             }
         }

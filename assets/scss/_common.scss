@@ -23,26 +23,13 @@ img {
 }
 
 a {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     transition: color 0.5s ease;
 
     &:hover {
-        color: var(--color-secondary-invert);
+        color: var(--color-primary-invert);
     }
 
-    &:focus,
-    &.focus {
-        outline: 0;
-        box-shadow: none;
-    }
-
-    &:focus-visible {
-        box-shadow: none;
-        outline: -webkit-focus-ring-color auto 1px;
-    }
-}
-
-button {
     &:focus,
     &.focus {
         outline: 0;

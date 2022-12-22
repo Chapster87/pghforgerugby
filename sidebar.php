@@ -6,9 +6,9 @@
 if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() ) :
 ?>
 	<?php if ( is_woocommerce() ) : ?>
-		<div id="sidebar" class="col-12 col-md-3">
+		<div id="sidebar" class="col-12 col-lg-3 col-xl-2">
 	<?php else: ?>
-		<div id="sidebar" class="col-12 col-md-3">
+		<div id="sidebar" class="col-12 col-lg-3 col-xl-2">
 	<?php endif; ?>
 		<?php
 			if ( is_active_sidebar( 'primary_widget_area' ) ) :

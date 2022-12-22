@@ -85,6 +85,10 @@
 	#comments-title {
 		margin: $grid-gutter-width 0;
 	}
+
+	.post-navigation {
+		display: none;
+	}
 }
 
 #comments {
@@ -135,34 +139,6 @@
 
 /* WordPress Blocks */
 
-// Buttons
-
-.wp-block-button {
-	&.is-style-outline {
-		.wp-block-button__link {
-			@extend .btn;
-			@extend .btn-outline-primary;
-		}
-	}
-
-	&.btn-lg {
-		.wp-block-button__link {
-			@extend .btn-lg;
-		}
-	}
-
-	&.btn-sm {
-		.wp-block-button__link {
-			@extend .btn-sm;
-		}
-	}
-
-	.wp-block-button__link {
-		@extend .btn;
-		@extend .btn-primary;
-		text-decoration: none;
-	}
-}
 
 // Image, Media and Text
 

@@ -10,7 +10,7 @@ get_header();
 the_post();
 ?>
 <div class="row">
-	<div class="col-12 col-md-9">
+	<div class="col-12 col-lg-9 col-xl-10 mt-4">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content' ); ?>>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php

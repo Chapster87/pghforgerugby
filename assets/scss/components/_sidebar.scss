@@ -1,9 +1,23 @@
 .widget-area {
     margin-top: rem(24);
 
-    ul {
-        list-style: none;
-        padding: 0;
+
+
+    .wp-block-group {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--color-white);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
     }
 }
 
@@ -15,6 +29,11 @@
     }
 }
 
+.wp-block-search,
 .search-form {
     margin-bottom: 2rem;
+}
+
+.wp-block-latest-posts.wp-block-latest-posts__list li {
+    margin-bottom: rem(12);
 }
