@@ -35,7 +35,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: staging.pghrugby.com/wp-content/themes/forge/
+        server-dir: ./wp-content/themes/forge/
         exclude: |
           **/.git*
           **/.git*/**
