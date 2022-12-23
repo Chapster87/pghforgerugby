@@ -31,11 +31,12 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: ${{ secrets.FTP_SERVER }}
+        server: ftp.pghrugby.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        dry-run: true
         local-dir: ./
-        server-dir: staging.pghrugby.com/wp-content/themes/forge/
+        server-dir: ./staging.pghrugby.com/wp-content/themes/forge/
         exclude: |
           **/.git*
           **/.git*/**
