@@ -1,8 +1,19 @@
 'use strict';
 
 module.exports = {
+    bgVid: function () {
+        var video = document.getElementById('bg-video');
+        console.log(video);
+
+        /**
+         * Check if video can play, and play it
+         */
+        video.addEventListener('canplay', function () {
+            console.log('canplay');
+            video.play();
+        });
+    },
     cardSlider: function () {
-        console.log('test');
         $('.post-cards-home .post-card-row').slick({
             infinite: true,
             mobileFirst: true,
