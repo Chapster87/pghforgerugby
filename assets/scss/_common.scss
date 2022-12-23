@@ -50,6 +50,7 @@ a {
 }
 
 #main {
+    position: relative;
 
     @include media-breakpoint-up(lg) {
         padding-top: rem(119);

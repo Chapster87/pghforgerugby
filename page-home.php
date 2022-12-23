@@ -14,7 +14,9 @@ the_post();
     <div class="container">
 		<div class="row">
             <div id="post-<?php the_ID(); ?>" <?php post_class( 'content col-12' ); ?>>
-                <h1 class="entry-title"><?php the_title(); ?></h1>
+                <!-- <h1 class="entry-title"> -->
+                        <?php // the_title(); ?>
+                <!-- </h1> -->
                 <?php
                     the_content();
 
@@ -56,6 +58,12 @@ the_post();
         </div>
     </div>
 </div>
+
+<video id="bg-video" className="home-video" playsinline autoplay muted loop>
+    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.mp4" type="video/mp4"/>
+    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.ogv" type="video/ogg"/>
+    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.webm" type="video/webm"/>
+</video>
 <?php
 get_footer();
 ?>
