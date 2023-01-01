@@ -12,6 +12,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: rem(28);
+
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 0;
+        }
 
         a {
             display: block;

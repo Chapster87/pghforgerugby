@@ -41,22 +41,37 @@
     .social {
         width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         border-bottom: rem(3) solid var(--color-secondary);
         padding: 0 0 rem(16);
+        margin: rem(24) 0 0;
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+            margin: 0;
+        }
 
         .social__header {
-            margin: 0;
+            margin: 0 0 rem(10);
             text-transform: uppercase;
             color: var(--color-accent);
+
+            @include media-breakpoint-up(sm) {
+                margin: 0;
+            }
         }
 
         .social__links {
             display: flex;
-            margin: 0 0 0 2rem;
+            margin: 0;
             padding: 0;
             list-style-type: none;
+
+            @include media-breakpoint-up(sm) {
+                margin: 0 0 0 2rem;
+            }
 
             li {
                 margin: 0 0.625rem;

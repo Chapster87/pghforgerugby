@@ -1,0 +1,59 @@
+.slider-core-css {
+
+    .slick-next,
+    .slick-prev {
+        opacity: 0.75;
+        height: rem(36);
+        width: rem(36);
+        border-radius: rem(20);
+        border: 1px solid transparent;
+        border-color: var(--color-black);
+        background-color: var(--color-white);
+        box-shadow: 0 0 rem(8) 0 #000;
+        font-size: rem(24);
+        z-index: 1;
+        transition: opacity 0.6s ease, background-color 0.6s ease, border-color 0.6s ease;
+
+        &:before {
+            display: block;
+            content: '';
+            opacity: 1;
+            height: auto;
+            width: auto;
+            background: none;
+            position: relative;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--color-black);
+            transition: color 0.6s ease;
+        }
+
+        &:focus,
+        &:hover {
+            &:not(.slick-disabled) {
+                opacity: 1;
+                background-color: var(--color-black);
+                border-color: var(--color-primary);
+                &:before {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    .slick-next {
+        right: rem(-5);
+
+        &:before {
+            content: "\f105";
+        }
+    }
+
+    .slick-prev {
+        left: rem(-5);
+
+        &:before {
+            content:"\f104";
+        }
+    }
+}
