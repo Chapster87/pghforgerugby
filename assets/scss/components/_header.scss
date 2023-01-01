@@ -2,6 +2,7 @@ header#header {
     border-bottom: rem(2) solid var(--color-primary);
     position: relative;
     @include frosted-glass-dk();
+    box-shadow: 0 0 rem(8) 0 #000;
 
     &.fixed-top {
         top: 0;

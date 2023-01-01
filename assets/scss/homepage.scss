@@ -2,9 +2,7 @@
 @import "./variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
-@import "./bootstrapComponents";
 @import "./utilities/utils";
-@import "./components/cards";
 
 .page.home {
     #wrapper {
@@ -16,10 +14,11 @@
         width: auto;
         margin: rem(-17) auto rem(30);
         padding: rem(24);
+        box-shadow: 0 0 rem(8) 0 #000;
 
         @include media-breakpoint-up(md) {
             margin: rem(60) auto;
-            padding: rem(40);
+            padding: rem(26);
         }
 
         .highlight-white {
@@ -71,6 +70,30 @@
 
         @include media-breakpoint-up(lg) {
             display: inline-block;
+        }
+    }
+
+    .post-cards-home {
+
+        .post-card-row {
+            display: none;
+
+            &.slick-initialized {
+                display: block;
+            }
+        }
+
+        .card {
+            margin: 0 rem(8);
+            background-color: var(--color-gray-900);
+            color: var(--color-white);
+            border: 2px solid var(--color-primary);
+            box-shadow: 0 0 rem(8) 0 #000;
+
+            .card-title,
+            .card-title a {
+                color: var(--color-primary);
+            }
         }
     }
 }

@@ -442,7 +442,6 @@ if ( ! function_exists( 'forge_comment' ) ) :
 
 endif;
 
-
 /**
  * Nav menus.
  *

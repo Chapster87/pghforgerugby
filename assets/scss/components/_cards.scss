@@ -1,5 +1,21 @@
-.post-card { 
-    .card-body {
-        background-color: var(--color-primary);
+.card {
+    border-radius: rem(4);
+
+    .card-title {
+        color: var(--color-black);
+        a {
+        color: var(--color-black);
+        }
+
+        &+.card-img-link,
+        &+.card-img {
+            margin-top: rem(12);
+        }
+    }
+
+    .card-img-link,
+    .card-img {
+        display: block;
+        margin-bottom: rem(12);
     }
 }
