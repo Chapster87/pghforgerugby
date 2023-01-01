@@ -1,0 +1,43 @@
+name: 🚀 Staging Branch to Staging Site Push
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the develop branch
+on:
+  push:
+    branches: [ staging ]
+#  pull_request:
+#    branches: [ staging ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  FTP-Deploy-Action:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12.22.0
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.22.0'
+
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run compile:scss
+        npm run compile:js
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: pghrugby.com
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: ./staging.pghrugby.com/wp-content/themes/forge/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          fileToExclude.txt
