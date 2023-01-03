@@ -46,5 +46,8 @@
     "*.js": "eslint --cache --fix",
     "*.scss": "stylelint --fix"
   },
-  "dependencies": {}
+  "overrides": {
+    "chokidar": "^3.5.3",
+    "glob-parent": "^6.0.2"
+  }
 }
