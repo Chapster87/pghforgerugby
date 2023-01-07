@@ -109,6 +109,14 @@
                     font-weight: 900;
                     content: "\f105";
                     color: var(--color-white);
+                    animation: menu-toggle 0.3s forwards;
+                }
+
+                &.js-active {
+                    &:before {
+                        animation: activate-menu-toggle 0.3s forwards;
+                        //transform: rotate(90deg);
+                    }
                 }
 
                 @include media-breakpoint-up(lg) {

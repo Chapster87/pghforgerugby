@@ -23,7 +23,7 @@ function resetNav() {
     $('.menu-item-has-children').removeProp('hoverIntent_t');
     $('.menu-item-has-children').removeProp('hoverIntent_s');
 
-    $('.menu-item-has-children .sub-menu').removeClass('js-active');
+    $('.menu-item-has-children .sub-menu-toggle, .menu-item-has-children .sub-menu').removeClass('js-active');
 }
 
 /**
@@ -41,9 +41,11 @@ function navInit() {
     } else {
         $('.menu-item-has-children .sub-menu-toggle').on('click', function () {
             if ($(this).siblings('.sub-menu').is('.js-active')) {
+                $(this).removeClass('js-active');
                 $(this).siblings('.sub-menu').removeClass('js-active');
             } else {
                 $('.menu-item-has-children .sub-menu').removeClass('js-active');
+                $(this).addClass('js-active');
                 $(this).siblings('.sub-menu').addClass('js-active');
             }
         });
