@@ -124,7 +124,13 @@
 		</nav><!-- /#header -->
 	</header>
 
-	<main id="main" class="container">
+	<?php
+		// If we are on the timeline page
+		if ( is_page( 'history' ) ) :
+	?>
+		<main id="main">
+	<?php else: ?>
+		<main id="main" class="container">
 		<?php
 			// If Single or Archive (Category, Tag, Author or a Date based page).
 			if ( is_single() || is_archive() ) :
@@ -140,3 +146,4 @@
 			<div class="row">
 				<div class="col-12 mt-4">
 		<?php endif; ?>
+	<?php endif; ?>

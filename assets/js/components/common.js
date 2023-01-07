@@ -1,6 +1,5 @@
 'use strict';
 
-
 function getDeviceSize() {
     $('body').removeClass('vp-desktop').removeClass('vp-mobile');
     if (window.matchMedia('(max-width: 62em)').matches) {
@@ -26,5 +25,4 @@ module.exports = function () {
     $(window).smartresize(function () {
         getDeviceSize();
     });
-
 };

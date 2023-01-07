@@ -24,11 +24,13 @@ function setScrollFx(scrollPos, offset, device) {
         $body.removeClass('is-scrolled');
     }
 
-    if ($body.is('.admin-bar')) {
-        // subtract admin bar height
-        $('#main').css('padding-top', $header.outerHeight() - 32);
-    } else {
-        $('#main').css('padding-top', $header.outerHeight());
+    if (!$body.is('.page-template-page-timeline')) {
+        if ($body.is('.admin-bar')) {
+            // subtract admin bar height
+            $('#main').css('padding-top', $header.outerHeight() - 32);
+        } else {
+            $('#main').css('padding-top', $header.outerHeight());
+        }
     }
 
     // Reset scroll position, prevent negative scroll
@@ -76,7 +78,7 @@ function mobileMenuToggle() {
             // close menu
             resetNav();
         }
-    })
+    });
 }
 
 module.exports = function () {

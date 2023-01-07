@@ -1,0 +1,118 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "./utilities/utils";
+
+header,
+footer,
+.edge-bottom {
+    display: none;
+}
+
+#main {
+    padding: 0;
+}
+
+#forge-history {
+    position: relative;
+    overflow: hidden;
+
+    .story-progress {
+        width: 98%;
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 40;
+        text-align: center;
+        border: rem(3) solid var(--color-black);
+        margin: 0 auto;
+
+        .progress {
+            position: relative;
+            width: 100%;
+            height: rem(30);
+            z-index: 1;
+        }
+
+        .progress-label {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .progress-title {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            &:not(:last-child) {
+                border-right: rem(3) solid var(--color-black);
+            }
+        }
+
+        &.full {
+            bottom: rem(40);
+        }
+
+        &.dynamic {
+            bottom: rem(90);
+        }
+
+        // &.dynamic2 {
+        //     bottom: rem(140);
+        // }
+    }
+
+    .story-hero {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .hentry {
+            background-color: transparent;
+            color: var(--color-gold);
+        }
+
+        .entry-title {
+            color: var(--color-gold);
+        }
+    }
+
+    .story {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+
+        .story-event {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 100vw;
+            background-color: var(--color-accent);
+
+            &:nth-child(even) {
+                background-color: var(--color-gold);
+            }
+
+            .card {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

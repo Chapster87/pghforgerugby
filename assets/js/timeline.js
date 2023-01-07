@@ -3,5 +3,5 @@
 var processInclude = require('./util');
 
 $(function () {
-    processInclude(require('./homepage/homepage'));
+    processInclude(require('./timeline/timeline'));
 });

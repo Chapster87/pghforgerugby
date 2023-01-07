@@ -4,7 +4,7 @@
 import * as bootstrap from 'bootstrap';
 var processInclude = require('./util');
 
-$(document).ready(function () {
+$(function () {
 
 	// Focus input if Searchform is empty
 	[].forEach.call( document.querySelectorAll( '.search-form' ), ( el ) => {

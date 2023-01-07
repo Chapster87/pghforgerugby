@@ -35,9 +35,12 @@ the_post();
     <div class="row">
         <div class="col-12 post-card-row slider-core-css">
             <?php
-                query_posts( array('posts_per_page'=>5) );
-                while ( have_posts() ) : the_post();
+                global $post;
+                $args = array( 'numberposts' => 8, 'category_name' => 'club-news' );
+                $posts = get_posts( $args );
+                foreach( $posts as $post ): setup_postdata($post);
             ?>
+
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
@@ -49,10 +52,8 @@ the_post();
                         <p class="card-text"><?php echo get_the_excerpt(); ?> <a class="excerpt-read-more" href="<?php the_permalink() ?>">Read More</a></p>
                     </div>
                 </div>
-            <?php
-                endwhile;
-                wp_reset_query(); // resets main query
-            ?>
+
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

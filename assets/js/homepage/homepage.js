@@ -3,13 +3,11 @@
 module.exports = {
     bgVid: function () {
         var video = document.getElementById('bg-video');
-        console.log(video);
 
         /**
          * Check if video can play, and play it
          */
         video.addEventListener('canplay', function () {
-            console.log('canplay');
             video.play();
         });
     },
