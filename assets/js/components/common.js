@@ -23,6 +23,9 @@ module.exports = function () {
     getDeviceSize();
     cloneSocialBar();
 
+    // Remove Product price if it's empty.
+    $('.woocommerce .summary .price:empty').remove();
+
     $(window).smartresize(function () {
         getDeviceSize();
     });
