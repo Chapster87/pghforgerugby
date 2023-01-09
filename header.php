@@ -95,15 +95,16 @@
 					</span>
 				</button>
 
-				<div id="navbar" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<div id="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<?php
 						wp_nav_menu(
 							array(
 								'theme_location'  => 'main-menu',
 								'menu_class'      => 'nav-wrapper',
-								'container_class' => 'navbar-menu-container col-12',
+								'container_class' => 'navbar-menu-container',
 								'items_wrap'      => '<ul id="primary-nav" class="%2$s">%3$s</ul>',
 								'fallback_cb'     => false,
+								'walker' => new Custom_Walker_Nav_Menu
 							)
 						);
 

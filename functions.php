@@ -456,8 +456,14 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	);
 }
 
-// Custom Nav Walker: wp_bootstrap_navwalker().
-$custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+// wp_bootstrap_navwalker().
+// $custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+// if ( is_readable( $custom_walker ) ) {
+// 	require_once $custom_walker;
+// }
+
+// Custom Nav Walker
+$custom_walker = get_template_directory() . '/inc/navwalker.php';
 if ( is_readable( $custom_walker ) ) {
 	require_once $custom_walker;
 }
@@ -466,7 +472,6 @@ $custom_walker_footer = get_template_directory() . '/inc/wp_bootstrap_navwalker_
 if ( is_readable( $custom_walker_footer ) ) {
 	require_once $custom_walker_footer;
 }
-
 
 /**
  * Loading All CSS Stylesheets and Javascript Files.

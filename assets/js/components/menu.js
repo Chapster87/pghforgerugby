@@ -15,20 +15,40 @@ function navMouseLeave() {
 }
 
 /**
+ * Return Nav to basic state
+ */
+function resetNav() {
+    // unbind the hoverIntent
+    $('.menu-item-has-children').unbind('mouseenter').unbind('mouseleave');
+    $('.menu-item-has-children').removeProp('hoverIntent_t');
+    $('.menu-item-has-children').removeProp('hoverIntent_s');
+
+    $('.menu-item-has-children .sub-menu-toggle, .menu-item-has-children .sub-menu').removeClass('js-active');
+}
+
+/**
  * Init the default menu states
  */
 function navInit() {
-    if($('body').is('.vp-desktop')) {
+    resetNav();
+
+    if ($('body').is('.vp-desktop')) {
         $('.menu-item-has-children').hoverIntent({
             over: navMouseEnter,
             out: navMouseLeave,
             timeout: 200
         });
     } else {
-        // unbind the hoverIntent
-        $('.menu-item-has-children').unbind('mouseenter').unbind('mouseleave');
-        $('.menu-item-has-children').removeProp('hoverIntent_t');
-        $('.menu-item-has-children').removeProp('hoverIntent_s');
+        $('.menu-item-has-children .sub-menu-toggle').on('click', function () {
+            if ($(this).siblings('.sub-menu').is('.js-active')) {
+                $(this).removeClass('js-active');
+                $(this).siblings('.sub-menu').removeClass('js-active');
+            } else {
+                $('.menu-item-has-children .sub-menu').removeClass('js-active');
+                $(this).addClass('js-active');
+                $(this).siblings('.sub-menu').addClass('js-active');
+            }
+        });
     }
 }
 
