@@ -1,15 +1,17 @@
 @import "tooltip";
 
 .form-group {
-    &.required .form-label::before {
+    &.required .form-label::after {
         content: "*";
         color: var(--color-danger);
+        display: inline-block;
+        margin-left: rem(3);
     }
 }
 
 .form-control {
-     background-color: var(--color-white);
-     color: var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
 
     &:focus {
         color: var(--color-black);
@@ -19,4 +21,31 @@
 ::placeholder,
 .form-control::placeholder {
     color: var(--color-gray-600);
+}
+
+.contact-form-messaging {
+    background-color: var(--color-gray-300);
+    padding: rem(16);
+    margin: rem(14) 0;
+
+    .contact-form-message {
+        font-weight: bold;
+    }
+
+    .contact-validation-message {
+        color: var(--color-danger);
+    }
+
+    .contact-success-message {
+        color: var(--color-success);
+    }
+}
+
+.captcha-image {
+    margin-bottom: rem(10);
+}
+
+.refresh-captcha {
+    font-size: rem(30);
+    margin-left: rem(10);
 }
