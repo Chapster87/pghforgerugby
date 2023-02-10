@@ -524,3 +524,5 @@ function forge_scripts_loader() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'forge_scripts_loader' );
+
+include('custom-shortcodes.php');
