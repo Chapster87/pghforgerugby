@@ -35,3 +35,4 @@ $(document).ready(function () {
 
 require('./thirdParty/smartResize');
 require('./thirdParty/hoverIntent');
+require('../../node_modules/swiper/swiper-bundle');
