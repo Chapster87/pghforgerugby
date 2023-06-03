@@ -1,0 +1,41 @@
+// All variables included, only overridden variables are uncommented
+
+:root {
+    --swiper-theme-color: var(--color-gold);
+    --swiper-navigation-size: rem(18);
+    --swiper-navigation-top-offset: 38%;
+    --swiper-navigation-color: var(--color-black);
+    --swiper-navigation-bg-color: var(--color-white); // custom, not swiper
+    --swiper-navigation-hover-color: var(--swiper-theme-color); // custom, not swiper
+    --swiper-scrollbar-bg-color: var(--color-grey2);
+    --swiper-scrollbar-drag-bg-color: var(--swiper-theme-color);
+    /*
+    --swiper-preloader-color: var(--swiper-theme-color);
+    --swiper-wrapper-transition-timing-function: initial;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-pagination-color: var(--swiper-theme-color);
+    --swiper-pagination-left: auto;
+    --swiper-pagination-right: 8px;
+    --swiper-pagination-bottom: 8px;
+    --swiper-pagination-top: auto;
+    --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: rgba(0,0,0,0.25);
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-border-radius: 50%;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+    --swiper-scrollbar-border-radius: 10px;
+    --swiper-scrollbar-top: auto;
+    --swiper-scrollbar-bottom: 4px;
+    --swiper-scrollbar-left: auto;
+    --swiper-scrollbar-right: 4px;
+    --swiper-scrollbar-sides-offset: 1%;
+    --swiper-scrollbar-size: 4px;
+    */
+}

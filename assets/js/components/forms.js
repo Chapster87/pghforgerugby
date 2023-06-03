@@ -21,8 +21,11 @@ module.exports = function () {
     }
 
     var captchaRefreshBtn = document.querySelector('.refresh-captcha');
-    var captchaImgSrc = document.querySelector('.captcha-image').src;
-    captchaRefreshBtn.addEventListener('click', function () {
-        document.querySelector('.captcha-image').src = captchaImgSrc + '?' + Date.now();
-    });
+    var captchaImg = document.querySelector('.captcha-image');
+    if (captchaImg) {
+        var captchaImgSrc = document.querySelector('.captcha-image').src;
+        captchaRefreshBtn.addEventListener('click', function () {
+            document.querySelector('.captcha-image').src = captchaImgSrc + '?' + Date.now();
+        });
+    }
 };

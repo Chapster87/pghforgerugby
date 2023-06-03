@@ -1,0 +1,62 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "./utilities/utils";
+
+.membership {
+    .membership-tier {
+        border: 1px solid var(--color-gray-300);
+        margin-bottom: rem(16);
+    }
+    .tier-header {
+        background-color: var(--color-gray-200);
+        border-bottom: 1px solid var(--color-gray-300);
+
+        h3 {
+            margin: 0;
+            padding: rem(10) 0;
+        }
+    }
+
+    .tier-col {
+        display: flex;
+        align-items: center;
+        padding-top: rem(16);
+        padding-bottom: rem(16);
+
+        &:not(:last-child){
+            border-bottom: 1px solid var(--color-gray-300);
+
+            @include media-breakpoint-up(xl) {
+                border-bottom: 0;
+                border-right: 1px solid var(--color-gray-300);
+            }
+        }
+    }
+
+    .tier-col-label {
+        display: block;
+        font-weight: bold;
+    }
+
+    .tier-contribution {
+        @include media-breakpoint-up(md) {
+            border-right: 1px solid var(--color-gray-300);
+        }
+    }
+
+    .tier-benefits {
+        ul {
+            margin: 0;
+        }
+    }
+
+    .tier-payment {
+        justify-content: center;
+
+        .paypal-submit {
+            margin-top: rem(10);
+        }
+    }
+}
