@@ -43,3 +43,15 @@ ul.products {
 
     }
 }
+
+section.products {
+    clear:both;
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    &.related {
+        display: none;
+    }
+}

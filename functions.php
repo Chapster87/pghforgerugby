@@ -500,8 +500,8 @@ function forge_scripts_loader() {
 		wp_enqueue_style( 'rtl', get_template_directory_uri() . '/assets/static/css/rtl.css', array(), $theme_version, 'all' );
 	}
 
-	// if ( is_woocommerce() || is_cart() || is_checkout() || is_page( array( 'my-account' ) ) ) {
-	if ( !function_exists( 'is_woocommerce' ) || is_cart() || is_checkout() || is_page( array( 'my-account' ) ) ) {
+	if ( is_woocommerce() || is_cart() || is_checkout() || is_page( array( 'my-account' ) ) ) {
+	// if ( !function_exists( 'is_woocommerce' ) || is_cart() || is_checkout() || is_page( array( 'my-account' ) ) ) {
         wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/assets/static/css/woocommerce.css', $theme_version, 'all' );
     }
 
