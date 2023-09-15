@@ -220,6 +220,18 @@ function forge_widgets_init() {
 	// Area 1.
 	register_sidebar(
 		array(
+			'name'          => 'Homepage Countdown',
+			'id'            => 'homepage-countdown',
+			'before_widget' => '<div class="countdown-block">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	// Area 1.
+	register_sidebar(
+		array(
 			'name'          => 'Primary Widget Area (Sidebar)',
 			'id'            => 'primary_widget_area',
 			'before_widget' => '',
