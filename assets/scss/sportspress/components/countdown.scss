@@ -1,0 +1,199 @@
+.home-countdown-widget {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(26);
+    padding: rem(20);
+    background-color: var(--color-gray-900);
+    box-shadow: 0 0 rem(8) 0 #000;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: rem(46);
+    }
+
+    .countdown-heading {
+        .headline {
+            margin-bottom: rem(20);
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--color-white);
+            font-size: rem(25);
+            text-shadow: rem(3) rem(3) var(--color-black);
+        }
+    }
+}
+
+.home-countdown-main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .sp-widget-align-left,
+    .sp-widget-align-right {
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            width: 50%;
+
+            &:nth-child(odd) {
+                padding-right: rem(20);
+            }
+
+        }
+
+        @include media-breakpoint-up(xl) {
+            width: 25%;
+            padding: 0 rem(10);
+
+            &:nth-child(odd) {
+                padding-right: rem(10);
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .card {
+        width: 100% !important;
+    }
+
+    .card-body {
+        padding-top: rem(8);
+    }
+
+    .sp-template {
+        margin-bottom: 0 !important;
+    }
+
+    .sp-template-countdown {
+
+        .sp-event-name,
+        .sp-event-venue,
+        .sp-event-league,
+        .sp-event-date {
+            border: 0 !important;
+            background: transparent !important;
+        }
+
+        .sp-event-date {
+            text-transform: uppercase !important;
+            color: var(--color-black) !important;
+            font-size: rem(16) !important;
+            padding-bottom: 0 !important;
+            padding-bottom: rem(16) !important;
+        }
+    }
+
+    .countdown-home-away {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: rem(10);
+        @include sansAltMed();
+        text-transform: uppercase !important;
+        font-weight: 500 !important;
+
+        &+hr {
+            margin-top: rem(6);
+            margin-bottom: rem(8);
+        }
+
+    }
+
+    .team-logo {
+        width: auto;
+    }
+
+    .event-name {
+        display: flex !important;
+        align-items: center;
+
+        .event-teams {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0 rem(10);
+
+            .event-team {
+                font-size: rem(14) !important;
+                text-transform: uppercase !important;
+            }
+
+            .forge {
+                order: 1;
+                font-family: $oswald !important;
+                font-weight: 600  !important;
+                font-size: rem(18) !important;
+            }
+
+            .against {
+                order: 2;
+                font-family: $oswald !important;
+                font-weight: 500  !important;
+                font-size: rem(18) !important;
+            }
+
+            .not-forge {
+                order: 3;
+            }
+        }
+
+        .home-team {
+
+        }
+
+        .away-team {
+
+        }
+
+        .forge {
+
+        }
+    }
+
+    .sp-countdown,
+    .countdown-dev {
+        margin: rem(12) 0 0 0;
+        display: flex;
+        justify-content: center;
+
+        time {
+            border: 0 !important;
+            display: flex !important;
+            width: 90% !important;
+        }
+
+        span {
+            display: flex !important;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex: 1;
+            padding: rem(8) rem(5) !important;
+            background: #222 !important;
+            color: #ccc !important;
+            font-family: sans-serif !important;
+            font-size: 2rem !important;
+            font-weight: bolder !important;
+            line-height: 0.95 !important;
+            border-radius: 0.15rem;
+            border: 1px solid #000 !important;
+
+            small {
+                width: 100%;
+                text-align: center;
+                color: white !important;
+                font-size: 12px !important;
+                line-height: 1.5 !important;
+                font-weight: 500 !important;
+                display: block !important;
+
+            }
+        }
+    }
+}

@@ -31,6 +31,17 @@ the_post();
     </div>
 </div>
 
+<?php if ( is_active_sidebar( 'homepage-countdown' ) ) : ?>
+    <div class="home-countdown-widget">
+        <div class="countdown-heading">
+            <h3 class="headline">Upcoming Matches</h3>
+        </div>
+        <div class="home-countdown-main">
+            <?php dynamic_sidebar( 'homepage-countdown' ); ?>
+        </div>
+    </div>
+<?php endif; ?>
+
 <div class="post-cards-home">
     <div class="row">
         <div class="col-12">

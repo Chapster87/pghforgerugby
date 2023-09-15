@@ -1,0 +1,20 @@
+.sp-widget-align-none,
+.sp-widget-align-left,
+.sp-widget-align-right {
+    width: 100%;
+    padding: 0;
+    float: none;
+    clear: none;
+}
+
+.sp-widget-align-left,
+.sp-widget-align-right {
+    @include media-breakpoint-up(md) {
+        width: 50%;
+        // width: calc(50% - #{rem(20)});
+        float: none;
+        clear: none;
+    }
+}
+
+@import "./components/countdown";
