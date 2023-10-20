@@ -1,172 +1,172 @@
-<div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <?php
-        /**
-         * Countdown
-         *
-         * @author      ThemeBoy
-         * @package     SportsPress/Templates
-         * @version   2.7.9
-         */
+<?php
+/**
+ * Countdown
+ *
+ * @author      ThemeBoy
+ * @package     SportsPress/Templates
+ * @version   2.7.9
+ */
 
-        if ( ! defined( 'ABSPATH' ) ) {
-            exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
+$defaults = array(
+    'team'           => null,
+    'calendar'       => null,
+    'order'          => null,
+    'orderby'        => null,
+    'league'         => null,
+    'season'         => null,
+    'id'             => null,
+    'title'          => null,
+    'live'           => get_option( 'sportspress_enable_live_countdowns', 'yes' ) == 'yes' ? true : false,
+    'link_events'    => get_option( 'sportspress_link_events', 'yes' ) == 'yes' ? true : false,
+    'link_teams'     => get_option( 'sportspress_link_teams', 'no' ) == 'yes' ? true : false,
+    'link_venues'    => get_option( 'sportspress_link_venues', 'no' ) == 'yes' ? true : false,
+    'show_logos'     => get_option( 'sportspress_countdown_show_logos', 'no' ) == 'yes' ? true : false,
+    'show_thumbnail' => get_option( 'sportspress_countdown_show_thumbnail', 'no' ) == 'yes' ? true : false,
+);
+
+if ( isset( $show_excluded ) && $show_excluded ) {
+    $excluded_statuses = array();
+} else {
+    $excluded_statuses = apply_filters(
+        'sp_countdown_excluded_statuses',
+        array(
+            'postponed',
+            'cancelled',
+        )
+    );
+}
+
+if ( isset( $id ) ) :
+    $post = get_post( $id );
+elseif ( $calendar ) :
+    $calendar = new SP_Calendar( $calendar );
+    if ( $team ) {
+        $calendar->team = $team;
+    }
+    $calendar->status = 'future';
+    if ( $order ) {
+        $calendar->order = $order;
+    } else {
+        $calendar->order = 'ASC';
+    }
+    if ( $orderby ) {
+        $calendar->orderby = $orderby;
+    }
+    $data = $calendar->data();
+
+    /**
+     * Exclude postponed or cancelled events.
+     */
+    while ( $post = array_shift( $data ) ) {
+        $sp_status = get_post_meta( $post->ID, 'sp_status', true );
+        if ( ! in_array( $sp_status, $excluded_statuses ) ) {
+            break;
         }
-
-        $defaults = array(
-            'team'           => null,
-            'calendar'       => null,
-            'order'          => null,
-            'orderby'        => null,
-            'league'         => null,
-            'season'         => null,
-            'id'             => null,
-            'title'          => null,
-            'live'           => get_option( 'sportspress_enable_live_countdowns', 'yes' ) == 'yes' ? true : false,
-            'link_events'    => get_option( 'sportspress_link_events', 'yes' ) == 'yes' ? true : false,
-            'link_teams'     => get_option( 'sportspress_link_teams', 'no' ) == 'yes' ? true : false,
-            'link_venues'    => get_option( 'sportspress_link_venues', 'no' ) == 'yes' ? true : false,
-            'show_logos'     => get_option( 'sportspress_countdown_show_logos', 'no' ) == 'yes' ? true : false,
-            'show_thumbnail' => get_option( 'sportspress_countdown_show_thumbnail', 'no' ) == 'yes' ? true : false,
+    }
+else :
+    $args = array();
+    if ( isset( $team ) ) {
+        $args['meta_query'] = array(
+            array(
+                'key'   => 'sp_team',
+                'value' => $team,
+            ),
         );
+    }
+    if ( isset( $league ) || isset( $season ) ) {
+        $args['tax_query'] = array( 'relation' => 'AND' );
 
-        if ( isset( $show_excluded ) && $show_excluded ) {
-            $excluded_statuses = array();
+        if ( isset( $league ) ) {
+            $args['tax_query'][] = array(
+                'taxonomy' => 'sp_league',
+                'terms'    => $league,
+            );
+        }
+
+        if ( isset( $season ) ) {
+            $args['tax_query'][] = array(
+                'taxonomy' => 'sp_season',
+                'terms'    => $season,
+            );
+        }
+    }
+
+    /**
+     * Exclude postponed or cancelled events.
+     */
+    $args['meta_query'][] = array(
+        'key'     => 'sp_status',
+        'compare' => 'NOT IN',
+        'value'   => $excluded_statuses,
+    );
+
+    $post = sp_get_next_event( $args );
+endif;
+
+extract( $defaults, EXTR_SKIP );
+
+if ( ! isset( $post ) || ! $post ) {
+    return;
+}
+
+//"sp-table-caption" class removed from title
+
+if ( $title ) {
+    echo '<h4 class="card-title text-muted">' . wp_kses_post( $title ) . '</h4>';
+}
+
+$title = $post->post_title;
+// if ( $link_events ) {
+//     $title = '<a href="' . get_post_permalink( $post->ID, false, true ) . '">' . $title . '</a>';
+// }
+if ( isset( $show_status ) && $show_status ) {
+    $sp_status = get_post_meta( $post->ID, 'sp_status', true );
+    // Avoid Undefined index warnings if no status is set (i.e. during import)
+    if ( $sp_status == '' ) {
+        $sp_status = 'ok';
+    }
+    $statuses = apply_filters(
+        'sportspress_event_statuses',
+        array(
+            'ok'        => esc_attr__( 'On time', 'sportspress' ),
+            'tbd'       => esc_attr__( 'TBD', 'sportspress' ),
+            'postponed' => esc_attr__( 'Postponed', 'sportspress' ),
+            'cancelled' => esc_attr__( 'Canceled', 'sportspress' ),
+        )
+    );
+    $title    = $title . ' (' . $statuses[ $sp_status ] . ')';
+}
+
+$teams = array_unique( (array) get_post_meta( $post->ID, 'sp_team' ) );
+$matchupData = array();
+
+if ( is_array( $teams ) ) {
+    $i = 0;
+    foreach ( $teams as $team ) {
+        $i++;
+        $teamName = esc_attr(get_the_title($team));
+        if($i === 1){
+            $matchupData['homeTeamID'] = $team;
+            $matchupData['homeTeamName'] = $teamName;
+            $matchupData['homeTeamNameShort'] = sp_team_short_name($team);
+            $matchupData['homeTeamLogoUrl'] = sp_team_short_name($team);
+            $matchupData['isForgeHome'] = strpos($teamName, "Forge") !== false;
         } else {
-            $excluded_statuses = apply_filters(
-                'sp_countdown_excluded_statuses',
-                array(
-                    'postponed',
-                    'cancelled',
-                )
-            );
+            $matchupData['awayTeamID'] = $team;
+            $matchupData['awayTeamName'] = $teamName;
+            $matchupData['awayTeamNameShort'] = sp_team_short_name($team);
+            $matchupData['isForgeAway'] = strpos($teamName, "Forge") !== false;
         }
+    }
+}
+?>
 
-        if ( isset( $id ) ) :
-            $post = get_post( $id );
-        elseif ( $calendar ) :
-            $calendar = new SP_Calendar( $calendar );
-            if ( $team ) {
-                $calendar->team = $team;
-            }
-            $calendar->status = 'future';
-            if ( $order ) {
-                $calendar->order = $order;
-            } else {
-                $calendar->order = 'ASC';
-            }
-            if ( $orderby ) {
-                $calendar->orderby = $orderby;
-            }
-            $data = $calendar->data();
-
-            /**
-             * Exclude postponed or cancelled events.
-             */
-            while ( $post = array_shift( $data ) ) {
-                $sp_status = get_post_meta( $post->ID, 'sp_status', true );
-                if ( ! in_array( $sp_status, $excluded_statuses ) ) {
-                    break;
-                }
-            }
-        else :
-            $args = array();
-            if ( isset( $team ) ) {
-                $args['meta_query'] = array(
-                    array(
-                        'key'   => 'sp_team',
-                        'value' => $team,
-                    ),
-                );
-            }
-            if ( isset( $league ) || isset( $season ) ) {
-                $args['tax_query'] = array( 'relation' => 'AND' );
-
-                if ( isset( $league ) ) {
-                    $args['tax_query'][] = array(
-                        'taxonomy' => 'sp_league',
-                        'terms'    => $league,
-                    );
-                }
-
-                if ( isset( $season ) ) {
-                    $args['tax_query'][] = array(
-                        'taxonomy' => 'sp_season',
-                        'terms'    => $season,
-                    );
-                }
-            }
-
-            /**
-             * Exclude postponed or cancelled events.
-             */
-            $args['meta_query'][] = array(
-                'key'     => 'sp_status',
-                'compare' => 'NOT IN',
-                'value'   => $excluded_statuses,
-            );
-
-            $post = sp_get_next_event( $args );
-        endif;
-
-        extract( $defaults, EXTR_SKIP );
-
-        if ( ! isset( $post ) || ! $post ) {
-            return;
-        }
-
-        //"sp-table-caption" class removed from title
-
-        if ( $title ) {
-            echo '<h4 class="card-title text-muted">' . wp_kses_post( $title ) . '</h4>';
-        }
-
-        $title = $post->post_title;
-        // if ( $link_events ) {
-        //     $title = '<a href="' . get_post_permalink( $post->ID, false, true ) . '">' . $title . '</a>';
-        // }
-        if ( isset( $show_status ) && $show_status ) {
-            $sp_status = get_post_meta( $post->ID, 'sp_status', true );
-            // Avoid Undefined index warnings if no status is set (i.e. during import)
-            if ( $sp_status == '' ) {
-                $sp_status = 'ok';
-            }
-            $statuses = apply_filters(
-                'sportspress_event_statuses',
-                array(
-                    'ok'        => esc_attr__( 'On time', 'sportspress' ),
-                    'tbd'       => esc_attr__( 'TBD', 'sportspress' ),
-                    'postponed' => esc_attr__( 'Postponed', 'sportspress' ),
-                    'cancelled' => esc_attr__( 'Canceled', 'sportspress' ),
-                )
-            );
-            $title    = $title . ' (' . $statuses[ $sp_status ] . ')';
-        }
-
-        $teams = array_unique( (array) get_post_meta( $post->ID, 'sp_team' ) );
-        $matchupData = array();
-
-        if ( is_array( $teams ) ) {
-            $i = 0;
-            foreach ( $teams as $team ) {
-                $i++;
-                $teamName = esc_attr(get_the_title($team));
-                if($i === 1){
-                    $matchupData['homeTeamID'] = $team;
-                    $matchupData['homeTeamName'] = $teamName;
-                    $matchupData['homeTeamNameShort'] = sp_team_short_name($team);
-                    $matchupData['homeTeamLogoUrl'] = sp_team_short_name($team);
-                    $matchupData['isForgeHome'] = strpos($teamName, "Forge") !== false;
-                } else {
-                    $matchupData['awayTeamID'] = $team;
-                    $matchupData['awayTeamName'] = $teamName;
-                    $matchupData['awayTeamNameShort'] = sp_team_short_name($team);
-                    $matchupData['isForgeAway'] = strpos($teamName, "Forge") !== false;
-                }
-            }
-        }
-
-        ?>
+<div class="card">
+    <div class="card-body">
         <div class="sp-template sp-template-countdown">
             <div class="sp-countdown-wrapper">
             <?php
@@ -313,6 +313,5 @@
                 </p>
             </div>
         </div>
-
     </div>
 </div>

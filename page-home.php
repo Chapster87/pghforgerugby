@@ -33,11 +33,13 @@ the_post();
 
 <?php if ( is_active_sidebar( 'homepage-countdown' ) ) : ?>
     <div class="home-countdown-widget">
-        <div class="countdown-heading">
-            <h3 class="headline">Upcoming Matches</h3>
-        </div>
-        <div class="home-countdown-main">
-            <?php dynamic_sidebar( 'homepage-countdown' ); ?>
+        <div class="home-countdown-inner">
+            <div class="countdown-heading">
+                <h3 class="headline">Upcoming Matches</h3>
+            </div>
+            <div class="home-countdown-main">
+                <?php dynamic_sidebar( 'homepage-countdown' ); ?>
+            </div>
         </div>
     </div>
 <?php endif; ?>
@@ -81,9 +83,9 @@ the_post();
 </div>
 
 <video id="bg-video" className="home-video" playsinline autoplay muted loop>
+    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.webm" type="video/webm"/>
     <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.mp4" type="video/mp4"/>
     <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.ogv" type="video/ogg"/>
-    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.webm" type="video/webm"/>
 </video>
 <?php
 get_footer();

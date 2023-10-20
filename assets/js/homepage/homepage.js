@@ -3,6 +3,30 @@
 /* global Swiper */
 
 /**
+ * Hide Countdown content
+ */
+function manageCountdowns() {
+    let $matchCountdown = $('.home-countdown-widget');
+    let $countdowns = $matchCountdown.find('.sp-widget-align-left');
+
+    $countdowns.each(function () {
+        let $countdownCard = $(this).find('.card');
+
+        if ($countdownCard.length < 1) {
+            $(this).detach();
+        } else {
+            $(this).addClass('js-active');
+        }
+    });
+
+    // recheck for countdowns after loop
+    $countdowns = $matchCountdown.find('.sp-widget-align-left');
+    if ($countdowns.length > 0) {
+        $matchCountdown.addClass('js-show');
+    }
+}
+
+/**
  * Init homepage bg video
  */
 function bgVid() {
@@ -59,6 +83,7 @@ function cardSlider() {
 }
 
 module.exports = function () {
+    manageCountdowns();
     bgVid();
     cardSlider();
 };
