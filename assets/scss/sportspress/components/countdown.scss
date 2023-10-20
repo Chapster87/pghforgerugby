@@ -1,14 +1,22 @@
 .home-countdown-widget {
-    display: flex;
-    flex-direction: column;
+    display: none;
+    justify-content: center;
     margin-bottom: rem(26);
-    padding: rem(20);
-    background-color: var(--color-gray-900);
-    box-shadow: 0 0 rem(8) 0 #000;
 
     @include media-breakpoint-up(md) {
         margin-bottom: rem(46);
     }
+
+    &.js-show {
+        display: flex;
+    }
+}
+
+.home-countdown-inner {
+    display: inline-block;
+    padding: rem(20);
+    background-color: var(--color-gray-900);
+    box-shadow: 0 0 rem(8) 0 #000;
 
     .countdown-heading {
         .headline {
@@ -25,23 +33,34 @@
 .home-countdown-main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 
+    .sp-widget-align-none,
     .sp-widget-align-left,
     .sp-widget-align-right {
+        display: none;
         width: 100%;
+        margin-bottom: rem(13);
 
         @include media-breakpoint-up(md) {
-            width: 50%;
+            // width - 50% of outer wrapper with padding
+            width:calc(662.25px * 0.5);
 
             &:nth-child(odd) {
                 padding-right: rem(20);
             }
 
+            &:only-child {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
         }
 
-        @include media-breakpoint-up(xl) {
-            width: 25%;
+        @include media-breakpoint-up(lg) {
+            // width - 25% of outer wrapper with padding
+            width:calc(913px * 0.5);
             padding: 0 rem(10);
 
             &:nth-child(odd) {
@@ -55,11 +74,40 @@
             &:last-child {
                 padding-right: 0;
             }
+
+            &:only-child {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            // width - 25% of outer wrapper with padding
+            width:calc(1400px * 0.25);
+        }
+
+        &.js-active {
+            display: block;
+        }
+    }
+
+    .countdown-block {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .widget-title {
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: rem(13);
         }
     }
 
     .card {
         width: 100% !important;
+        flex: 1;
     }
 
     .card-body {
@@ -71,6 +119,14 @@
     }
 
     .sp-template-countdown {
+        height: 100%;
+
+        .sp-countdown-wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
         .sp-event-name,
         .sp-event-venue,
@@ -143,17 +199,11 @@
             }
         }
 
-        .home-team {
+        .home-team {}
 
-        }
+        .away-team {}
 
-        .away-team {
-
-        }
-
-        .forge {
-
-        }
+        .forge {}
     }
 
     .sp-countdown,
