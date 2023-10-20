@@ -83,9 +83,9 @@ the_post();
 </div>
 
 <video id="bg-video" className="home-video" playsinline autoplay muted loop>
+    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.webm" type="video/webm"/>
     <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.mp4" type="video/mp4"/>
     <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.ogv" type="video/ogg"/>
-    <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/ForgeJerseyRevealBG.webm" type="video/webm"/>
 </video>
 <?php
 get_footer();
