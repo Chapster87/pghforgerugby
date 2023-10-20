@@ -33,11 +33,13 @@ the_post();
 
 <?php if ( is_active_sidebar( 'homepage-countdown' ) ) : ?>
     <div class="home-countdown-widget">
-        <div class="countdown-heading">
-            <h3 class="headline">Upcoming Matches</h3>
-        </div>
-        <div class="home-countdown-main">
-            <?php dynamic_sidebar( 'homepage-countdown' ); ?>
+        <div class="home-countdown-inner">
+            <div class="countdown-heading">
+                <h3 class="headline">Upcoming Matches</h3>
+            </div>
+            <div class="home-countdown-main">
+                <?php dynamic_sidebar( 'homepage-countdown' ); ?>
+            </div>
         </div>
     </div>
 <?php endif; ?>
