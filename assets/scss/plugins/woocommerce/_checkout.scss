@@ -12,3 +12,11 @@
         }
     }
 }
+
+label {
+    @extend .form-label;
+}
+
+input[type="text"], textarea {
+    @extend .form-control;
+}
