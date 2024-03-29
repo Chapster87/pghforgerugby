@@ -13,7 +13,7 @@ if ( is_readable( $theme_customizer ) ) {
 
 /**
  * Include Support for wordpress.com-specific functions.
- * 
+ *
  * @since v1.0
  */
 $theme_wordpresscom = get_template_directory() . '/inc/wordpresscom.php';
@@ -312,6 +312,35 @@ function forge_password_form() {
 	return $output;
 }
 add_filter( 'the_password_form', 'forge_password_form' );
+
+function filter_woocommerce_coupon_get_discount_amount( $round, $discounting_amount, $cart_item, $single, $coupon ) {
+    // Related coupons codes to be defined in this array
+    $coupon_codes = array( 'midwestchamps' );
+
+    // Product IDs, for second discount
+    $product_ids = array( 4691 );
+
+    // Second discount
+    $second_discount = 75;
+
+    // Changing the discount for specific product Ids
+    if ( $coupon->is_type('fixed_product') && in_array( $coupon->get_code(), $coupon_codes ) ) {
+        // Search for product ID in array product IDs
+        if ( in_array( $cart_item['product_id'], $product_ids ) ) {
+            // Get cart item quantity
+            $cart_item_qty = is_null( $cart_item ) ? 1 : $cart_item['quantity'];
+
+            // Discount
+            $discount = $second_discount;
+            $discount = $single ? $discount : $discount * $cart_item_qty;
+
+            $round = round( min( $discount, $discounting_amount ), wc_get_rounding_precision() );
+        }
+    }
+
+    return $round;
+}
+add_filter( 'woocommerce_coupon_get_discount_amount', 'filter_woocommerce_coupon_get_discount_amount', 10, 5 );
 
 
 if ( ! function_exists( 'forge_comment' ) ) :
