@@ -15,6 +15,19 @@
 			<?php
 				endif;
 			?>
+			<div id="social-feed">
+				<div class="feed-inner">
+					<button class="feed-trigger btn btn-primary">
+						<span class="trigger-title">Social Media</span>
+						<i class="fas fa-chevron-right"></i>
+						<i class="fas fa-x"></i>
+					</button>
+					<div class="feed-main"></div>
+					<div class="feed-ribbon">
+						<?php get_template_part('templates/social/social-links'); ?>
+					</div>
+				</div>
+			</div>
 		</main><!-- /#main -->
 		<footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
 			<div class="sponsors-bar">

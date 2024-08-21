@@ -1,0 +1,170 @@
+#social-feed {
+    position: fixed;
+    top: 0;
+    right: rem(-475);
+    width: 100%;
+    max-width: rem(475);
+    z-index: 2000;
+    height: 100vh;
+    transition: right ease 0.5s;
+    animation: feed-out-sm 0.5s forwards;
+
+    @include media-breakpoint-up(md) {
+        animation: feed-out 0.5s forwards;
+    }
+
+    &.js-active {
+        animation: feed-in-sm 0.5s forwards;
+
+        @include media-breakpoint-up(md) {
+            animation: feed-in 0.5s forwards;
+        }
+
+        .feed-trigger {
+            animation: none;
+
+            @include media-breakpoint-down(sm) {
+                top: 0;
+                right:auto;
+                left:0;
+            }
+
+            .trigger-title {
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+            .fa-x {
+                display: inline;
+
+                @include media-breakpoint-down(sm) {
+                    font-size: rem(28);
+                }
+            }
+    
+            .fa-chevron-right {
+                display: none;
+            }
+        }
+    }
+
+    &:hover {
+        .feed-trigger {
+            animation: none;
+        }
+    }
+
+    body.admin-bar & {
+        top: rem(45);
+
+        @include media-breakpoint-up(lg) {
+            top: rem(32);
+        }
+    }
+    
+    .feed-inner {
+        height: 100%;
+        width:100%;
+    }
+
+    .feed-main {
+        height: 100%;
+        width:100%;
+        overflow: auto;
+        padding: rem(16);
+        border-left: rem(2) solid var(--color-gold);
+        @include frosted-glass-dk();
+
+        @include media-breakpoint-down(sm) {
+            padding-top: rem(62);
+        }
+    }
+
+    .card-insta {
+        background-color: var(--color-white);
+        margin-bottom: rem(16);
+        text-decoration: none;
+        border: rem(3) solid var(--color-gold);
+        border-radius: rem(3);
+        text-decoration: none;
+
+        .card-img-top {
+            border-top-left-radius: rem(3);
+            border-top-right-radius: rem(3);
+        }
+
+        .card-text {
+            color: var(--color-black);
+        }
+    }
+
+    .insta-album {
+        .slider-core-css {
+            .swiper-button-prev {
+                left: rem(6);
+            }
+
+            .swiper-button-next {
+                right: rem(6);
+            }
+        }
+    }
+
+    .feed-trigger {
+        position: absolute;
+        top: 12%;
+        right: 100%;
+        z-index: 10;
+        animation: wiggle 2.5s infinite;
+
+        .fa-x {
+            display: none;
+        }
+
+        .fa-chevron-right {
+            display: inline;
+        }
+    }
+
+    .feed-ribbon {
+        position: absolute;
+        bottom: rem(10);
+        right: 0;
+        width: calc(100% - #{rem(2)});
+        background-color: rgba(0, 0, 0, 0.8);
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: rem(16) 0;
+            margin: 0;
+
+            .social-links-title {
+                display: none;
+            }
+
+            .social-link {
+                display: flex;
+                align-items: center;
+                padding: 0 rem(14);
+                text-decoration: none;
+                font-size: rem(18);
+            }
+
+            .fab {
+                font-size: rem(26);
+                margin-right: rem(8);
+            }
+
+            .social-link-label {
+                display: none;
+
+                @include media-breakpoint-up(md) {
+                    display: inline;
+                }
+            }
+        }
+    }
+}

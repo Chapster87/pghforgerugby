@@ -85,7 +85,7 @@
 								echo esc_attr( get_bloginfo( 'name', 'display' ) );
 							endif;
 						?>
-						<span class="sr-only">Pittsburgh Forge Rugby Club</span>
+						<span class="visually-hidden">Pittsburgh Forge Rugby Club</span>
 					</a>
 				</div>
 

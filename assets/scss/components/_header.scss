@@ -90,16 +90,20 @@ header#header {
                 left: rem(12);
                 transform: none;
                 box-shadow: 0 0 30px 0 rgba(0, 0, 0, 1);
-                animation: scale-logo-up 0.5s forwards;
+                animation: scale-logo-up-homepage 0.5s forwards;
 
                 body.is-scrolled & {
-                    animation: scale-logo-down 0.5s forwards;
+                    animation: scale-logo-down-homepage 0.5s forwards;
                 }
 
                 body:not(.home) & {
-                    animation: none;
-                    max-width: rem(105);
-                    top: rem(-16);
+                    animation: scale-logo-up 0.5s forwards;
+                    // max-width: rem(105);
+                    // top: rem(-16);
+                }
+
+                body:not(.home).is-scrolled & {
+                    animation: scale-logo-down 0.5s forwards;
                 }
             }
         }

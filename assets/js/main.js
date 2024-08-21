@@ -4,8 +4,9 @@
 import * as bootstrap from 'bootstrap';
 var processInclude = require('./util');
 
-$(document).ready(function () {
+require('../../node_modules/lodash/lodash');
 
+$(function() {
 	// Focus input if Searchform is empty
 	[].forEach.call( document.querySelectorAll( '.search-form' ), ( el ) => {
 		el.addEventListener( 'submit', function ( e ) {
@@ -25,11 +26,12 @@ $(document).ready(function () {
 		} );
 	} );
 
-    processInclude(require('./components/common'));
+  processInclude(require('./components/common'));
 	processInclude(require('./components/header'));
 	processInclude(require('./components/menu'));
 	processInclude(require('./components/forms'));
 	processInclude(require('./components/tooltip'));
+	processInclude(require('./components/instafeed'));
 	processInclude(require('./styleguide/styleguide'));
 });
 
