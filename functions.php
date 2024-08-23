@@ -556,6 +556,11 @@ function forge_scripts_loader() {
 		wp_enqueue_style( 'membership', get_template_directory_uri() . '/assets/static/css/membership.css', $theme_version, 'all' );
 	}
 
+	// merch landing styles
+	if ( basename( $template ) === 'page-merch.php' ) {
+		wp_enqueue_style( 'merch', get_template_directory_uri() . '/assets/static/css/merch.css', $theme_version, 'all' );
+	}
+
 	// social link tree styles
 	if ( basename( $template ) === 'page-sociallinks.php' ) {
 		wp_enqueue_style( 'sociallinks', get_template_directory_uri() . '/assets/static/css/sociallinks.css', $theme_version, 'all' );
