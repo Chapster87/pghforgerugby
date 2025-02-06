@@ -13,7 +13,7 @@ if ( is_readable( $theme_customizer ) ) {
 
 /**
  * Include Support for wordpress.com-specific functions.
- * 
+ *
  * @since v1.0
  */
 $theme_wordpresscom = get_template_directory() . '/inc/wordpresscom.php';
@@ -220,6 +220,18 @@ function forge_widgets_init() {
 	// Area 1.
 	register_sidebar(
 		array(
+			'name'          => 'Homepage Countdown',
+			'id'            => 'homepage-countdown',
+			'before_widget' => '<div class="countdown-block">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	// Area 1.
+	register_sidebar(
+		array(
 			'name'          => 'Primary Widget Area (Sidebar)',
 			'id'            => 'primary_widget_area',
 			'before_widget' => '',
@@ -300,6 +312,35 @@ function forge_password_form() {
 	return $output;
 }
 add_filter( 'the_password_form', 'forge_password_form' );
+
+function filter_woocommerce_coupon_get_discount_amount( $round, $discounting_amount, $cart_item, $single, $coupon ) {
+    // Related coupons codes to be defined in this array
+    $coupon_codes = array( 'midwestchamps' );
+
+    // Product IDs, for second discount
+    $product_ids = array( 4691 );
+
+    // Second discount
+    $second_discount = 75;
+
+    // Changing the discount for specific product Ids
+    if ( $coupon->is_type('fixed_product') && in_array( $coupon->get_code(), $coupon_codes ) ) {
+        // Search for product ID in array product IDs
+        if ( in_array( $cart_item['product_id'], $product_ids ) ) {
+            // Get cart item quantity
+            $cart_item_qty = is_null( $cart_item ) ? 1 : $cart_item['quantity'];
+
+            // Discount
+            $discount = $second_discount;
+            $discount = $single ? $discount : $discount * $cart_item_qty;
+
+            $round = round( min( $discount, $discounting_amount ), wc_get_rounding_precision() );
+        }
+    }
+
+    return $round;
+}
+add_filter( 'woocommerce_coupon_get_discount_amount', 'filter_woocommerce_coupon_get_discount_amount', 10, 5 );
 
 
 if ( ! function_exists( 'forge_comment' ) ) :
@@ -485,7 +526,6 @@ function forge_scripts_loader() {
 	// 1. Styles.
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), $theme_version, 'all' );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/static/css/main.css', array(), $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles.
-	wp_enqueue_style( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 
 	// page style
 	if ( is_page() ) {
@@ -502,11 +542,32 @@ function forge_scripts_loader() {
 	}
 
 	if ( is_woocommerce() || is_cart() || is_checkout() || is_page( array( 'my-account' ) ) ) {
+	// if ( !function_exists( 'is_woocommerce' ) || is_cart() || is_checkout() || is_page( array( 'my-account' ) ) ) {
         wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/assets/static/css/woocommerce.css', $theme_version, 'all' );
     }
 
+	// homepage styles
+	if ( basename( $template ) === 'page-home.php' ) {
+		wp_enqueue_style( 'homepage', get_template_directory_uri() . '/assets/static/css/homepage.css', $theme_version, 'all' );
+	}
+
+	// membership styles
+	if ( basename( $template ) === 'page-membership.php' ) {
+		wp_enqueue_style( 'membership', get_template_directory_uri() . '/assets/static/css/membership.css', $theme_version, 'all' );
+	}
+
+	// merch landing styles
+	if ( basename( $template ) === 'page-merch.php' ) {
+		wp_enqueue_style( 'merch', get_template_directory_uri() . '/assets/static/css/merch.css', $theme_version, 'all' );
+	}
+
+	// social link tree styles
+	if ( basename( $template ) === 'page-sociallinks.php' ) {
+		wp_enqueue_style( 'sociallinks', get_template_directory_uri() . '/assets/static/css/sociallinks.css', $theme_version, 'all' );
+	}
+
 	// 2. Scripts.
-	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/static/js/main.js', array(), $theme_version, false );
+	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/static/js/main.js', array(), $theme_version, true );
 	wp_enqueue_script( 'slickjs', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', null, false);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -530,3 +591,5 @@ function forge_scripts_loader() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'forge_scripts_loader' );
+
+include('custom-shortcodes.php');

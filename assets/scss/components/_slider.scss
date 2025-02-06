@@ -1,38 +1,40 @@
-.slider-core-css {
+.swiper-outer {
+	position: relative;
+    padding: 0 rem(20);
 
-    .slick-next,
-    .slick-prev {
-        opacity: 0.75;
+	@include media-breakpoint-up(xxl) {
+		padding: 0;
+	}
+}
+
+.slider-core-css {
+    display: none;
+    padding: 0 0 rem(45);
+
+    &.swiper-initialized {
+		display: block;
+	}
+
+    .swiper-button-next,
+	.swiper-button-prev,
+	&~.swiper-button-next,
+	&~.swiper-button-prev {
+        opacity: 0.8;
         height: rem(36);
         width: rem(36);
         border-radius: rem(20);
         border: 1px solid transparent;
         border-color: var(--color-black);
-        background-color: var(--color-white);
+        background-color: var(--swiper-navigation-bg-color);
         box-shadow: 0 0 rem(8) 0 #000;
-        font-size: rem(24);
         z-index: 1;
         transition: opacity 0.6s ease, background-color 0.6s ease, border-color 0.6s ease;
 
-        &:before {
-            display: block;
-            content: '';
-            opacity: 1;
-            height: auto;
-            width: auto;
-            background: none;
-            position: relative;
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--color-black);
-            transition: color 0.6s ease;
-        }
-
         &:focus,
         &:hover {
-            &:not(.slick-disabled) {
+            &:not(.swiper-button-disabled) {
                 opacity: 1;
-                background-color: var(--color-black);
+                background-color: var(--swiper-navigation-hover-color);
                 border-color: var(--color-primary);
                 &:before {
                     color: var(--color-primary);
@@ -41,19 +43,111 @@
         }
     }
 
-    .slick-next {
-        right: rem(-5);
+    // Inside of .swiper
+	.swiper-button-prev, .swiper-rtl .swiper-button-next {
+		left: 0;
 
-        &:before {
-            content: "\f105";
-        }
-    }
+		@include media-breakpoint-up(xxl) {
+			left: rem(-21)
+		}
+	}
 
-    .slick-prev {
-        left: rem(-5);
 
-        &:before {
-            content:"\f104";
-        }
-    }
+	.swiper-button-next, .swiper-rtl .swiper-button-prev {
+		right: 0;
+
+		@include media-breakpoint-up(xxl) {
+			right: rem(-21)
+		}
+	}
+
+	// Outside of .swiper
+
+	&~.swiper-button-prev, .swiper-rtl~.swiper-button-next {
+		left: rem(-4);
+
+		@include media-breakpoint-up(xxl) {
+			left: rem(-25)
+		}
+	}
+
+	&~.swiper-button-next, .swiper-rtl~.swiper-button-prev {
+		right: rem(-4);
+
+		@include media-breakpoint-up(xxl) {
+			right: rem(-25)
+		}
+	}
+
+	.swiper-pagination-bullets {
+		&.swiper-pagination-horizontal {
+			bottom: rem(16);
+		}
+	}
+
+	.swiper-scrollbar {
+		&.swiper-scrollbar-horizontal {
+			left: rem(20);
+			width: calc(100% - #{rem(40)});
+
+			@include media-breakpoint-up(xxl) {
+				left:0;
+				width: 100%;
+			}
+		}
+	}
+
+	&.swiper-navigation-disabled {
+		padding-left: 0;
+		padding-right: 0;
+
+		.swiper-scrollbar {
+			left: 0;
+			width: 100%;
+		}
+
+		&~.swiper-button-next,
+		&~.swiper-button-prev {
+			display: none;
+		}
+	}
+
+	&.swiper-pagination-disabled {
+		padding-bottom: rem(30);
+
+		.swiper-button-next,
+		.swiper-button-prev,
+		&~.swiper-button-next,
+		&~.swiper-button-prev {
+			top: calc(50% - #{rem(30)});
+		}
+	}
+
+	&.swiper-scrollbar-disabled {
+		padding-bottom: rem(34);
+
+		.swiper-button-next,
+		.swiper-button-prev,
+		&~.swiper-button-next,
+		&~.swiper-button-prev {
+			top: calc(50% - #{rem(34px)});
+		}
+
+		.swiper-pagination-bullets {
+			&.swiper-pagination-horizontal {
+				bottom: rem(3);
+			}
+		}
+	}
+
+	&.swiper-pagination-disabled.swiper-scrollbar-disabled {
+		padding-bottom: 0;
+
+		.swiper-button-next,
+		.swiper-button-prev,
+		&~.swiper-button-next,
+		&~.swiper-button-prev {
+			top: 50%;
+		}
+	}
 }

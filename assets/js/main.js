@@ -28,9 +28,11 @@ $(function () {
     processInclude(require('./components/common'));
 	processInclude(require('./components/header'));
 	processInclude(require('./components/menu'));
+	processInclude(require('./components/forms'));
 	processInclude(require('./components/tooltip'));
 	processInclude(require('./styleguide/styleguide'));
 });
 
 require('./thirdParty/smartResize');
 require('./thirdParty/hoverIntent');
+require('../../node_modules/swiper/swiper-bundle');

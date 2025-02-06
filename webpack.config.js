@@ -17,6 +17,11 @@ module.exports = {
     externals: {
         jquery: 'jQuery'
     },
+    resolve: {
+        alias: {
+            nodeModules: path.resolve(__dirname, 'node_modules')
+        }
+    },
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',

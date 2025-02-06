@@ -1,0 +1,53 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "./utilities/utils";
+
+.merchandise {
+    .card {
+        height: 100%;
+    }
+
+    .card-img-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: rem(250);
+    }
+
+    .card-img {
+        max-width: rem(260);
+        margin: 0;
+    }
+
+    .card-body {
+        border-top: 1px solid rgba(0, 0, 0, .125);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .wrs {
+        .card-img-top {
+            background-color: var(--color-black);
+        }
+    }
+    
+    .threadless {
+        .card-img-top {
+            background-color: #00a9e8;
+        }
+
+        .card-img {
+            max-width: rem(290);
+        }
+    }
+
+
+    .tier-contribution {
+        @include media-breakpoint-up(md) {
+            border-right: 1px solid var(--color-gray-300);
+        }
+    }
+}

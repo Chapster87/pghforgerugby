@@ -30,3 +30,8 @@
 @import "../../node_modules/bootstrap/scss/carousel";
 @import "../../node_modules/bootstrap/scss/spinners";
 @import "../../node_modules/bootstrap/scss/offcanvas";
+
+.container.inner {
+    padding-left: #{$grid-columns}px;
+    padding-right: #{$grid-columns}px;
+}
