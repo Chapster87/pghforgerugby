@@ -90,6 +90,8 @@ footer,
     }
 
     .story {
+        position: fixed;
+        top: 0;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -99,7 +101,7 @@ footer,
         .story-event {
             position: relative;
             display: flex;
-            height: 100%;
+            height: 100vh;
             width: 100vw;
             background-color: var(--color-accent);
 

@@ -1,5 +1,13 @@
 'use strict';
 
+const { gsap } = require('gsap/dist/gsap');
+
+const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+const { ScrollToPlugin } = require('gsap/dist/ScrollToPlugin');
+const { MotionPathPlugin } = require('gsap/dist/MotionPathPlugin');
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
+
 let $story = document.querySelector('.story');
 let $history = document.querySelector('.forge-history');
 

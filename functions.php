@@ -583,10 +583,6 @@ function forge_scripts_loader() {
 	// timeline scripts
 	if ( basename( $template ) === 'page-timeline.php' ) {
 		wp_enqueue_style( 'timeline', get_template_directory_uri() . '/assets/static/css/timeline.css', $theme_version, 'all' );
-		wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js', array(), null, false );
-		wp_enqueue_script( 'gsap-scrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js', array(), null, false );
-		wp_enqueue_script( 'gsap-scrollTo', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js', array(), null, false );
-		wp_enqueue_script( 'gsap-motionPath', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js', array(), null, false );
 		wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/assets/static/js/timeline.js', array(), $theme_version, false );
 	}
 }

@@ -28,7 +28,7 @@ the_post();
         <div class="progress-label">
         <?php
             global $post;
-            $args = array( 'numberposts' => -1, 'category_name' => 'timeline' );
+            $args = array( 'post_type' => 'history', 'post_status' => 'publish', 'numberposts' => -1 );
             $posts = get_posts( $args );
             foreach( $posts as $key => $post): setup_postdata($post);
             $i = $key + 1;
@@ -41,17 +41,6 @@ the_post();
         </div>
     </div>
 
-    <!-- <div class="story-progress dynamic dynamic2">
-        <div class="progress-label">
-            <div class="progress-title">Event #1</div>
-            <div class="progress-title">Event #2</div>
-            <div class="progress-title">Event #3</div>
-        </div>
-        <div class="progress">
-            <div id="dynamic-progress2" class="progress-bar progress-bar-striped progress-bar-animated bg-primary text-secondary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-    </div> -->
-
     <div class="story-progress full">
         <div class="progress-label">Timeline Progress</div>
         <div class="progress">
@@ -59,10 +48,16 @@ the_post();
         </div>
     </div>
 
+    <div class="story-progress scrolling">
+        <div class="progress">
+            <div id="scrolling-progress" class="progress-bar progress-bar-striped progress-bar-animated bg-primary text-secondary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+
     <section class="story">
         <?php
             global $post;
-            $args = array( 'numberposts' => -1, 'category_name' => 'timeline', 'orderby' => 'post_date' , 'order' => 'ASC',);
+            $args = array( 'post_type' => 'history', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => 'post_date' , 'order' => 'ASC' );
             $posts = get_posts( $args );
             foreach( $posts as $key => $post): setup_postdata($post);
         ?>
