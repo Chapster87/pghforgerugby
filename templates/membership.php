@@ -1,3 +1,55 @@
+<div class="modal fade" id="venmoModal" tabindex="-1" aria-labelledby="venmoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="venmoModalLabel">Venmo Payment Guide</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2>How to Pay with Venmo</h2>
+                <p>Follow these steps to pay with Venmo:</p>
+                <ol>
+                    <li>
+                        <div class="d-flex flex-column">
+                            <p class="mb-2"><a class="link-secondary" href="https://venmo.com/pghrugby" target="_blank">Open Venmo by clicking here</a>, or scanning the following QR code:</p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <a href="https://venmo.com/pghrugby" target="_blank">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-qr.png" alt="Venmo Logo" width="200">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Verify that @pghrugby is the recipient</li>
+                    <li>
+                        <div class="d-flex flex-column">
+                            <p class="mb-2">Enter the donation amount you wish to contribute and the reason for payment: i.e.<strong>Club Membership - Reward Tier</strong></p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-amount-and-desc.png" alt="Venmo Payment Details" width="250">
+                            </div>
+                        </div></li>
+                    <li>
+                        <div class="d-flex flex-column">
+                            <p class="mb-2">If you would like to make a recurring payment, tap the "Schedule" button in the bottom left. Then choose a frequency & occurs date. Tap "Save" when finished.</p>
+                            <div class="row mb-3">
+                                <div class="col-12 col-sm-6">
+                                    <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-schedule1.png" alt="Venmo Schedule Payment">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <img class="d-block mt-3 mt-sm-0" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-schedule2.png" alt="Venmo Schedule Payment">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Click "Pay" to complete the transaction</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="membership container inner mt-4">
     <div class="membership-tier diamond row">
         <div class="col-12">
@@ -22,14 +74,11 @@
                             <li>Spotlight media feature</li>
                             <li>Name engraved on NEW plaque at Ruggers Pub</li>
                             <li>Complementary reserved seating for FOUR at Annual Awards Gala</li>
-                            <li>Golf Outing Signage Recognition</li>
-                            <li>Complementary Golf Outing Foursome</li>
                             <li>SC7s Field Naming Rights</li>
-                            <li>$100 Streamroller Merchandise Gift Card</li>
                         </ul>
                     </div>
                 </div>
-                <div class="tier-payment tier-col col-12 col-xl-4">
+                <div class="tier-payment tier-col d-flex flex-column col-12 col-xl-4">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="text-center">
                         <input name="cmd" type="hidden" value="_s-xclick" />
                         <input name="hosted_button_id" type="hidden" value="L7AR7NVRAN8YJ" />
@@ -52,9 +101,13 @@
                             </tbody>
                         </table>
                         <input name="currency_code" type="hidden" value="USD" />
-                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" type="image" />
+                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/donate-paypal.webp" type="image" />
                         <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
                     </form>
+                    <div class="w-100 text-center py-2"><span class="">OR</span></div>
+                    <button type="button" class="venmo-btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#venmoModal">
+                        <img class="venmo-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-logo.webp" alt="Pay With Venmo" width="200">
+                    </button>
                 </div>
             </div>
         </div>
@@ -81,12 +134,11 @@
                         <ul>
                             <li>Spotlight media feature</li>
                             <li>Golf Outing Signage Recognition</li>
-                            <li>Complementary Golf Outing Foursome</li>
                             <li>Name engraved on plaque at Ruggers</li>
                         </ul>
                     </div>
                 </div>
-                <div class="tier-payment tier-col col-12 col-xl-4">
+                <div class="tier-payment tier-col d-flex flex-column col-12 col-xl-4">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="text-center">
                         <input name="cmd" type="hidden" value="_s-xclick" />
                         <input name="hosted_button_id" type="hidden" value="GWYMGW3F6AH9C" />
@@ -109,9 +161,13 @@
                             </tbody>
                         </table>
                         <input name="currency_code" type="hidden" value="USD" />
-                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" type="image" />
+                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/donate-paypal.webp" type="image" />
                         <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
                     </form>
+                    <div class="w-100 text-center py-2"><span class="">OR</span></div>
+                    <button type="button" class="venmo-btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#venmoModal">
+                        <img class="venmo-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-logo.webp" alt="Pay With Venmo" width="200">
+                    </button>
                 </div>
             </div>
         </div>
@@ -141,7 +197,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="tier-payment tier-col col-12 col-xl-4">
+                <div class="tier-payment tier-col d-flex flex-column col-12 col-xl-4">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="text-center">
                         <input name="cmd" type="hidden" value="_s-xclick" />
                         <input name="hosted_button_id" type="hidden" value="7G6PKQ4VKZCAW" />
@@ -164,9 +220,13 @@
                             </tbody>
                         </table>
                         <input name="currency_code" type="hidden" value="USD" />
-                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" type="image" />
+                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/donate-paypal.webp" type="image" />
                         <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
                     </form>
+                    <div class="w-100 text-center py-2"><span class="">OR</span></div>
+                    <button type="button" class="venmo-btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#venmoModal">
+                        <img class="venmo-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-logo.webp" alt="Pay With Venmo" width="200">
+                    </button>
                 </div>
             </div>
         </div>
@@ -192,12 +252,10 @@
                         <span class="tier-benefits-label tier-col-label">Benefits: </span>
                         <ul>
                             <li>Newsletter recognition</li>
-                            <li>$50 Ruggers Pub Gift Card</li>
-                            <li>Hawaiian Shirt (while supplies last)</li>
                         </ul>
                     </div>
                 </div>
-                <div class="tier-payment tier-col col-12 col-xl-4">
+                <div class="tier-payment tier-col d-flex flex-column col-12 col-xl-4">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="text-center">
                         <input name="cmd" type="hidden" value="_s-xclick" />
                         <input name="hosted_button_id" type="hidden" value="FE3GE9UXNR46E"/>
@@ -220,9 +278,13 @@
                             </tbody>
                         </table>
                         <input name="currency_code" type="hidden" value="USD" />
-                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" type="image" />
+                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/donate-paypal.webp" type="image" />
                         <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
                     </form>
+                    <div class="w-100 text-center py-2"><span class="">OR</span></div>
+                    <button type="button" class="venmo-btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#venmoModal">
+                        <img class="venmo-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-logo.webp" alt="Pay With Venmo" width="200">
+                    </button>
                 </div>
             </div>
         </div>
@@ -251,7 +313,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="tier-payment tier-col col-12 col-xl-4">
+                <div class="tier-payment tier-col d-flex flex-column col-12 col-xl-4">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="text-center">
                         <input name="cmd" type="hidden" value="_s-xclick" />
                         <input name="hosted_button_id" type="hidden" value="S3QE9J6LTWR3N" />
@@ -274,9 +336,13 @@
                             </tbody>
                         </table>
                         <input name="currency_code" type="hidden" value="USD" />
-                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" type="image" />
+                        <input class="paypal-submit" alt="PayPal - The safer, easier way to pay online!" name="submit" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/donate-paypal.webp" type="image" />
                         <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
                     </form>
+                    <div class="w-100 text-center py-2"><span class="">OR</span></div>
+                    <button type="button" class="venmo-btn border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#venmoModal">
+                        <img class="venmo-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/venmo/venmo-logo.webp" alt="Pay With Venmo" width="200">
+                    </button>
                 </div>
             </div>
         </div>
