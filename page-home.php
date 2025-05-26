@@ -51,7 +51,7 @@ the_post();
                 <div class="post-card-row swiper slider-core-css">
                     <div class="swiper-wrapper">
                         <?php
-                            query_posts( array('posts_per_page'=>7) );
+                            query_posts( array('posts_per_page' => 7, 'category__not_in' => array(1)) );
                             while ( have_posts() ) : the_post();
                         ?>
                             <div class="swiper-slide">
