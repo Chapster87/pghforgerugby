@@ -6,6 +6,10 @@
 
     .sponsors-bar-inner {
         justify-content: center;
+
+		@include media-breakpoint-up(md) {
+            gap: 24px;
+		}
     }
 
     .sponsor {
@@ -65,4 +69,18 @@
             }
         }
     }
+
+	.blackwell {
+		.sponsor__logo {
+            max-width: 8rem;
+
+            @include media-breakpoint-up(sm) {
+                max-width: 11.5rem;
+            }
+
+            @include media-breakpoint-up(md) {
+                max-width: 13rem;
+            }
+        }
+	}
 }
