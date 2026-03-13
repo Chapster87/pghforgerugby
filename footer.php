@@ -20,19 +20,22 @@
 			<div class="sponsors-bar">
 				<div class="container">
 					<div class="sponsors-bar-inner row">
-						<div class="sponsor iron-city col-6 col-sm-4 col-xl">
+						<div class="sponsor iron-city col-6 col-sm-4 col-xl p-0">
 							<a href="/forge-partner-with-iron-city-beer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sponsors/ironcity.png" alt="Iron City Beer" class="sponsor__logo"></a>
 						</div>
-						<div class="sponsor ic-light col-6 col-sm-4 col-xl">
+						<div class="sponsor ic-light col-6 col-sm-4 col-xl p-0">
 							<a href="/forge-partner-with-iron-city-beer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sponsors/iclight.png" alt="IC Light Beer" class="sponsor__logo"></a>
 						</div>
-						<div class="sponsor ahn col-6 col-sm-4 col-xl">
+						<div class="sponsor ahn col-6 col-sm-4 col-xl p-0">
 							<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sponsors/ahn.png" alt="Allegheny Health Network Sports Medicine" class="sponsor__logo"></a>
 						</div>
-						<div class="sponsor essmc col-6 col-sm-4 col-xl">
+						<div class="sponsor blackwell col-6 col-sm-4 col-xl p-0">
+							<a href="/pittsburgh-forge-partners-with-blackwell-law-firm"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sponsors/blackwell-law-firm.png" alt="Allegheny Health Network Sports Medicine" class="sponsor__logo"></a>
+						</div>
+						<div class="sponsor essmc col-6 col-sm-4 col-xl p-0">
 							<a href="/pittsburgh-forge-partners-with-essmc"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sponsors/essmc.png" alt="Eastern Suburbs Sports Medicine" class="sponsor__logo"></a>
 						</div>
-						<div class="sponsor ruggers col-6 col-sm-4 col-xl">
+						<div class="sponsor ruggers col-6 col-sm-4 col-xl p-0">
 							<a href="http://ruggerspub.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sponsors/ruggers.png" alt="Ruggers Pub" class="sponsor__logo"></a>
 						</div>
 					</div>
